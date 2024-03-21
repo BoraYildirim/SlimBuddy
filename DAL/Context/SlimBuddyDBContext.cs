@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Models.Concrete;
+
+namespace DAL.Context
+{
+    public class SlimBuddyDBContext: DbContext
+    {
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserDetail> UserDetails { get; set; }
+        public DbSet<Meal> Meals { get; set; }
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<FoodMeal> FoodMeals { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Data source=.;Initial catalog=SlimBuddyDB;Integrated security=true;TrustServerCertificate=true");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(System.Reflection.Assembly.GetExecutingAssembly());
+        }
+
+
+    }
+}

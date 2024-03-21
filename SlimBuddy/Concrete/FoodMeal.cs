@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models.Abstracts;
 
 namespace Models.Concrete
 {
-    public class FoodMeal
+    public class FoodMeal:BaseEntity
     {
         public int FoodMealID { get; set; }
         public Food? Food { get; set; }
