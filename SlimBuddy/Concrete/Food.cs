@@ -13,7 +13,7 @@ namespace Models.Concrete
         public int FoodID { get; set; }
         public string Name { get; set; }
 
-        public double Calorie { get; set; }
+        public double Calorie { get; set; } 
 
         public string Image { get; set; }
         public Unit Unit { get; set; }
