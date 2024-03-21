@@ -11,7 +11,7 @@ namespace Models.Concrete
     public class Meal:BaseEntity
     {
         public int MealID { get; set; }
-        public MealType MealName { get; set; }
+        public string MealName { get; set; }
         public double TotalCalorie { get; set; }
         public ICollection<FoodMeal>? FoodMeals { get; set; }
 

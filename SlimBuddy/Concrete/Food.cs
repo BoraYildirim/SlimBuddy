@@ -1,4 +1,5 @@
 ﻿using Models.Abstracts;
+using Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Models.Concrete
         public double Calorie { get; set; }
 
         public string Image { get; set; }
+        public Unit Unit { get; set; }
 
         public Category? Category { get; set; }
         public int CategoryID { get; set; }
