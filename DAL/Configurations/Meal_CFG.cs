@@ -13,7 +13,9 @@ namespace DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<Meal> builder)
         {
-            
+
+            builder.Property(x => x.MealName).HasColumnType("varchar").HasMaxLength(50).IsRequired();
+           
         }
     }
 }
