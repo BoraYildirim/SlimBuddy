@@ -15,8 +15,8 @@ namespace Models.Concrete
         public string Password { get; set; }
         public UserType UserType { get; set; }
 
-        public ICollection<Meal>? Meals { get; set; }
-        public ICollection<Food>? Foods { get; set; }
+        public ICollection<MealSummary>? MealSummary { get; set; }
+
 
         public UserDetail? UserDetail { get; set; }
 

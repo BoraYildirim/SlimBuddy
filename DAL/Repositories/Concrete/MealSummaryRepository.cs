@@ -10,9 +10,9 @@ using Models.Enums;
 
 namespace DAL.Repositories.Concrete
 {
-    public class FoodMealRepository : Crud<FoodMeal>
+    public class MealSummaryRepository : Crud<MealSummary>
     {
-        public FoodMealRepository(SlimBuddyDBContext dbContext) : base(dbContext)
+        public MealSummaryRepository(SlimBuddyDBContext dbContext) : base(dbContext)
         {      
         }    
     }

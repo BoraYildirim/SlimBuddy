@@ -14,8 +14,10 @@ namespace DAL.Configurations
         public void Configure(EntityTypeBuilder<Category> builder)
         {
 
-            builder.Property(x=>x.CategoryName).HasColumnType("nvarchar").HasMaxLength(30).IsRequired(); 
-            
+            builder.Property(x=>x.CategoryName).HasColumnType("nvarchar").HasMaxLength(30).IsRequired();
+
+
+
         }
     }
 }

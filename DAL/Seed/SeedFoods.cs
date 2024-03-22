@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Seed
 {
-    internal class SeedFoods : IEntityTypeConfiguration<Food>
+    public class SeedFoods : IEntityTypeConfiguration<Food>
     {
         public void Configure(EntityTypeBuilder<Food> builder)
         {

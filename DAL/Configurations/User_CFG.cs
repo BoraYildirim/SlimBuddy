@@ -13,8 +13,7 @@ namespace DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.Property(x => x.Name).HasColumnType("nvarchar").HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Surname).HasColumnType("nvarchar").HasMaxLength(50).IsRequired();
+          
             builder.Property(x => x.Email).HasColumnType("nvarchar").HasMaxLength(60).IsRequired();
             builder.Property(x => x.Password).HasColumnType("nvarchar").HasMaxLength(60).IsRequired();
         }

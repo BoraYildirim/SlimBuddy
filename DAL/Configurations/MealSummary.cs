@@ -9,9 +9,9 @@ using Models.Concrete;
 
 namespace DAL.Configurations
 {
-    public class FoodMeal_CFG : IEntityTypeConfiguration<FoodMeal>
+    public class MealSummary_CFG : IEntityTypeConfiguration<MealSummary>
     {
-        public void Configure(EntityTypeBuilder<FoodMeal> builder)
+        public void Configure(EntityTypeBuilder<MealSummary> builder)
         {
             
         }

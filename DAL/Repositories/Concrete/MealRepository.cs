@@ -18,10 +18,10 @@ namespace DAL.Repositories.Concrete
         SlimBuddyDBContext _dbContext;
     
 
-        public List<string> GetMealsNames(int userID)
-        {
-            return _dbContext.Meals.Where(x => x.UserID == null || x.UserID == userID && x.Status != Status.Passive).Select(x => x.MealName).ToList();
-        }
+        //public List<string> GetMealsNames(int userID)
+        //{
+        //    return _dbContext.Meals.Where(x => x.UserID == null || x.UserID == userID && x.Status != Status.Passive).Select(x => x.MealName).ToList();
+        //}
 
         public int GetMealID(string text)
         {

@@ -16,7 +16,8 @@ namespace DAL.Configurations
 
             builder.Property(x => x.MealName).HasColumnType("nvarchar").HasMaxLength(50).IsRequired();
 
-           
+
+
         }
     }
 }

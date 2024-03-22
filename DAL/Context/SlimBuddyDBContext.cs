@@ -15,7 +15,7 @@ namespace DAL.Context
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<FoodMeal> FoodMeals { get; set; }
+        public DbSet<MealSummary> MealSummaries { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

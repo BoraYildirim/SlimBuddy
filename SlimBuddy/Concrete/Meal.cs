@@ -14,10 +14,9 @@ namespace Models.Concrete
         public string MealName { get; set; }
         public double TotalCalorie { get; set; }
       
-        public ICollection<FoodMeal>? FoodMeals { get; set; }
+     
 
-        public User? User { get; set; }
-        public int UserID { get; set; }
+        public ICollection<MealSummary>? MealSummary { get; set; }
 
     }
 }

@@ -10,10 +10,15 @@ namespace Models.Abstracts
 {
     public abstract class BaseEntity
     {
+        public BaseEntity()
+        {
+            CreationDate = DateTime.Now;
+        }
+
         public DateTime CreationDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DateTime? DeletedDate { get; set; }
-        public Status Status { get; set; }
+        public Status? Status { get; set; }
 
     }
 }
