@@ -21,6 +21,9 @@ namespace Models.Concrete
         public Category? Category { get; set; }
         public int CategoryID { get; set; }
 
+        public User? User { get; set; }
+        public int UserID { get; set; }
+
         public ICollection<FoodMeal>? FoodMeals { get; set; }
     }
 }

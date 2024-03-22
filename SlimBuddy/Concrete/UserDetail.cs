@@ -14,6 +14,8 @@ namespace Models.Concrete
     {
         [ForeignKey("User")]
         public int UserDetailID { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public int Age { get; set; }
         public Gender Gender { get; set; }
 

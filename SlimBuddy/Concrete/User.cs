@@ -11,13 +11,12 @@ namespace Models.Concrete
     public class User:BaseEntity
     {
         public int UserID { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public UserType UserType { get; set; }
 
         public ICollection<Meal>? Meals { get; set; }
+        public ICollection<Food>? Foods { get; set; }
 
         public UserDetail? UserDetail { get; set; }
 
