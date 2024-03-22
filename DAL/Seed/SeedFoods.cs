@@ -26,7 +26,7 @@ namespace DAL.Seed
             new Food { FoodID = 8, Name = "Peach", Calorie = 59, Status = Status.Active, Unit = Unit.Quantity, Image = "\\Resources\\Peach.jpeg", CategoryID = 1 },
             new Food { FoodID = 9, Name = "Mango", Calorie = 60, Status = Status.Active, Unit = Unit.Quantity, Image = "\\Resources\\Mango.jpg", CategoryID = 1 },
             new Food { FoodID = 10, Name = "Cherry", Calorie = 50, Status = Status.Active, Unit = Unit.Quantity, Image = "\\Resources\\Cherry.jpg", CategoryID = 1 },
-
+             
 
             new Food { FoodID = 11, Name = "Water", Calorie = 0, Status = Status.Active, Unit = Unit.milliliter, Image = "\\Resources\\Water.jpg", CategoryID = 2 },
             new Food { FoodID = 12, Name = "Milkshake", Calorie = 113, Status = Status.Active, Unit = Unit.milliliter, Image = "\\Resources\\Milkshake.jpg", CategoryID = 2 },
