@@ -25,7 +25,7 @@ namespace DAL.Seed
                     new Category { CategoryID = 7, CategoryName = "Fish and Seafood" },
                     new Category { CategoryID = 8, CategoryName = "Fast Food" },
                     new Category { CategoryID = 9, CategoryName = "Meat or Poultry" },                
-                    new Category { CategoryID = 11, CategoryName = "Others" }
+                    new Category { CategoryID = 10, CategoryName = "Others" }
                 );
         }
     }
