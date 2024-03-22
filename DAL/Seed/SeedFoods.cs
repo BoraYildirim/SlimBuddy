@@ -40,8 +40,8 @@ namespace DAL.Seed
             new Food { FoodID = 20, Name = "Lemonade", Calorie = 42, Status = Status.Active, Unit = Unit.milliliter, Image = "\\FoodPhotos\\2.jpg", CategoryID = 2 },
 
 
-            new Food { FoodID = 21, Name = "wafer", Calorie = 433, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
-            new Food { FoodID = 22, Name = "almond", Calorie = 11, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
+            new Food { FoodID = 21, Name = "Wafer", Calorie = 433, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
+            new Food { FoodID = 22, Name = "Almond", Calorie = 11, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
             new Food { FoodID = 23, Name = "Peanut", Calorie = 6, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
             new Food { FoodID = 24, Name = "Snickers", Calorie = 488, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
             new Food { FoodID = 25, Name = "Popcorn", Calorie = 375, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
@@ -49,7 +49,7 @@ namespace DAL.Seed
             new Food { FoodID = 27, Name = "Cookies", Calorie = 502, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
             new Food { FoodID = 28, Name = "Crackers", Calorie = 20, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
             new Food { FoodID = 29, Name = "Sunflower Seed", Calorie = 559, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
-            new Food { FoodID = 30, Name = "marshmallow", Calorie = 318, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
+            new Food { FoodID = 30, Name = "Marshmallow", Calorie = 318, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 3 },
 
 
             new Food { FoodID = 31, Name = "Cheesecake", Calorie = 321, Status = Status.Active, Unit = Unit.Quantity, Image = "\\FoodPhotos\\2.jpg", CategoryID = 4 },
@@ -102,14 +102,14 @@ namespace DAL.Seed
 
             new Food { FoodID = 71, Name = "Burger", Calorie = 295, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 72, Name = "Pizza", Calorie = 266, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
-            new Food { FoodID = 73, Name = "Rotary", Calorie = 239, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
+            new Food { FoodID = 73, Name = "Doner", Calorie = 239, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 74, Name = "French fries", Calorie = 312, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
-            new Food { FoodID = 75, Name = "mac and cheese", Calorie = 164, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
+            new Food { FoodID = 75, Name = "Mac and cheese", Calorie = 164, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 76, Name = "Lahmacun", Calorie = 118, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 77, Name = "Tantuni", Calorie = 390, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 78, Name = "Sandwich", Calorie = 284, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
             new Food { FoodID = 79, Name = "Onion rings", Calorie = 411, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
-            new Food { FoodID = 80, Name = "chicken wing", Calorie = 203, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
+            new Food { FoodID = 80, Name = "Chicken wing", Calorie = 203, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 8 },
 
 
             new Food { FoodID = 81, Name = "Adana Kebab", Calorie = 360, Status = Status.Active, Unit = Unit.Portion, Image = "\\FoodPhotos\\2.jpg", CategoryID = 9 },
