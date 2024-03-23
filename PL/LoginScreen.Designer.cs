@@ -41,6 +41,7 @@
             textBox1 = new TextBox();
             panel2 = new Panel();
             buttonClose = new Button();
+            buttonAdmin = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -55,7 +56,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-        //    pictureBox1.Click += this.pictureBox1_Click;
             // 
             // label4
             // 
@@ -68,11 +68,11 @@
             label4.Size = new Size(300, 62);
             label4.TabIndex = 12;
             label4.Text = "SLIMBUDDY";
-        //    label4.Click += this.label4_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(buttonAdmin);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(label3);
@@ -84,7 +84,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(391, 472);
             panel1.TabIndex = 11;
-        //    panel1.Paint += this.panel1_Paint;
             // 
             // button1
             // 
@@ -94,18 +93,17 @@
             button1.TabIndex = 6;
             button1.Text = "LOGIN";
             button1.UseVisualStyleBackColor = true;
-        //    button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(135, 397);
+            linkLabel1.Location = new Point(135, 380);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(110, 20);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Create Account";
-          //  linkLabel1.LinkClicked += this.linkLabel1_LinkClicked;
             // 
             // label3
             // 
@@ -117,7 +115,6 @@
             label3.Size = new Size(95, 41);
             label3.TabIndex = 4;
             label3.Text = "Login";
-      //      label3.Click += this.label3_Click;
             // 
             // label2
             // 
@@ -127,7 +124,6 @@
             label2.Size = new Size(70, 20);
             label2.TabIndex = 3;
             label2.Text = "Password";
-       //     label2.Click += this.label2_Click;
             // 
             // label1
             // 
@@ -137,7 +133,6 @@
             label1.Size = new Size(52, 20);
             label1.TabIndex = 2;
             label1.Text = "E-Mail";
-      //      label1.Click += this.label1_Click;
             // 
             // textBox2
             // 
@@ -145,7 +140,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(212, 27);
             textBox2.TabIndex = 1;
-       //     textBox2.TextChanged += this.textBox2_TextChanged;
             // 
             // textBox1
             // 
@@ -153,7 +147,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(212, 27);
             textBox1.TabIndex = 0;
-       //     textBox1.TextChanged += this.textBox1_TextChanged;
             // 
             // panel2
             // 
@@ -163,7 +156,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(740, 31);
             panel2.TabIndex = 13;
-       //     panel2.Paint += this.panel2_Paint;
             // 
             // buttonClose
             // 
@@ -177,6 +169,15 @@
             buttonClose.Text = "X";
             buttonClose.UseVisualStyleBackColor = false;
             buttonClose.Click += button2_Click;
+            // 
+            // buttonAdmin
+            // 
+            buttonAdmin.Location = new Point(108, 417);
+            buttonAdmin.Name = "buttonAdmin";
+            buttonAdmin.Size = new Size(171, 29);
+            buttonAdmin.TabIndex = 14;
+            buttonAdmin.Text = "Admin Login";
+            buttonAdmin.UseVisualStyleBackColor = true;
             // 
             // LoginScreen
             // 
@@ -211,5 +212,6 @@
         private TextBox textBox1;
         private Panel panel2;
         private Button buttonClose;
+        private Button buttonAdmin;
     }
 }

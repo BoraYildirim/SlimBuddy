@@ -1,4 +1,5 @@
 ﻿using DAL.Repositories.Concrete;
+using Microsoft.EntityFrameworkCore;
 using Models.Concrete;
 using Models.Enums;
 using System;
@@ -50,6 +51,11 @@ namespace BLL
         public List<User> GetAll()
         {
             return userRepository.GetAll();
+        }
+
+        public bool RegisterControl(string email)
+        {
+            return userRepository.RegisterControl(email);
         }
     }
 }

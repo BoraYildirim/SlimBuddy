@@ -144,11 +144,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label6.Location = new Point(524, 319);
+            label6.Location = new Point(505, 319);
             label6.Name = "label6";
-            label6.Size = new Size(86, 30);
+            label6.Size = new Size(135, 30);
             label6.TabIndex = 19;
-            label6.Text = "Weight";
+            label6.Text = "Weight (Kg)";
             // 
             // textBoxHeight
             // 
@@ -161,11 +161,11 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label8.Location = new Point(528, 220);
+            label8.Location = new Point(508, 220);
             label8.Name = "label8";
-            label8.Size = new Size(80, 30);
+            label8.Size = new Size(132, 30);
             label8.TabIndex = 17;
-            label8.Text = "Height";
+            label8.Text = "Height (cm)";
             // 
             // label9
             // 
@@ -275,6 +275,7 @@
             buttonRegister.TabIndex = 0;
             buttonRegister.Text = "Register";
             buttonRegister.UseVisualStyleBackColor = false;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // pictureBox1
             // 

@@ -16,5 +16,10 @@ namespace PL
         {
             InitializeComponent();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
