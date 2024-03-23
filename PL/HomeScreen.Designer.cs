@@ -30,14 +30,14 @@
         {
             menuStrip1 = new MenuStrip();
             hOMEToolStripMenuItem = new ToolStripMenuItem();
-            dataGridView1 = new DataGridView();
+            mEALToolStripMenuItem = new ToolStripMenuItem();
+            fOODToolStripMenuItem = new ToolStripMenuItem();
+            dAILYCALORIEToolStripMenuItem = new ToolStripMenuItem();
             aNALYSISToolStripMenuItem = new ToolStripMenuItem();
             sUMMARYToolStripMenuItem = new ToolStripMenuItem();
             aCCOUNTToolStripMenuItem = new ToolStripMenuItem();
-            dAILYCALORIEToolStripMenuItem = new ToolStripMenuItem();
-            mEALToolStripMenuItem = new ToolStripMenuItem();
-            fOODToolStripMenuItem = new ToolStripMenuItem();
             lOGOUTToolStripMenuItem = new ToolStripMenuItem();
+            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -51,6 +51,7 @@
             menuStrip1.Size = new Size(1168, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // hOMEToolStripMenuItem
             // 
@@ -58,14 +59,23 @@
             hOMEToolStripMenuItem.Size = new Size(66, 24);
             hOMEToolStripMenuItem.Text = "HOME";
             // 
-            // dataGridView1
+            // mEALToolStripMenuItem
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 31);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1168, 558);
-            dataGridView1.TabIndex = 2;
+            mEALToolStripMenuItem.Name = "mEALToolStripMenuItem";
+            mEALToolStripMenuItem.Size = new Size(61, 24);
+            mEALToolStripMenuItem.Text = "MEAL";
+            // 
+            // fOODToolStripMenuItem
+            // 
+            fOODToolStripMenuItem.Name = "fOODToolStripMenuItem";
+            fOODToolStripMenuItem.Size = new Size(63, 24);
+            fOODToolStripMenuItem.Text = "FOOD";
+            // 
+            // dAILYCALORIEToolStripMenuItem
+            // 
+            dAILYCALORIEToolStripMenuItem.Name = "dAILYCALORIEToolStripMenuItem";
+            dAILYCALORIEToolStripMenuItem.Size = new Size(123, 24);
+            dAILYCALORIEToolStripMenuItem.Text = "DAILY CALORIE";
             // 
             // aNALYSISToolStripMenuItem
             // 
@@ -85,29 +95,20 @@
             aCCOUNTToolStripMenuItem.Size = new Size(91, 24);
             aCCOUNTToolStripMenuItem.Text = "ACCOUNT";
             // 
-            // dAILYCALORIEToolStripMenuItem
-            // 
-            dAILYCALORIEToolStripMenuItem.Name = "dAILYCALORIEToolStripMenuItem";
-            dAILYCALORIEToolStripMenuItem.Size = new Size(123, 24);
-            dAILYCALORIEToolStripMenuItem.Text = "DAILY CALORIE";
-            // 
-            // mEALToolStripMenuItem
-            // 
-            mEALToolStripMenuItem.Name = "mEALToolStripMenuItem";
-            mEALToolStripMenuItem.Size = new Size(61, 24);
-            mEALToolStripMenuItem.Text = "MEAL";
-            // 
-            // fOODToolStripMenuItem
-            // 
-            fOODToolStripMenuItem.Name = "fOODToolStripMenuItem";
-            fOODToolStripMenuItem.Size = new Size(63, 24);
-            fOODToolStripMenuItem.Text = "FOOD";
-            // 
             // lOGOUTToolStripMenuItem
             // 
             lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
             lOGOUTToolStripMenuItem.Size = new Size(83, 24);
             lOGOUTToolStripMenuItem.Text = "LOG OUT";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(0, 31);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1168, 558);
+            dataGridView1.TabIndex = 2;
             // 
             // HomeScreen
             // 

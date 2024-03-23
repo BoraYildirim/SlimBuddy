@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            btnDelete = new Button();
             clmMealName = new ColumnHeader();
             clmDate = new ColumnHeader();
             clmTotalCalorie = new ColumnHeader();
+            btnDeleteMeal = new Button();
             listView2 = new ListView();
             clmFoodName = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
@@ -40,7 +40,7 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            button1 = new Button();
+            buttonUpdateMeal = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -52,15 +52,6 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Location = new Point(997, 427);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(135, 80);
-            btnDelete.TabIndex = 1;
-            btnDelete.Text = "DELETE MEAL";
-            btnDelete.UseVisualStyleBackColor = true;
             // 
             // clmMealName
             // 
@@ -75,6 +66,15 @@
             // 
             clmTotalCalorie.Text = "Total Calorie";
             clmTotalCalorie.Width = 100;
+            // 
+            // btnDeleteMeal
+            // 
+            btnDeleteMeal.Location = new Point(997, 427);
+            btnDeleteMeal.Name = "btnDeleteMeal";
+            btnDeleteMeal.Size = new Size(135, 80);
+            btnDeleteMeal.TabIndex = 1;
+            btnDeleteMeal.Text = "DELETE MEAL";
+            btnDeleteMeal.UseVisualStyleBackColor = true;
             // 
             // listView2
             // 
@@ -116,23 +116,23 @@
             columnHeader5.Text = "Unit";
             columnHeader5.Width = 100;
             // 
-            // button1
+            // buttonUpdateMeal
             // 
-            button1.Location = new Point(997, 309);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 81);
-            button1.TabIndex = 3;
-            button1.Text = "UPDATE MEAL";
-            button1.UseVisualStyleBackColor = true;
+            buttonUpdateMeal.Location = new Point(997, 309);
+            buttonUpdateMeal.Name = "buttonUpdateMeal";
+            buttonUpdateMeal.Size = new Size(135, 81);
+            buttonUpdateMeal.TabIndex = 3;
+            buttonUpdateMeal.Text = "UPDATE MEAL";
+            buttonUpdateMeal.UseVisualStyleBackColor = true;
             // 
             // SummaryScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1168, 558);
-            Controls.Add(button1);
+            Controls.Add(buttonUpdateMeal);
             Controls.Add(listView2);
-            Controls.Add(btnDelete);
+            Controls.Add(btnDeleteMeal);
             Controls.Add(listView1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SummaryScreen";
@@ -143,7 +143,7 @@
         #endregion
 
         private ListView listView1;
-        private Button btnDelete;
+        private Button btnDeleteMeal;
         private ColumnHeader clmMealName;
         private ColumnHeader clmDate;
         private ColumnHeader clmTotalCalorie;
@@ -154,6 +154,6 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
-        private Button button1;
+        private Button buttonUpdateMeal;
     }
 }

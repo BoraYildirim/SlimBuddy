@@ -31,26 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateaAccountScreen));
             panel1 = new Panel();
             button2 = new Button();
-            comboBox1 = new ComboBox();
+            comboBoxGender = new ComboBox();
             label10 = new Label();
-            textBox9 = new TextBox();
+            textBoxComfirmPassword = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
+            textBoxWeight = new TextBox();
             label6 = new Label();
-            textBox7 = new TextBox();
+            textBoxHeight = new TextBox();
             label8 = new Label();
             label9 = new Label();
-            textBox8 = new TextBox();
+            textBoxAge = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxPassword = new TextBox();
+            textBoxLastName = new TextBox();
+            textBoxName = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            textBoxEmail = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            buttonRegister = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             button3 = new Button();
@@ -63,26 +63,26 @@
             // 
             panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(comboBoxGender);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(textBox9);
+            panel1.Controls.Add(textBoxComfirmPassword);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox6);
+            panel1.Controls.Add(textBoxWeight);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(textBox7);
+            panel1.Controls.Add(textBoxHeight);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(textBox8);
+            panel1.Controls.Add(textBoxAge);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(textBoxPassword);
+            panel1.Controls.Add(textBoxLastName);
+            panel1.Controls.Add(textBoxName);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(textBoxEmail);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonRegister);
             panel1.Location = new Point(42, 34);
             panel1.Name = "panel1";
             panel1.Size = new Size(760, 524);
@@ -98,13 +98,13 @@
             button2.TabIndex = 25;
             button2.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // comboBoxGender
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(466, 81);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(203, 28);
-            comboBox1.TabIndex = 24;
+            comboBoxGender.FormattingEnabled = true;
+            comboBoxGender.Location = new Point(466, 81);
+            comboBoxGender.Name = "comboBoxGender";
+            comboBoxGender.Size = new Size(203, 28);
+            comboBoxGender.TabIndex = 24;
             // 
             // label10
             // 
@@ -116,12 +116,12 @@
             label10.TabIndex = 23;
             label10.Text = "Confirm Password";
             // 
-            // textBox9
+            // textBoxComfirmPassword
             // 
-            textBox9.Location = new Point(33, 458);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(203, 27);
-            textBox9.TabIndex = 22;
+            textBoxComfirmPassword.Location = new Point(33, 458);
+            textBoxComfirmPassword.Name = "textBoxComfirmPassword";
+            textBoxComfirmPassword.Size = new Size(203, 27);
+            textBoxComfirmPassword.TabIndex = 22;
             // 
             // label7
             // 
@@ -133,12 +133,12 @@
             label7.TabIndex = 21;
             label7.Text = "Last Name";
             // 
-            // textBox6
+            // textBoxWeight
             // 
-            textBox6.Location = new Point(466, 356);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(203, 27);
-            textBox6.TabIndex = 20;
+            textBoxWeight.Location = new Point(466, 356);
+            textBoxWeight.Name = "textBoxWeight";
+            textBoxWeight.Size = new Size(203, 27);
+            textBoxWeight.TabIndex = 20;
             // 
             // label6
             // 
@@ -150,12 +150,12 @@
             label6.TabIndex = 19;
             label6.Text = "Weight";
             // 
-            // textBox7
+            // textBoxHeight
             // 
-            textBox7.Location = new Point(466, 263);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(203, 27);
-            textBox7.TabIndex = 18;
+            textBoxHeight.Location = new Point(466, 263);
+            textBoxHeight.Name = "textBoxHeight";
+            textBoxHeight.Size = new Size(203, 27);
+            textBoxHeight.TabIndex = 18;
             // 
             // label8
             // 
@@ -177,12 +177,12 @@
             label9.TabIndex = 16;
             label9.Text = "Age";
             // 
-            // textBox8
+            // textBoxAge
             // 
-            textBox8.Location = new Point(466, 174);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(203, 27);
-            textBox8.TabIndex = 15;
+            textBoxAge.Location = new Point(466, 174);
+            textBoxAge.Name = "textBoxAge";
+            textBoxAge.Size = new Size(203, 27);
+            textBoxAge.TabIndex = 15;
             // 
             // label4
             // 
@@ -205,26 +205,26 @@
             label5.TabIndex = 12;
             label5.Text = "Password";
             // 
-            // textBox5
+            // textBoxPassword
             // 
-            textBox5.Location = new Point(33, 356);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(203, 27);
-            textBox5.TabIndex = 11;
+            textBoxPassword.Location = new Point(33, 356);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(203, 27);
+            textBoxPassword.TabIndex = 11;
             // 
-            // textBox3
+            // textBoxLastName
             // 
-            textBox3.Location = new Point(33, 263);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(203, 27);
-            textBox3.TabIndex = 10;
+            textBoxLastName.Location = new Point(33, 263);
+            textBoxLastName.Name = "textBoxLastName";
+            textBoxLastName.Size = new Size(203, 27);
+            textBoxLastName.TabIndex = 10;
             // 
-            // textBox2
+            // textBoxName
             // 
-            textBox2.Location = new Point(33, 174);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(203, 27);
-            textBox2.TabIndex = 8;
+            textBoxName.Location = new Point(33, 174);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(203, 27);
+            textBoxName.TabIndex = 8;
             // 
             // label3
             // 
@@ -248,12 +248,12 @@
             label2.TabIndex = 3;
             label2.Text = "E-Mail";
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            textBox1.Location = new Point(33, 81);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(203, 27);
-            textBox1.TabIndex = 2;
+            textBoxEmail.Location = new Point(33, 81);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(203, 27);
+            textBoxEmail.TabIndex = 2;
             // 
             // label1
             // 
@@ -265,16 +265,16 @@
             label1.TabIndex = 1;
             label1.Text = "CREATE ACCOUNT";
             // 
-            // button1
+            // buttonRegister
             // 
-            button1.BackColor = Color.LightBlue;
-            button1.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            button1.Location = new Point(490, 425);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 60);
-            button1.TabIndex = 0;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = false;
+            buttonRegister.BackColor = Color.LightBlue;
+            buttonRegister.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            buttonRegister.Location = new Point(490, 425);
+            buttonRegister.Name = "buttonRegister";
+            buttonRegister.Size = new Size(162, 60);
+            buttonRegister.TabIndex = 0;
+            buttonRegister.Text = "Register";
+            buttonRegister.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -330,24 +330,24 @@
         private Panel panel1;
         private Label label4;
         private Label label5;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox textBoxPassword;
+        private TextBox textBoxLastName;
+        private TextBox textBoxName;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxEmail;
         private Label label1;
-        private Button button1;
-        private TextBox textBox6;
+        private Button buttonRegister;
+        private TextBox textBoxWeight;
         private Label label6;
-        private TextBox textBox7;
+        private TextBox textBoxHeight;
         private Label label8;
         private Label label9;
-        private TextBox textBox8;
+        private TextBox textBoxAge;
         private Label label7;
         private Label label10;
-        private TextBox textBox9;
-        private ComboBox comboBox1;
+        private TextBox textBoxComfirmPassword;
+        private ComboBox comboBoxGender;
         private PictureBox pictureBox1;
         private Button button2;
         private Panel panel2;

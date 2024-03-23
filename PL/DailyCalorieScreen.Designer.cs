@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DailyCalorieScreen";
+            SuspendLayout();
+            // 
+            // DailyCalorieScreen
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1168, 558);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "DailyCalorieScreen";
+            Text = "DailyCalorieScreen";
+            ResumeLayout(false);
         }
 
         #endregion

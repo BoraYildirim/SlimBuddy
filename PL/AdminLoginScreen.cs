@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PL
 {
-    public partial class HomeScreen : Form
+    public partial class AdminLoginScreen : Form
     {
-        public HomeScreen()
+        public AdminLoginScreen()
         {
             InitializeComponent();
-        }
-
-        private void aDDMEALToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

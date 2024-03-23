@@ -30,7 +30,7 @@
         {
             rdoWeekly = new RadioButton();
             rdoDaily = new RadioButton();
-            groupBox1 = new GroupBox();
+            groupBoxWeeklyDaily = new GroupBox();
             listView1 = new ListView();
             Meal = new ColumnHeader();
             UserEaten = new ColumnHeader();
@@ -48,7 +48,7 @@
             columnHeader5 = new ColumnHeader();
             label1 = new Label();
             button2 = new Button();
-            groupBox1.SuspendLayout();
+            groupBoxWeeklyDaily.SuspendLayout();
             SuspendLayout();
             // 
             // rdoWeekly
@@ -73,20 +73,20 @@
             rdoDaily.TabStop = true;
             rdoDaily.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBoxWeeklyDaily
             // 
-            groupBox1.Controls.Add(rdoDaily);
-            groupBox1.Controls.Add(rdoWeekly);
-            groupBox1.Font = new Font("Ink Free", 11.9999981F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(485, 212);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(214, 101);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Weekly   Or    Daily";
-            groupBox1.Enter += groupBox1_Enter;
+            groupBoxWeeklyDaily.Controls.Add(rdoDaily);
+            groupBoxWeeklyDaily.Controls.Add(rdoWeekly);
+            groupBoxWeeklyDaily.Font = new Font("Ink Free", 11.9999981F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            groupBoxWeeklyDaily.Location = new Point(485, 212);
+            groupBoxWeeklyDaily.Margin = new Padding(3, 4, 3, 4);
+            groupBoxWeeklyDaily.Name = "groupBoxWeeklyDaily";
+            groupBoxWeeklyDaily.Padding = new Padding(3, 4, 3, 4);
+            groupBoxWeeklyDaily.Size = new Size(214, 101);
+            groupBoxWeeklyDaily.TabIndex = 5;
+            groupBoxWeeklyDaily.TabStop = false;
+            groupBoxWeeklyDaily.Text = "Weekly   Or    Daily";
+            groupBoxWeeklyDaily.Enter += groupBox1_Enter;
             // 
             // listView1
             // 
@@ -206,19 +206,19 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 511);
+            ClientSize = new Size(1168, 558);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(listView3);
             Controls.Add(listView2);
             Controls.Add(listView1);
-            Controls.Add(groupBox1);
+            Controls.Add(groupBoxWeeklyDaily);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "AnalysisScreen";
             Text = "AnalysisScreen";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            groupBoxWeeklyDaily.ResumeLayout(false);
+            groupBoxWeeklyDaily.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,7 +226,7 @@
         #endregion
         private RadioButton rdoWeekly;
         private RadioButton rdoDaily;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxWeeklyDaily;
         private ListView listView1;
         private ListView listView2;
         private ColumnHeader FoodName;

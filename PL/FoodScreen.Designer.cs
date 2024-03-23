@@ -35,9 +35,9 @@
             label4 = new Label();
             button2 = new Button();
             pbFoodImage = new PictureBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            textBoxUnit = new TextBox();
+            textBoxCalorie = new TextBox();
+            textBoxName = new TextBox();
             label5 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -55,7 +55,7 @@
             btnDelete.BackColor = Color.IndianRed;
             btnDelete.Font = new Font("Comic Sans MS", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnDelete.Location = new Point(331, 426);
-            btnDelete.Margin = new Padding(2, 2, 2, 2);
+            btnDelete.Margin = new Padding(2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(86, 37);
             btnDelete.TabIndex = 61;
@@ -67,7 +67,7 @@
             btnUpdate.BackColor = Color.IndianRed;
             btnUpdate.Font = new Font("Comic Sans MS", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnUpdate.Location = new Point(206, 426);
-            btnUpdate.Margin = new Padding(2, 2, 2, 2);
+            btnUpdate.Margin = new Padding(2);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(89, 37);
             btnUpdate.TabIndex = 62;
@@ -79,7 +79,7 @@
             btnAdd.BackColor = Color.IndianRed;
             btnAdd.Font = new Font("Comic Sans MS", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnAdd.Location = new Point(87, 426);
-            btnAdd.Margin = new Padding(2, 2, 2, 2);
+            btnAdd.Margin = new Padding(2);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(79, 37);
             btnAdd.TabIndex = 63;
@@ -102,7 +102,7 @@
             button2.BackColor = Color.Red;
             button2.Enabled = false;
             button2.Location = new Point(455, 91);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(6, 386);
             button2.TabIndex = 59;
@@ -113,39 +113,39 @@
             // 
             pbFoodImage.Image = (Image)resources.GetObject("pbFoodImage.Image");
             pbFoodImage.Location = new Point(158, 103);
-            pbFoodImage.Margin = new Padding(2, 2, 2, 2);
+            pbFoodImage.Margin = new Padding(2);
             pbFoodImage.Name = "pbFoodImage";
             pbFoodImage.Size = new Size(130, 106);
             pbFoodImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbFoodImage.TabIndex = 58;
             pbFoodImage.TabStop = false;
             // 
-            // textBox3
+            // textBoxUnit
             // 
-            textBox3.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox3.Location = new Point(206, 358);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(170, 35);
-            textBox3.TabIndex = 55;
+            textBoxUnit.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxUnit.Location = new Point(206, 358);
+            textBoxUnit.Margin = new Padding(2);
+            textBoxUnit.Name = "textBoxUnit";
+            textBoxUnit.Size = new Size(170, 35);
+            textBoxUnit.TabIndex = 55;
             // 
-            // textBox2
+            // textBoxCalorie
             // 
-            textBox2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox2.Location = new Point(206, 305);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(170, 35);
-            textBox2.TabIndex = 56;
+            textBoxCalorie.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxCalorie.Location = new Point(206, 305);
+            textBoxCalorie.Margin = new Padding(2);
+            textBoxCalorie.Name = "textBoxCalorie";
+            textBoxCalorie.Size = new Size(170, 35);
+            textBoxCalorie.TabIndex = 56;
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox1.Location = new Point(206, 252);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(170, 35);
-            textBox1.TabIndex = 57;
+            textBoxName.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxName.Location = new Point(206, 252);
+            textBoxName.Margin = new Padding(2);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(170, 35);
+            textBoxName.TabIndex = 57;
             // 
             // label5
             // 
@@ -185,7 +185,7 @@
             button1.BackColor = Color.Red;
             button1.Enabled = false;
             button1.Location = new Point(50, 79);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(402, 6);
             button1.TabIndex = 51;
@@ -208,7 +208,7 @@
             lvFoods.Columns.AddRange(new ColumnHeader[] { Name, Calorie, Unit });
             lvFoods.GridLines = true;
             lvFoods.Location = new Point(542, 79);
-            lvFoods.Margin = new Padding(2, 2, 2, 2);
+            lvFoods.Margin = new Padding(2);
             lvFoods.Name = "lvFoods";
             lvFoods.Size = new Size(562, 399);
             lvFoods.TabIndex = 49;
@@ -241,9 +241,9 @@
             Controls.Add(label4);
             Controls.Add(button2);
             Controls.Add(pbFoodImage);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxUnit);
+            Controls.Add(textBoxCalorie);
+            Controls.Add(textBoxName);
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -251,8 +251,8 @@
             Controls.Add(label3);
             Controls.Add(lvFoods);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
-            //Name = "FoodScreen";
+            Margin = new Padding(2);
+  //          Name = "FoodScreen";
             Text = "FoodScreen";
             ((System.ComponentModel.ISupportInitialize)pbFoodImage).EndInit();
             ResumeLayout(false);
@@ -267,9 +267,9 @@
         private Label label4;
         private Button button2;
         private PictureBox pbFoodImage;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxUnit;
+        private TextBox textBoxCalorie;
+        private TextBox textBoxName;
         private Label label5;
         private Label label2;
         private Label label1;
