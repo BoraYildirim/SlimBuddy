@@ -30,30 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateaAccountScreen));
             panel1 = new Panel();
-            button1 = new Button();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
-            textBox5 = new TextBox();
+            button2 = new Button();
+            comboBox1 = new ComboBox();
+            label10 = new Label();
+            textBox9 = new TextBox();
+            label7 = new Label();
             textBox6 = new TextBox();
             label6 = new Label();
             textBox7 = new TextBox();
             label8 = new Label();
             label9 = new Label();
             textBox8 = new TextBox();
-            label7 = new Label();
-            label10 = new Label();
-            textBox9 = new TextBox();
-            comboBox1 = new ComboBox();
+            label4 = new Label();
+            label5 = new Label();
+            textBox5 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            button1 = new Button();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
+            panel2 = new Panel();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -84,100 +87,51 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(760, 524);
             panel1.TabIndex = 0;
-           // panel1.Paint += this.panel1_Paint;
             // 
-            // button1
+            // button2
             // 
-            button1.BackColor = Color.LightBlue;
-            button1.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            button1.Location = new Point(490, 425);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 60);
-            button1.TabIndex = 0;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.LightBlue;
+            button2.Enabled = false;
+            button2.Location = new Point(347, 81);
+            button2.Name = "button2";
+            button2.Size = new Size(13, 404);
+            button2.TabIndex = 25;
+            button2.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // comboBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Comic Sans MS", 14.2F, FontStyle.Bold);
-            label1.Location = new Point(231, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(242, 35);
-            label1.TabIndex = 1;
-            label1.Text = "CREATE ACCOUNT";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(466, 81);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(203, 28);
+            comboBox1.TabIndex = 24;
             // 
-            // textBox1
+            // label10
             // 
-            textBox1.Location = new Point(33, 81);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(203, 27);
-            textBox1.TabIndex = 2;
+            label10.AutoSize = true;
+            label10.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label10.Location = new Point(41, 411);
+            label10.Name = "label10";
+            label10.Size = new Size(190, 30);
+            label10.TabIndex = 23;
+            label10.Text = "Confirm Password";
             // 
-            // label2
+            // textBox9
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Menu;
-            label2.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label2.Location = new Point(88, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 30);
-            label2.TabIndex = 3;
-            label2.Text = "E-Mail";
+            textBox9.Location = new Point(33, 458);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(203, 27);
+            textBox9.TabIndex = 22;
             // 
-            // label3
+            // label7
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.Menu;
-            label3.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label3.Location = new Point(68, 132);
-            label3.Name = "label3";
-            label3.Size = new Size(128, 30);
-            label3.TabIndex = 4;
-            label3.Text = "First Name";
-           // label3.Click += this.label3_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(33, 174);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(203, 27);
-            textBox2.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(33, 263);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(203, 27);
-            textBox3.TabIndex = 10;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ButtonFace;
-            label4.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label4.Location = new Point(524, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 30);
-            label4.TabIndex = 13;
-            label4.Text = "Gender";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label5.Location = new Point(78, 319);
-            label5.Name = "label5";
-            label5.Size = new Size(103, 30);
-            label5.TabIndex = 12;
-            label5.Text = "Password";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(33, 356);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(203, 27);
-            textBox5.TabIndex = 11;
+            label7.AutoSize = true;
+            label7.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label7.Location = new Point(68, 220);
+            label7.Name = "label7";
+            label7.Size = new Size(123, 30);
+            label7.TabIndex = 21;
+            label7.Text = "Last Name";
             // 
             // textBox6
             // 
@@ -230,41 +184,97 @@
             textBox8.Size = new Size(203, 27);
             textBox8.TabIndex = 15;
             // 
-            // label7
+            // label4
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label7.Location = new Point(68, 220);
-            label7.Name = "label7";
-            label7.Size = new Size(123, 30);
-            label7.TabIndex = 21;
-            label7.Text = "Last Name";
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.ButtonFace;
+            label4.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label4.Location = new Point(524, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 30);
+            label4.TabIndex = 13;
+            label4.Text = "Gender";
             // 
-            // label10
+            // label5
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
-            label10.Location = new Point(41, 411);
-            label10.Name = "label10";
-            label10.Size = new Size(190, 30);
-            label10.TabIndex = 23;
-            label10.Text = "Confirm Password";
-           // label10.Click += this.label10_Click;
+            label5.AutoSize = true;
+            label5.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label5.Location = new Point(78, 319);
+            label5.Name = "label5";
+            label5.Size = new Size(103, 30);
+            label5.TabIndex = 12;
+            label5.Text = "Password";
             // 
-            // textBox9
+            // textBox5
             // 
-            textBox9.Location = new Point(33, 458);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(203, 27);
-            textBox9.TabIndex = 22;
+            textBox5.Location = new Point(33, 356);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(203, 27);
+            textBox5.TabIndex = 11;
             // 
-            // comboBox1
+            // textBox3
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(466, 81);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(203, 28);
-            comboBox1.TabIndex = 24;
+            textBox3.Location = new Point(33, 263);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(203, 27);
+            textBox3.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(33, 174);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(203, 27);
+            textBox2.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.Menu;
+            label3.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label3.Location = new Point(68, 132);
+            label3.Name = "label3";
+            label3.Size = new Size(128, 30);
+            label3.TabIndex = 4;
+            label3.Text = "First Name";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.Menu;
+            label2.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            label2.Location = new Point(88, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 30);
+            label2.TabIndex = 3;
+            label2.Text = "E-Mail";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(33, 81);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(203, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Comic Sans MS", 14.2F, FontStyle.Bold);
+            label1.Location = new Point(231, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(242, 35);
+            label1.TabIndex = 1;
+            label1.Text = "CREATE ACCOUNT";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightBlue;
+            button1.Font = new Font("Comic Sans MS", 12.2F, FontStyle.Bold);
+            button1.Location = new Point(490, 425);
+            button1.Name = "button1";
+            button1.Size = new Size(162, 60);
+            button1.TabIndex = 0;
+            button1.Text = "Register";
+            button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -276,21 +286,33 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // panel2
             // 
-            button2.BackColor = Color.LightBlue;
-            button2.Enabled = false;
-            button2.Location = new Point(347, 81);
-            button2.Name = "button2";
-            button2.Size = new Size(13, 404);
-            button2.TabIndex = 25;
-            button2.UseVisualStyleBackColor = false;
+            panel2.BackColor = Color.LightBlue;
+            panel2.Controls.Add(button3);
+            panel2.Location = new Point(0, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(853, 29);
+            panel2.TabIndex = 26;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.White;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button3.ForeColor = Color.Red;
+            button3.Location = new Point(822, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(31, 29);
+            button3.TabIndex = 26;
+            button3.Text = "X";
+            button3.UseVisualStyleBackColor = false;
             // 
             // CreateaAccountScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 588);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -299,6 +321,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -327,5 +350,7 @@
         private ComboBox comboBox1;
         private PictureBox pictureBox1;
         private Button button2;
+        private Panel panel2;
+        private Button button3;
     }
 }

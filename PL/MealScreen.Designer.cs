@@ -169,7 +169,7 @@
             // 
             listViewselectedFoods.Location = new Point(833, 32);
             listViewselectedFoods.Name = "listViewselectedFoods";
-            listViewselectedFoods.Size = new Size(352, 430);
+            listViewselectedFoods.Size = new Size(333, 430);
             listViewselectedFoods.TabIndex = 5;
             listViewselectedFoods.UseCompatibleStateImageBehavior = false;
             // 
@@ -275,9 +275,9 @@
             // 
             buttonSaveMeal.BackColor = Color.IndianRed;
             buttonSaveMeal.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
-            buttonSaveMeal.Location = new Point(833, 468);
+            buttonSaveMeal.Location = new Point(843, 468);
             buttonSaveMeal.Name = "buttonSaveMeal";
-            buttonSaveMeal.Size = new Size(352, 41);
+            buttonSaveMeal.Size = new Size(323, 41);
             buttonSaveMeal.TabIndex = 15;
             buttonSaveMeal.Text = "Save Meal";
             buttonSaveMeal.UseVisualStyleBackColor = false;
@@ -327,7 +327,7 @@
             AccessibleRole = AccessibleRole.Animation;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1197, 577);
+            ClientSize = new Size(1168, 558);
             Controls.Add(textBoxSearchFood);
             Controls.Add(label1);
             Controls.Add(labelTotalCalorieValue);
