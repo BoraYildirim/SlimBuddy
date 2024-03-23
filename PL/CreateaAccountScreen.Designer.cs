@@ -84,7 +84,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(760, 524);
             panel1.TabIndex = 0;
-            panel1.Paint += this.panel1_Paint;
+           // panel1.Paint += this.panel1_Paint;
             // 
             // button1
             // 
@@ -135,7 +135,7 @@
             label3.Size = new Size(128, 30);
             label3.TabIndex = 4;
             label3.Text = "First Name";
-            label3.Click += this.label3_Click;
+           // label3.Click += this.label3_Click;
             // 
             // textBox2
             // 
@@ -249,7 +249,7 @@
             label10.Size = new Size(190, 30);
             label10.TabIndex = 23;
             label10.Text = "Confirm Password";
-            label10.Click += this.label10_Click;
+           // label10.Click += this.label10_Click;
             // 
             // textBox9
             // 
