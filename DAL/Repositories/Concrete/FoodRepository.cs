@@ -30,21 +30,28 @@ namespace DAL.Repositories.Concrete
                 return true;
             }
         }
-        //public List<Food> GetFoodByCategoryName(string categoryName, int userID)
-        //{
-        //    return _dbContext.Foods.Include(x => x.Category).AsNoTracking().Where(x => x.Category.CategoryName == categoryName && x.Status != Status.Passive && (x.UserID == null || x.UserID == userID)).ToList();
-        //}
-        //public List<Food> GetAllFoods(int userID)
-        //{
-        //    return _dbContext.Foods.Include(x => x.Category).AsNoTracking().Where(x => x.UserID == null || x.UserID == userID).ToList();
-        //}
-        //public Food GetFoodByID(int id)
-        //{
-        //    return _dbContext.Foods.Where(x => x.FoodID == id).ToList().FirstOrDefault();
-        //}
-        //public List<Food> GetSearchedFood(int userID, string foodName)
-        //{
-        //    return _dbContext.Foods.AsNoTracking().Where(x => x.Name.Contains(foodName) && x.Status != Status.Passive && (x.UserID == null || x.UserID == userID)).ToList();
-        //}
+        public List<Food> GetFoodByCategoryName(string categoryName)
+        {
+            return _dbContext.MealSummaries
+                .Where(ms => ms.Food.Category.CategoryName == categoryName)
+                .Select(ms => ms.Food)
+                .Distinct()
+                .ToList();
+        }
+
+        public List<Food> GetAllFoods(int userID)
+        {
+            return _dbContext.Foods.Include(x => x.Category).AsNoTracking().ToList();
+        }
+
+        public Food GetFoodByID(int id)
+        {
+            return _dbContext.Foods.Where(x => x.FoodID == id).ToList().FirstOrDefault();
+        }
+
+        public List<Food> GetSearchedFood(int userID, string foodName)
+        {
+            return _dbContext.Foods.AsNoTracking().Where(x => x.Name.Contains(foodName) && x.Status != Status.Passive).ToList();
+        }
     }
 }

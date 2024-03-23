@@ -10,6 +10,8 @@ namespace DAL.Repositories.Concrete
 {
     public class CategoryRepository : Crud<Category>
     {
+      
+
         public CategoryRepository(SlimBuddyDBContext dbContext) : base(dbContext)
         {
             _dbContext = new SlimBuddyDBContext();
