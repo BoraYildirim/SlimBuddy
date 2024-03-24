@@ -50,5 +50,10 @@ namespace BLL
         {
             return foodRepository.GetAll();
         }
+
+        public List<Food> GetFoodByCategoryName(string categoryName)
+        {
+            return foodRepository.GetFoodByCategoryName(categoryName);
+        }
     }
 }

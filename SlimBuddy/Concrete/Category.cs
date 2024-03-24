@@ -17,5 +17,9 @@ namespace Models.Concrete
 
         public ICollection<Food>? Foods { get; set; }
 
+        public override string ToString()
+        {
+            return CategoryName;
+        }
     }
 }

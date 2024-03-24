@@ -33,12 +33,12 @@ namespace PL
 
             if (textBoxEmail.Text != null && (textBoxEmail.Text.EndsWith("@gmail.com") || textBoxEmail.Text.EndsWith("@hotmail.com") || textBoxEmail.Text.EndsWith("@bilgeadamboost.com") || textBoxEmail.Text.EndsWith("@outlook.com") || textBoxEmail.Text.EndsWith("@yahoo.com")))
             {
-             
-              
-                    user.Email = textBoxEmail.Text;
+
+
+                user.Email = textBoxEmail.Text;
 
             }
-         
+
         }
 
         public void PasswordControl(string password, User user)
@@ -163,7 +163,7 @@ namespace PL
 
         public void HeightControl(double height)
         {
-            if (height<=55 || height>=250)
+            if (height <= 55 || height >= 250)
             {
                 MessageBox.Show("Hatakı Boy");
                 throw new Exception();
@@ -192,25 +192,25 @@ namespace PL
             textBoxHeight.Text = string.Empty;
         }
 
-        
+
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-           
-            int kontrol=0;
 
-            foreach (User us in userService.GetAll()) 
+            int kontrol = 0;
+
+            foreach (User us in userService.GetAll())
             {
-                if (us.Email==textBoxEmail.Text)
+                if (us.Email == textBoxEmail.Text)
                 {
-                    
+
                     kontrol = 1;
                     break;
                 }
-              
-              
+
+
             }
 
-            if (kontrol==1)
+            if (kontrol == 1)
             {
 
                 MessageBox.Show("Upss Somethings gone wrong");
@@ -220,30 +220,30 @@ namespace PL
                 try
                 {
                     HeightControl(double.Parse(textBoxHeight.Text));
-                WeightControl(double.Parse(textBoxWeight.Text));
+                    WeightControl(double.Parse(textBoxWeight.Text));
 
 
 
-                User user = new User();
+                    User user = new User();
 
 
-                user.UserType = UserType.Regular;
-                user.Status = Status.Active;
-                EmailControl(textBoxEmail.Text, user);
-                PasswordControl(textBoxPassword.Text, user);
-                ConfirmPassword(textBoxPassword.Text, textBoxComfirmPassword.Text);
+                    user.UserType = UserType.Regular;
+                    user.Status = Status.Active;
+                    EmailControl(textBoxEmail.Text, user);
+                    PasswordControl(textBoxPassword.Text, user);
+                    ConfirmPassword(textBoxPassword.Text, textBoxComfirmPassword.Text);
 
-                UserDetail userDetail = new UserDetail();
+                    UserDetail userDetail = new UserDetail();
 
 
-                GenderSelected(comboBoxGender.Text, userDetail);
-                NameControl(textBoxName.Text, userDetail);
-                LastNameControl(textBoxLastName.Text, userDetail);
-                userDetail.Height = double.Parse(textBoxHeight.Text);
-                userDetail.Weight = double.Parse(textBoxWeight.Text);
-                userDetail.Age = int.Parse(textBoxAge.Text);
-                userDetail.ActivityLevel = ActivityLevel.MidLevel;
-                
+                    GenderSelected(comboBoxGender.Text, userDetail);
+                    NameControl(textBoxName.Text, userDetail);
+                    LastNameControl(textBoxLastName.Text, userDetail);
+                    userDetail.Height = double.Parse(textBoxHeight.Text);
+                    userDetail.Weight = double.Parse(textBoxWeight.Text);
+                    userDetail.Age = int.Parse(textBoxAge.Text);
+                    userDetail.ActivityLevel = ActivityLevel.MidLevel;
+
 
                     user.UserDetail = userDetail;
                     userService.Add(user);
@@ -256,7 +256,7 @@ namespace PL
                 }
 
             }
-           
+
 
             FormClear();
         }
@@ -271,11 +271,32 @@ namespace PL
         {
 
             comboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
+            textBoxPassword.UseSystemPasswordChar = true;
+            textBoxComfirmPassword.UseSystemPasswordChar = true;
+
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowPassword.Checked)
+            {
+                textBoxPassword.UseSystemPasswordChar = false;
+                textBoxComfirmPassword.UseSystemPasswordChar =false;
+
+               
+            }
+            else
+            {
+                textBoxPassword.UseSystemPasswordChar = true;
+                textBoxComfirmPassword.UseSystemPasswordChar = true;
+            }
+
+        }
+
     }
 }

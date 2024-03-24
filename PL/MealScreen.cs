@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using Models.Concrete;
+using Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,17 @@ namespace PL
 {
     public partial class MealScreen : Form
     {
-        public MealScreen()
+        public MealScreen(User user)
         {
             InitializeComponent();
+            categoryService = new();
+            foodService = new();
+            _user = user;
         }
+
+        CategoryService categoryService;
+        FoodService foodService;
+        User _user;
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
@@ -34,6 +44,11 @@ namespace PL
 
         private void MealScreen_Load(object sender, EventArgs e)
         {
+            foreach (Category cat in categoryService.GetAll())
+            {
+                comboBoxCategory.Items.Add(cat);
+            }
+
 
         }
 
@@ -45,6 +60,11 @@ namespace PL
         private void menuStripCaregories_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
         }
     }
 }
