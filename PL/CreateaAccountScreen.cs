@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Models.Concrete;
 using Models.Enums;
 using System;
@@ -32,27 +33,12 @@ namespace PL
 
             if (textBoxEmail.Text != null && (textBoxEmail.Text.EndsWith("@gmail.com") || textBoxEmail.Text.EndsWith("@hotmail.com") || textBoxEmail.Text.EndsWith("@bilgeadamboost.com") || textBoxEmail.Text.EndsWith("@outlook.com") || textBoxEmail.Text.EndsWith("@yahoo.com")))
             {
-                 if (userService.RegisterControl(textBoxEmail.Text))
-                {
-                    MessageBox.Show("This mail address is already taken");
-                    return;
-                    
-                }
-                else
-                {
+             
+              
                     user.Email = textBoxEmail.Text;
-                }
-
-
 
             }
-            else
-            {
-                MessageBox.Show("Wrong Email address...");
-                textBoxEmail.Text = string.Empty;
-                return;
-                
-            }
+         
         }
 
         public void PasswordControl(string password, User user)
@@ -117,7 +103,7 @@ namespace PL
             }
             else
             {
-                MessageBox.Show("Name must have minimum 1-symbol,1-digit and 1-Punction");
+                MessageBox.Show("Name must have only letter");
             }
         }
         public void LastNameControl(string name, UserDetail userDetail)
@@ -148,7 +134,7 @@ namespace PL
             }
             else
             {
-                MessageBox.Show("LastName must have minimum 1-symbol,1-digit and 1-Punction");
+                MessageBox.Show("LastName must have only letter");
             }
         }
 
@@ -175,6 +161,23 @@ namespace PL
             }
         }
 
+        public void HeightControl(double height)
+        {
+            if (height<=55 || height>=250)
+            {
+                MessageBox.Show("Hatakı Boy");
+                throw new Exception();
+            }
+        }
+        public void WeightControl(double height)
+        {
+            if (height <= 55 || height >= 250)
+            {
+                MessageBox.Show("Hatalı Kilo");
+                throw new Exception();
+            }
+        }
+
 
         public void FormClear()
         {
@@ -192,12 +195,37 @@ namespace PL
         
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+           
+            int kontrol=0;
 
+            foreach (User us in userService.GetAll()) 
+            {
+                if (us.Email==textBoxEmail.Text)
+                {
+                    
+                    kontrol = 1;
+                    break;
+                }
+              
+              
+            }
 
-            try
+            if (kontrol==1)
             {
 
+                MessageBox.Show("Upss Somethings gone wrong");
+            }
+            else
+            {
+                try
+                {
+                    HeightControl(double.Parse(textBoxHeight.Text));
+                WeightControl(double.Parse(textBoxWeight.Text));
+
+
+
                 User user = new User();
+
 
                 user.UserType = UserType.Regular;
                 user.Status = Status.Active;
@@ -206,7 +234,7 @@ namespace PL
                 ConfirmPassword(textBoxPassword.Text, textBoxComfirmPassword.Text);
 
                 UserDetail userDetail = new UserDetail();
-                //userDetail.User = user;
+
 
                 GenderSelected(comboBoxGender.Text, userDetail);
                 NameControl(textBoxName.Text, userDetail);
@@ -215,22 +243,22 @@ namespace PL
                 userDetail.Weight = double.Parse(textBoxWeight.Text);
                 userDetail.Age = int.Parse(textBoxAge.Text);
                 userDetail.ActivityLevel = ActivityLevel.MidLevel;
+                
 
-                user.UserDetail = userDetail;
-                userService.Add(user);
+                    user.UserDetail = userDetail;
+                    userService.Add(user);
+                    MessageBox.Show("Succesfully");
+                }
+                catch (Exception)
+                {
 
-                MessageBox.Show("Succesfully");
+                    MessageBox.Show("Try again");
+                }
 
-                FormClear();
             }
+           
 
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
+            FormClear();
         }
 
 
