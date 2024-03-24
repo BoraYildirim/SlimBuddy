@@ -23,6 +23,14 @@ namespace Models.Concrete
 
 
         public ICollection<MealSummary>? MealSummary { get; set; }
-        
+
+
+        public override string ToString()
+        {
+            return Name+" => "+Calorie.ToString()+" Calorie"+" => "+Unit.ToString()+" x1";
+        }
     }
+
+
+
 }

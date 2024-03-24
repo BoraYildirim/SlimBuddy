@@ -45,8 +45,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mEALToolStripMenuItem, fOODToolStripMenuItem, dAILYCALORIEToolStripMenuItem, aNALYSISToolStripMenuItem, sUMMARYToolStripMenuItem, aCCOUNTToolStripMenuItem, lOGOUTToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(10, 3, 0, 3);
-            menuStrip1.Size = new Size(1898, 44);
+            menuStrip1.Padding = new Padding(5, 1, 0, 1);
+            menuStrip1.Size = new Size(1022, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -54,56 +54,57 @@
             // mEALToolStripMenuItem
             // 
             mEALToolStripMenuItem.Name = "mEALToolStripMenuItem";
-            mEALToolStripMenuItem.Size = new Size(94, 38);
+            mEALToolStripMenuItem.Size = new Size(50, 22);
             mEALToolStripMenuItem.Text = "MEAL";
             mEALToolStripMenuItem.Click += mEALToolStripMenuItem_Click;
             // 
             // fOODToolStripMenuItem
             // 
             fOODToolStripMenuItem.Name = "fOODToolStripMenuItem";
-            fOODToolStripMenuItem.Size = new Size(99, 38);
+            fOODToolStripMenuItem.Size = new Size(51, 22);
             fOODToolStripMenuItem.Text = "FOOD";
             // 
             // dAILYCALORIEToolStripMenuItem
             // 
             dAILYCALORIEToolStripMenuItem.Name = "dAILYCALORIEToolStripMenuItem";
-            dAILYCALORIEToolStripMenuItem.Size = new Size(191, 38);
+            dAILYCALORIEToolStripMenuItem.Size = new Size(100, 22);
             dAILYCALORIEToolStripMenuItem.Text = "DAILY CALORIE";
             // 
             // aNALYSISToolStripMenuItem
             // 
             aNALYSISToolStripMenuItem.Name = "aNALYSISToolStripMenuItem";
-            aNALYSISToolStripMenuItem.Size = new Size(137, 38);
+            aNALYSISToolStripMenuItem.Size = new Size(71, 22);
             aNALYSISToolStripMenuItem.Text = "ANALYSIS";
             // 
             // sUMMARYToolStripMenuItem
             // 
             sUMMARYToolStripMenuItem.Name = "sUMMARYToolStripMenuItem";
-            sUMMARYToolStripMenuItem.Size = new Size(149, 38);
+            sUMMARYToolStripMenuItem.Size = new Size(77, 22);
             sUMMARYToolStripMenuItem.Text = "SUMMARY";
             // 
             // aCCOUNTToolStripMenuItem
             // 
             aCCOUNTToolStripMenuItem.Name = "aCCOUNTToolStripMenuItem";
-            aCCOUNTToolStripMenuItem.Size = new Size(142, 38);
+            aCCOUNTToolStripMenuItem.Size = new Size(75, 22);
             aCCOUNTToolStripMenuItem.Text = "ACCOUNT";
             // 
             // lOGOUTToolStripMenuItem
             // 
             lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            lOGOUTToolStripMenuItem.Size = new Size(132, 38);
+            lOGOUTToolStripMenuItem.Size = new Size(68, 22);
             lOGOUTToolStripMenuItem.Text = "LOG OUT";
+            lOGOUTToolStripMenuItem.Click += lOGOUTToolStripMenuItem_Click;
             // 
             // HomeScreen
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1898, 942);
+            ClientSize = new Size(1022, 442);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(5);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "HomeScreen";
             Text = "HomeScreen";
             Load += HomeScreen_Load;

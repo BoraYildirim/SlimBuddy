@@ -54,5 +54,11 @@ namespace PL
             this.Height = mealScreen.Height + 60;
             mealScreen.Show();
         }
+
+        private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            
+        }
     }
 }

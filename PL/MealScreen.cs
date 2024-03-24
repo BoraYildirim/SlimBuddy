@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Models.Concrete;
 using Models.Enums;
+using PL.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,10 +45,10 @@ namespace PL
 
         private void MealScreen_Load(object sender, EventArgs e)
         {
-            foreach (Category cat in categoryService.GetAll())
-            {
-                comboBoxCategory.Items.Add(cat);
-            }
+            comboBoxCategory.DataSource = categoryService.GetAll();
+            comboBoxCategory.DisplayMember = "CategoryName";
+            comboBoxCategory.ValueMember = "CategoryName";
+
 
 
         }
@@ -64,7 +65,28 @@ namespace PL
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
+            Category category = comboBoxCategory.SelectedItem as Category;
+
+            lbFoods.DataSource = foodService.GetFoodByCategoryName(category.CategoryName);
+
+            lbFoods.DisplayMember = "Name Calorie";
+
+
+        }
+
+        private void lbFoods_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFoods_DoubleClick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -32,11 +32,7 @@ namespace DAL.Repositories.Concrete
         }
         public List<Food> GetFoodByCategoryName(string categoryName)
         {
-            return _dbContext.MealSummaries
-                .Where(ms => ms.Food.Category.CategoryName == categoryName)
-                .Select(ms => ms.Food)
-                .Distinct()
-                .ToList();
+            return _dbContext.Foods.Include(x=>x.Category).Where(x=>x.Category.CategoryName==categoryName).ToList();
         }
 
         public List<Food> GetAllFoods(int userID)
