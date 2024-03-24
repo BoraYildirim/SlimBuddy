@@ -16,5 +16,19 @@ namespace PL
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           CreateaAccountScreen createForm = new CreateaAccountScreen();
+            this.Hide();
+            createForm.ShowDialog();
+            this.Show();
+
+        }
     }
 }

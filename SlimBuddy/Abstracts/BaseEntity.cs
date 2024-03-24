@@ -13,6 +13,7 @@ namespace Models.Abstracts
         public BaseEntity()
         {
             CreationDate = DateTime.Now;
+            
         }
 
         public DateTime CreationDate { get; set; }

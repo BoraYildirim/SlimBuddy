@@ -32,8 +32,9 @@
             pictureBox1 = new PictureBox();
             label4 = new Label();
             panel1 = new Panel();
+            buttonAdmin = new Button();
             button1 = new Button();
-            linkLabel1 = new LinkLabel();
+            linkLabelCreateAccount = new LinkLabel();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -41,7 +42,6 @@
             textBox1 = new TextBox();
             panel2 = new Panel();
             buttonClose = new Button();
-            buttonAdmin = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -56,6 +56,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label4
             // 
@@ -74,7 +75,7 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(buttonAdmin);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(linkLabelCreateAccount);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -84,6 +85,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(391, 472);
             panel1.TabIndex = 11;
+            // 
+            // buttonAdmin
+            // 
+            buttonAdmin.Location = new Point(108, 417);
+            buttonAdmin.Name = "buttonAdmin";
+            buttonAdmin.Size = new Size(171, 29);
+            buttonAdmin.TabIndex = 14;
+            buttonAdmin.Text = "Admin Login";
+            buttonAdmin.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -95,15 +105,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // linkLabel1
+            // linkLabelCreateAccount
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(135, 380);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(110, 20);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Create Account";
+            linkLabelCreateAccount.AutoSize = true;
+            linkLabelCreateAccount.Location = new Point(135, 380);
+            linkLabelCreateAccount.Name = "linkLabelCreateAccount";
+            linkLabelCreateAccount.Size = new Size(110, 20);
+            linkLabelCreateAccount.TabIndex = 5;
+            linkLabelCreateAccount.TabStop = true;
+            linkLabelCreateAccount.Text = "Create Account";
+            linkLabelCreateAccount.LinkClicked += linkLabelCreateAccount_LinkClicked;
             // 
             // label3
             // 
@@ -170,15 +181,6 @@
             buttonClose.UseVisualStyleBackColor = false;
             buttonClose.Click += button2_Click;
             // 
-            // buttonAdmin
-            // 
-            buttonAdmin.Location = new Point(108, 417);
-            buttonAdmin.Name = "buttonAdmin";
-            buttonAdmin.Size = new Size(171, 29);
-            buttonAdmin.TabIndex = 14;
-            buttonAdmin.Text = "Admin Login";
-            buttonAdmin.UseVisualStyleBackColor = true;
-            // 
             // LoginScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -204,7 +206,7 @@
         private Label label4;
         private Panel panel1;
         private Button button1;
-        private LinkLabel linkLabel1;
+        private LinkLabel linkLabelCreateAccount;
         private Label label3;
         private Label label2;
         private Label label1;

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Models.Concrete
 {
+
+   
     public class User:BaseEntity
     {
         public int UserID { get; set; }
