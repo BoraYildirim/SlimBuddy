@@ -46,5 +46,32 @@ namespace DAL.Repositories.Concrete
 
             return userDetail;
         }
+
+        public string GetUserName(int userId) 
+        { 
+            var userName = _dbContext.UserDetails
+                .Where(x=>x.User.UserID==userId)    
+                .Select(x=>x.Name)
+                .FirstOrDefault();
+            return userName;
+        }
+
+        public string GetUserSurname(int userId)
+        {
+            var userSurname = _dbContext.UserDetails
+                .Where(x => x.User.UserID == userId)
+                .Select(x => x.Surname)
+                .FirstOrDefault();
+            return userSurname;
+        }
+
+        public string GetUserGender(int userId)
+        {
+            var userGender = _dbContext.UserDetails
+                .Where(x => x.User.UserID == userId)
+                .Select(x => x.Gender.ToString())
+                .FirstOrDefault();
+            return userGender;
+        }
     }
 }

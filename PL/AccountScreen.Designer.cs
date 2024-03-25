@@ -294,6 +294,7 @@
             btnUpdate.TabIndex = 48;
             btnUpdate.Text = "UPDATE";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // AccountScreen
             // 
@@ -327,6 +328,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AccountScreen";
             Text = "AccountScreen";
+            Load += AccountScreen_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,4 +1,5 @@
 ﻿using DAL.Repositories.Concrete;
+using Microsoft.EntityFrameworkCore;
 using Models.Concrete;
 using Models.Enums;
 using System;
@@ -50,6 +51,37 @@ namespace BLL
         public List<UserDetail> GetAll()
         {
             return userDetailRepository.GetAll();
+        }
+
+        public int GetUserAge(int userId)
+        {
+            return userDetailRepository.GetUserAge(userId);
+        }
+
+        public double GetUserHeight(int userId)
+        {
+            return userDetailRepository.GetUserHeight(userId);
+        }
+
+        public double GetUserWeight(int userId)
+        {
+            return userDetailRepository.GetUserWeight(userId);
+        }
+
+        public string GetUserName(int userId)
+        {
+           
+            return userDetailRepository.GetUserName(userId);
+        }
+
+        public string GetUserSurname(int userId)
+        {
+            return userDetailRepository.GetUserSurname(userId);
+        }
+
+        public string GetUserGender(int userId)
+        {
+           return userDetailRepository.GetUserGender(userId);
         }
     }
 }

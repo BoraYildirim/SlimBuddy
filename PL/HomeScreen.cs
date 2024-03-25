@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PL
 {
@@ -58,7 +59,22 @@ namespace PL
         private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            
+
+        }
+
+        private void fOODToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void aCCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountScreen accountScreen = new AccountScreen(_user);
+            accountScreen.MdiParent = this;
+            accountScreen.Dock = DockStyle.Fill;
+            this.Width = accountScreen.Width;
+            this.Height = accountScreen.Height + 60;
+            accountScreen.Show();
         }
     }
 }
