@@ -64,7 +64,10 @@ namespace PL
 
         private void fOODToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FoodScreen foodScreen = new FoodScreen(_user);
+            foodScreen.MdiParent = this;
+            foodScreen.Dock = DockStyle.Fill;
+            foodScreen.Show();
         }
 
         private void aCCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
