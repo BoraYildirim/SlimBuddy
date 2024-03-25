@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -31,12 +32,10 @@ namespace PL
         public void EmailControl(string email, User user)
         {
 
-            if (textBoxEmail.Text != null && (textBoxEmail.Text.EndsWith("@gmail.com") || textBoxEmail.Text.EndsWith("@hotmail.com") || textBoxEmail.Text.EndsWith("@bilgeadamboost.com") || textBoxEmail.Text.EndsWith("@outlook.com") || textBoxEmail.Text.EndsWith("@yahoo.com")))
-            {
-
-
+            string pattern = @"^[\w-\.]+@([\w-]+\.)+com$";
+            if (Regex.IsMatch(textBoxEmail.Text, pattern))
+            {               
                 user.Email = textBoxEmail.Text;
-
             }
 
         }
@@ -286,9 +285,9 @@ namespace PL
             if (checkBoxShowPassword.Checked)
             {
                 textBoxPassword.UseSystemPasswordChar = false;
-                textBoxComfirmPassword.UseSystemPasswordChar =false;
+                textBoxComfirmPassword.UseSystemPasswordChar = false;
 
-               
+
             }
             else
             {
@@ -298,5 +297,20 @@ namespace PL
 
         }
 
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            // E-posta formatını kontrol etmek için düzenli ifade
+            string pattern = @"^[\w-\.]+@([\w-]+\.)+com$";
+            if (Regex.IsMatch(textBoxEmail.Text, pattern))
+            {
+                // Metin kutusunun arka plan rengini yeşil yaparak, formatın doğru olduğunu göster
+                textBoxEmail.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                // Metin kutusunun arka plan rengini kırmızı yaparak, formatın yanlış olduğunu göster
+                textBoxEmail.BackColor = Color.Salmon;
+            }
+        }
     }
 }
