@@ -79,6 +79,8 @@ namespace PL
 
         }
 
+        
+
         private void lbFoods_Click(object sender, EventArgs e)
         {
             Food food = lbFoods.SelectedItem as Food;
@@ -161,9 +163,12 @@ namespace PL
 
         private void textBoxSearchFood_TextChanged(object sender, EventArgs e)
         {
-            
+            List<Food> food = foodService.GetFoodWithWord(textBoxSearchFood.Text);
 
+            lbFoods.DataSource = food;
 
+            lbFoods.DisplayMember = "Name Calorie";
+           
 
         }
     }

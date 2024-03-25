@@ -49,5 +49,10 @@ namespace DAL.Repositories.Concrete
         {
             return _dbContext.Foods.AsNoTracking().Where(x => x.Name.Contains(foodName) && x.Status != Status.Passive).ToList();
         }
+
+        public List<Food> GetFoodWithWord(string word)
+        {
+            return _dbContext.Foods.AsNoTracking().Where(x => x.Status != Status.Passive && (x.Name.Contains(word))).ToList();
+        }
     }
 }

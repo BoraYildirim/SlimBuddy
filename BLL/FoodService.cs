@@ -60,5 +60,13 @@ namespace BLL
         {
             return foodRepository.GetSearchedFood(userID, foodName);
         }
+     
+
+        public List<Food> GetFoodWithWord(string word)
+        {
+            return foodRepository.GetFoodWithWord(word);
+                
+                
+        }
     }
 }
