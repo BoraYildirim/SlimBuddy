@@ -30,7 +30,6 @@
         {
             textBoxSearchFood = new TextBox();
             label1 = new Label();
-            listViewselectedFoods = new ListView();
             labelTotalCalorie = new Label();
             labelTotalCalorieValue = new Label();
             radioButtonBreakfast = new RadioButton();
@@ -46,6 +45,7 @@
             comboBoxCategory = new ComboBox();
             lbFoods = new ListBox();
             pictureBox1 = new PictureBox();
+            lbMeal = new ListBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,6 +58,7 @@
             textBoxSearchFood.Name = "textBoxSearchFood";
             textBoxSearchFood.Size = new Size(110, 23);
             textBoxSearchFood.TabIndex = 2;
+            textBoxSearchFood.TextChanged += textBoxSearchFood_TextChanged;
             // 
             // label1
             // 
@@ -68,15 +69,6 @@
             label1.Size = new Size(99, 16);
             label1.TabIndex = 3;
             label1.Text = "Search FOOD :";
-            // 
-            // listViewselectedFoods
-            // 
-            listViewselectedFoods.Location = new Point(729, 24);
-            listViewselectedFoods.Margin = new Padding(3, 2, 3, 2);
-            listViewselectedFoods.Name = "listViewselectedFoods";
-            listViewselectedFoods.Size = new Size(292, 324);
-            listViewselectedFoods.TabIndex = 5;
-            listViewselectedFoods.UseCompatibleStateImageBehavior = false;
             // 
             // labelTotalCalorie
             // 
@@ -193,6 +185,7 @@
             buttonSaveMeal.TabIndex = 15;
             buttonSaveMeal.Text = "Save Meal";
             buttonSaveMeal.UseVisualStyleBackColor = false;
+            buttonSaveMeal.Click += buttonSaveMeal_Click;
             // 
             // button1
             // 
@@ -241,6 +234,7 @@
             lbFoods.Size = new Size(368, 247);
             lbFoods.TabIndex = 20;
             lbFoods.Click += lbFoods_Click;
+            lbFoods.SelectedIndexChanged += lbFoods_SelectedIndexChanged;
             lbFoods.DoubleClick += lbFoods_DoubleClick;
             // 
             // pictureBox1
@@ -253,12 +247,23 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // lbMeal
+            // 
+            lbMeal.FormattingEnabled = true;
+            lbMeal.ItemHeight = 15;
+            lbMeal.Location = new Point(738, 48);
+            lbMeal.Name = "lbMeal";
+            lbMeal.Size = new Size(272, 244);
+            lbMeal.TabIndex = 22;
+            lbMeal.SelectedIndexChanged += lbMeal_SelectedIndexChanged;
+            // 
             // MealScreen
             // 
             AccessibleRole = AccessibleRole.Animation;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1022, 419);
+            Controls.Add(lbMeal);
             Controls.Add(pictureBox1);
             Controls.Add(lbFoods);
             Controls.Add(comboBoxCategory);
@@ -270,7 +275,6 @@
             Controls.Add(button1);
             Controls.Add(buttonSaveMeal);
             Controls.Add(panel1);
-            Controls.Add(listViewselectedFoods);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "MealScreen";
@@ -287,7 +291,6 @@
         #endregion
         private TextBox textBoxSearchFood;
         private Label label1;
-        private ListView listViewselectedFoods;
         private Label labelTotalCalorie;
         private Label labelTotalCalorieValue;
         private RadioButton radioButtonBreakfast;
@@ -303,5 +306,6 @@
         private ComboBox comboBoxCategory;
         private ListBox lbFoods;
         private PictureBox pictureBox1;
+        private ListBox lbMeal;
     }
 }

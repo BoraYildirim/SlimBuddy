@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(SlimBuddyDBContext))]
-    [Migration("20240324115748_initDB")]
-    partial class initDB
+    [Migration("20240324182622_InitDBssss")]
+    partial class InitDBssss
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,61 +59,61 @@ namespace DAL.Migrations
                         {
                             CategoryID = 1,
                             CategoryName = "Fruit",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(772)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6203)
                         },
                         new
                         {
                             CategoryID = 2,
                             CategoryName = "Drink",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(790)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6214)
                         },
                         new
                         {
                             CategoryID = 3,
                             CategoryName = "Snack",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(791)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6216)
                         },
                         new
                         {
                             CategoryID = 4,
                             CategoryName = "Dessert",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(792)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6216)
                         },
                         new
                         {
                             CategoryID = 5,
                             CategoryName = "Vegetable",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(793)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6217)
                         },
                         new
                         {
                             CategoryID = 6,
                             CategoryName = "Dairy",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(793)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6218)
                         },
                         new
                         {
                             CategoryID = 7,
                             CategoryName = "Fish and Seafood",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(794)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6218)
                         },
                         new
                         {
                             CategoryID = 8,
                             CategoryName = "Fast Food",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(795)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6219)
                         },
                         new
                         {
                             CategoryID = 9,
                             CategoryName = "Meat or Poultry",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(796)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6220)
                         },
                         new
                         {
                             CategoryID = 10,
                             CategoryName = "Others",
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(797)
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6221)
                         });
                 });
 
@@ -142,6 +142,9 @@ namespace DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar");
 
+                    b.Property<int?>("MealID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
@@ -160,6 +163,8 @@ namespace DAL.Migrations
 
                     b.HasIndex("CategoryID");
 
+                    b.HasIndex("MealID");
+
                     b.ToTable("Foods");
 
                     b.HasData(
@@ -168,7 +173,7 @@ namespace DAL.Migrations
                             FoodID = 1,
                             Calorie = 52.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1027),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6460),
                             Image = "\\Resources\\Apple.jpeg",
                             Name = "Apple",
                             Status = 1,
@@ -179,7 +184,7 @@ namespace DAL.Migrations
                             FoodID = 2,
                             Calorie = 47.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1035),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6468),
                             Image = "\\Resources\\Orange.jpg",
                             Name = "Orange",
                             Status = 1,
@@ -190,7 +195,7 @@ namespace DAL.Migrations
                             FoodID = 3,
                             Calorie = 131.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1037),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6469),
                             Image = "\\Resources\\Banana.jpg",
                             Name = "Banana",
                             Status = 1,
@@ -201,7 +206,7 @@ namespace DAL.Migrations
                             FoodID = 4,
                             Calorie = 46.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1039),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6471),
                             Image = "\\Resources\\Plum.jpeg",
                             Name = "Plum",
                             Status = 1,
@@ -212,7 +217,7 @@ namespace DAL.Migrations
                             FoodID = 5,
                             Calorie = 61.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1040),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6472),
                             Image = "\\Resources\\Kiwi.jpg",
                             Name = "Kiwi",
                             Status = 1,
@@ -223,7 +228,7 @@ namespace DAL.Migrations
                             FoodID = 6,
                             Calorie = 30.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1042),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6473),
                             Image = "\\Resources\\Watermelon.jpg",
                             Name = "Watermelon",
                             Status = 1,
@@ -234,7 +239,7 @@ namespace DAL.Migrations
                             FoodID = 7,
                             Calorie = 34.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1044),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6474),
                             Image = "\\Resources\\Melon.jpg",
                             Name = "Melon",
                             Status = 1,
@@ -245,7 +250,7 @@ namespace DAL.Migrations
                             FoodID = 8,
                             Calorie = 59.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1046),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6476),
                             Image = "\\Resources\\Peach.jpeg",
                             Name = "Peach",
                             Status = 1,
@@ -256,7 +261,7 @@ namespace DAL.Migrations
                             FoodID = 9,
                             Calorie = 60.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1048),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6477),
                             Image = "\\Resources\\Mango.jpg",
                             Name = "Mango",
                             Status = 1,
@@ -267,7 +272,7 @@ namespace DAL.Migrations
                             FoodID = 10,
                             Calorie = 50.0,
                             CategoryID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1049),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6479),
                             Image = "\\Resources\\Cherry.jpg",
                             Name = "Cherry",
                             Status = 1,
@@ -278,7 +283,7 @@ namespace DAL.Migrations
                             FoodID = 11,
                             Calorie = 0.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1051),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6481),
                             Image = "\\Resources\\Water.jpg",
                             Name = "Water",
                             Status = 1,
@@ -289,7 +294,7 @@ namespace DAL.Migrations
                             FoodID = 12,
                             Calorie = 113.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1053),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6483),
                             Image = "\\Resources\\Milkshake.jpg",
                             Name = "Milkshake",
                             Status = 1,
@@ -300,7 +305,7 @@ namespace DAL.Migrations
                             FoodID = 13,
                             Calorie = 37.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1054),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6485),
                             Image = "\\Resources\\Cola.jpg",
                             Name = "Cola",
                             Status = 1,
@@ -311,7 +316,7 @@ namespace DAL.Migrations
                             FoodID = 14,
                             Calorie = 48.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1056),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6487),
                             Image = "\\Resources\\Fanta.jpg",
                             Name = "Fanta",
                             Status = 1,
@@ -322,7 +327,7 @@ namespace DAL.Migrations
                             FoodID = 15,
                             Calorie = 89.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1057),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6490),
                             Image = "\\Resources\\Hotchocolate.jpg",
                             Name = "Hot Chocolate",
                             Status = 1,
@@ -333,7 +338,7 @@ namespace DAL.Migrations
                             FoodID = 16,
                             Calorie = 53.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1059),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6494),
                             Image = "\\Resources\\Soda.jpg",
                             Name = "Soda",
                             Status = 1,
@@ -344,7 +349,7 @@ namespace DAL.Migrations
                             FoodID = 17,
                             Calorie = 1.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1061),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6496),
                             Image = "\\Resources\\Coffee.jpg",
                             Name = "Coffee",
                             Status = 1,
@@ -355,7 +360,7 @@ namespace DAL.Migrations
                             FoodID = 18,
                             Calorie = 45.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1063),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6497),
                             Image = "\\Resources\\Orangejuice.jpg",
                             Name = "Orange Juice",
                             Status = 1,
@@ -366,7 +371,7 @@ namespace DAL.Migrations
                             FoodID = 19,
                             Calorie = 2.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1065),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6499),
                             Image = "\\Resources\\Tea.jpg",
                             Name = "Tea",
                             Status = 1,
@@ -377,7 +382,7 @@ namespace DAL.Migrations
                             FoodID = 20,
                             Calorie = 42.0,
                             CategoryID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1067),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6502),
                             Image = "\\Resources\\Lemonade.jpg",
                             Name = "Lemonade",
                             Status = 1,
@@ -388,7 +393,7 @@ namespace DAL.Migrations
                             FoodID = 21,
                             Calorie = 433.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1068),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6504),
                             Image = "\\Resources\\Wafer.jpg",
                             Name = "Wafer",
                             Status = 1,
@@ -399,7 +404,7 @@ namespace DAL.Migrations
                             FoodID = 22,
                             Calorie = 11.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1070),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6505),
                             Image = "\\Resources\\Almond.jpg",
                             Name = "Almond",
                             Status = 1,
@@ -410,7 +415,7 @@ namespace DAL.Migrations
                             FoodID = 23,
                             Calorie = 6.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1071),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6507),
                             Image = "\\Resources\\Peanut.png",
                             Name = "Peanut",
                             Status = 1,
@@ -421,7 +426,7 @@ namespace DAL.Migrations
                             FoodID = 24,
                             Calorie = 488.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1073),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6508),
                             Image = "\\Resources\\Snickers.jpeg",
                             Name = "Snickers",
                             Status = 1,
@@ -432,7 +437,7 @@ namespace DAL.Migrations
                             FoodID = 25,
                             Calorie = 375.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1075),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6509),
                             Image = "\\Resources\\Popcorn.jpeg",
                             Name = "Popcorn",
                             Status = 1,
@@ -443,7 +448,7 @@ namespace DAL.Migrations
                             FoodID = 26,
                             Calorie = 536.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1076),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6510),
                             Image = "\\Resources\\Chips.jpg",
                             Name = "Chips",
                             Status = 1,
@@ -454,7 +459,7 @@ namespace DAL.Migrations
                             FoodID = 27,
                             Calorie = 502.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1078),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6512),
                             Image = "\\Resources\\Cookies.jpg",
                             Name = "Cookies",
                             Status = 1,
@@ -465,7 +470,7 @@ namespace DAL.Migrations
                             FoodID = 28,
                             Calorie = 20.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1080),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6514),
                             Image = "\\Resources\\Crackers.jpg",
                             Name = "Crackers",
                             Status = 1,
@@ -476,7 +481,7 @@ namespace DAL.Migrations
                             FoodID = 29,
                             Calorie = 559.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1081),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6515),
                             Image = "\\Resources\\Sunflowerseed.jpg",
                             Name = "Sunflower Seed",
                             Status = 1,
@@ -487,7 +492,7 @@ namespace DAL.Migrations
                             FoodID = 30,
                             Calorie = 318.0,
                             CategoryID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1083),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6516),
                             Image = "\\Resources\\Marshmallow.jpg",
                             Name = "Marshmallow",
                             Status = 1,
@@ -498,7 +503,7 @@ namespace DAL.Migrations
                             FoodID = 31,
                             Calorie = 321.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1084),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6519),
                             Image = "\\Resources\\Cheesecake.jpg",
                             Name = "Cheesecake",
                             Status = 1,
@@ -509,7 +514,7 @@ namespace DAL.Migrations
                             FoodID = 32,
                             Calorie = 174.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1086),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6520),
                             Image = "\\Resources\\Baklava.jpg",
                             Name = "Baklava",
                             Status = 1,
@@ -520,7 +525,7 @@ namespace DAL.Migrations
                             FoodID = 33,
                             Calorie = 438.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1089),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6522),
                             Image = "\\Resources\\Doughnut.jpg",
                             Name = "Doughnut",
                             Status = 1,
@@ -531,7 +536,7 @@ namespace DAL.Migrations
                             FoodID = 34,
                             Calorie = 321.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1090),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6524),
                             Image = "\\Resources\\Cremebrulee.jpg",
                             Name = "Creme brulee",
                             Status = 1,
@@ -542,7 +547,7 @@ namespace DAL.Migrations
                             FoodID = 35,
                             Calorie = 49.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1092),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6525),
                             Image = "\\Resources\\Cookie.jpg",
                             Name = "Cookie",
                             Status = 1,
@@ -553,7 +558,7 @@ namespace DAL.Migrations
                             FoodID = 36,
                             Calorie = 466.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1093),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6527),
                             Image = "\\Resources\\Brownie.jpg",
                             Name = "Brownie",
                             Status = 1,
@@ -564,7 +569,7 @@ namespace DAL.Migrations
                             FoodID = 37,
                             Calorie = 250.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1095),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6530),
                             Image = "\\Resources\\Icecream.jpg",
                             Name = "Ice cream",
                             Status = 1,
@@ -575,7 +580,7 @@ namespace DAL.Migrations
                             FoodID = 38,
                             Calorie = 290.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1097),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6531),
                             Image = "\\Resources\\Tiramisu.jpg",
                             Name = "Tiramisu",
                             Status = 1,
@@ -586,7 +591,7 @@ namespace DAL.Migrations
                             FoodID = 39,
                             Calorie = 271.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1098),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6533),
                             Image = "\\Resources\\Pavlova.jpg",
                             Name = "Pavlova",
                             Status = 1,
@@ -597,7 +602,7 @@ namespace DAL.Migrations
                             FoodID = 40,
                             Calorie = 120.0,
                             CategoryID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1100),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6534),
                             Image = "\\Resources\\Pudding.jpg",
                             Name = "Pudding",
                             Status = 1,
@@ -608,7 +613,7 @@ namespace DAL.Migrations
                             FoodID = 41,
                             Calorie = 33.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1101),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6535),
                             Image = "\\Resources\\Brocoli.jpg",
                             Name = "Broccoli",
                             Status = 1,
@@ -619,7 +624,7 @@ namespace DAL.Migrations
                             FoodID = 42,
                             Calorie = 15.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1111),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6536),
                             Image = "\\Resources\\Cucumber.jpg",
                             Name = "Cucumber",
                             Status = 1,
@@ -630,7 +635,7 @@ namespace DAL.Migrations
                             FoodID = 43,
                             Calorie = 42.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1113),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6545),
                             Image = "\\Resources\\Celery.jpg",
                             Name = "Celery",
                             Status = 1,
@@ -641,7 +646,7 @@ namespace DAL.Migrations
                             FoodID = 44,
                             Calorie = 16.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1115),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6546),
                             Image = "\\Resources\\Courgette.jpg",
                             Name = "Courgette",
                             Status = 1,
@@ -652,7 +657,7 @@ namespace DAL.Migrations
                             FoodID = 45,
                             Calorie = 24.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1116),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6547),
                             Image = "\\Resources\\Eggplant.jpg",
                             Name = "Eggplant",
                             Status = 1,
@@ -663,7 +668,7 @@ namespace DAL.Migrations
                             FoodID = 46,
                             Calorie = 19.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1118),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6549),
                             Image = "\\Resources\\Tomatoes.jpg",
                             Name = "Tomatoes",
                             Status = 1,
@@ -674,7 +679,7 @@ namespace DAL.Migrations
                             FoodID = 47,
                             Calorie = 41.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1119),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6550),
                             Image = "\\Resources\\Carrot.jpg",
                             Name = "Carrot",
                             Status = 1,
@@ -685,7 +690,7 @@ namespace DAL.Migrations
                             FoodID = 48,
                             Calorie = 39.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1121),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6551),
                             Image = "\\Resources\\Pepper.jpg",
                             Name = "Pepper",
                             Status = 1,
@@ -696,7 +701,7 @@ namespace DAL.Migrations
                             FoodID = 49,
                             Calorie = 47.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1124),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6552),
                             Image = "\\Resources\\Artichoke.jpg",
                             Name = "Artichoke",
                             Status = 1,
@@ -707,7 +712,7 @@ namespace DAL.Migrations
                             FoodID = 50,
                             Calorie = 22.0,
                             CategoryID = 5,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1125),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6554),
                             Image = "\\Resources\\Mushroom.jpg",
                             Name = "Mushroom",
                             Status = 1,
@@ -718,7 +723,7 @@ namespace DAL.Migrations
                             FoodID = 51,
                             Calorie = 59.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1127),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6555),
                             Image = "\\Resources\\Yogurt.jpg",
                             Name = "Yogurt",
                             Status = 1,
@@ -729,7 +734,7 @@ namespace DAL.Migrations
                             FoodID = 52,
                             Calorie = 62.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1128),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6556),
                             Image = "\\Resources\\Tzatziki.jpg",
                             Name = "Tzatziki",
                             Status = 1,
@@ -740,7 +745,7 @@ namespace DAL.Migrations
                             FoodID = 53,
                             Calorie = 50.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1130),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6558),
                             Image = "\\Resources\\Ayran.jpg",
                             Name = "Ayran",
                             Status = 1,
@@ -751,7 +756,7 @@ namespace DAL.Migrations
                             FoodID = 54,
                             Calorie = 402.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1131),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6560),
                             Image = "\\Resources\\Cheddarcheese.jpg",
                             Name = "Cheddar cheese",
                             Status = 1,
@@ -762,7 +767,7 @@ namespace DAL.Migrations
                             FoodID = 55,
                             Calorie = 98.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1133),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6562),
                             Image = "\\Resources\\Cottagecheese.jpg",
                             Name = "Cottage cheese",
                             Status = 1,
@@ -773,7 +778,7 @@ namespace DAL.Migrations
                             FoodID = 56,
                             Calorie = 280.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1135),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6563),
                             Image = "\\Resources\\Mozzarellacheese.jpg",
                             Name = "Mozzarella cheese",
                             Status = 1,
@@ -784,7 +789,7 @@ namespace DAL.Migrations
                             FoodID = 57,
                             Calorie = 42.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1136),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6564),
                             Image = "\\Resources\\Milk.jpg",
                             Name = "Milk",
                             Status = 1,
@@ -795,7 +800,7 @@ namespace DAL.Migrations
                             FoodID = 58,
                             Calorie = 68.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1138),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6565),
                             Image = "\\Resources\\Goatmilk.jpg",
                             Name = "Goat milk",
                             Status = 1,
@@ -806,7 +811,7 @@ namespace DAL.Migrations
                             FoodID = 59,
                             Calorie = 32.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1139),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6567),
                             Image = "\\Resources\\Almondmilk.jpg",
                             Name = "Almond milk",
                             Status = 1,
@@ -817,7 +822,7 @@ namespace DAL.Migrations
                             FoodID = 60,
                             Calorie = 54.0,
                             CategoryID = 6,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1141),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6568),
                             Image = "\\Resources\\Soymilk.jpg",
                             Name = "Soy milk",
                             Status = 1,
@@ -828,7 +833,7 @@ namespace DAL.Migrations
                             FoodID = 61,
                             Calorie = 164.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1142),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6569),
                             Image = "\\Resources\\Octopus.jpg",
                             Name = "Octopus",
                             Status = 1,
@@ -839,7 +844,7 @@ namespace DAL.Migrations
                             FoodID = 62,
                             Calorie = 124.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1144),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6572),
                             Image = "\\Resources\\Seabass.jpg",
                             Name = "Sea Bass",
                             Status = 1,
@@ -850,7 +855,7 @@ namespace DAL.Migrations
                             FoodID = 63,
                             Calorie = 264.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1146),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6575),
                             Image = "\\Resources\\Caviar.jpg",
                             Name = "Caviar",
                             Status = 1,
@@ -861,7 +866,7 @@ namespace DAL.Migrations
                             FoodID = 64,
                             Calorie = 89.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1147),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6576),
                             Image = "\\Resources\\Lobster.jpg",
                             Name = "Lobster",
                             Status = 1,
@@ -872,7 +877,7 @@ namespace DAL.Migrations
                             FoodID = 65,
                             Calorie = 175.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1150),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6579),
                             Image = "\\Resources\\Calamary.jpg",
                             Name = "Calamary",
                             Status = 1,
@@ -883,7 +888,7 @@ namespace DAL.Migrations
                             FoodID = 66,
                             Calorie = 159.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1152),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6580),
                             Image = "\\Resources\\Bluefish.jpg",
                             Name = "Blue Fish",
                             Status = 1,
@@ -894,7 +899,7 @@ namespace DAL.Migrations
                             FoodID = 67,
                             Calorie = 90.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1154),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6582),
                             Image = "\\Resources\\whiting.jpg",
                             Name = "Whiting",
                             Status = 1,
@@ -905,7 +910,7 @@ namespace DAL.Migrations
                             FoodID = 68,
                             Calorie = 206.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1155),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6583),
                             Image = "\\Resources\\Salmon.jpg",
                             Name = "Salmon",
                             Status = 1,
@@ -916,7 +921,7 @@ namespace DAL.Migrations
                             FoodID = 69,
                             Calorie = 150.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1157),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6586),
                             Image = "\\Resources\\Sushi.jpg",
                             Name = "Sushi",
                             Status = 1,
@@ -927,7 +932,7 @@ namespace DAL.Migrations
                             FoodID = 70,
                             Calorie = 262.0,
                             CategoryID = 7,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1159),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6587),
                             Image = "\\Resources\\Mackerel.jpg",
                             Name = "Mackerel",
                             Status = 1,
@@ -938,7 +943,7 @@ namespace DAL.Migrations
                             FoodID = 71,
                             Calorie = 295.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1160),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6588),
                             Image = "\\Resources\\Burger.jpg",
                             Name = "Burger",
                             Status = 1,
@@ -949,7 +954,7 @@ namespace DAL.Migrations
                             FoodID = 72,
                             Calorie = 266.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1162),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6589),
                             Image = "\\Resources\\Pizza.jpeg",
                             Name = "Pizza",
                             Status = 1,
@@ -960,7 +965,7 @@ namespace DAL.Migrations
                             FoodID = 73,
                             Calorie = 239.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1164),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6591),
                             Image = "\\Resources\\Doner.jpg",
                             Name = "Doner",
                             Status = 1,
@@ -971,7 +976,7 @@ namespace DAL.Migrations
                             FoodID = 74,
                             Calorie = 312.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1165),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6592),
                             Image = "\\Resources\\Frenchfries.jpg",
                             Name = "French fries",
                             Status = 1,
@@ -982,7 +987,7 @@ namespace DAL.Migrations
                             FoodID = 75,
                             Calorie = 164.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1167),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6593),
                             Image = "\\Resources\\Macandcheese.jpg",
                             Name = "Mac and cheese",
                             Status = 1,
@@ -993,7 +998,7 @@ namespace DAL.Migrations
                             FoodID = 76,
                             Calorie = 118.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1168),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6594),
                             Image = "\\Resources\\Lahmacun.jpg",
                             Name = "Lahmacun",
                             Status = 1,
@@ -1004,7 +1009,7 @@ namespace DAL.Migrations
                             FoodID = 77,
                             Calorie = 390.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1170),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6596),
                             Image = "\\Resources\\Tantuni.jpg",
                             Name = "Tantuni",
                             Status = 1,
@@ -1015,7 +1020,7 @@ namespace DAL.Migrations
                             FoodID = 78,
                             Calorie = 284.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1172),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6597),
                             Image = "\\Resources\\Sandwich.jpg",
                             Name = "Sandwich",
                             Status = 1,
@@ -1026,7 +1031,7 @@ namespace DAL.Migrations
                             FoodID = 79,
                             Calorie = 411.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1173),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6598),
                             Image = "\\Resources\\Onionrings.jpeg",
                             Name = "Onion rings",
                             Status = 1,
@@ -1037,7 +1042,7 @@ namespace DAL.Migrations
                             FoodID = 80,
                             Calorie = 203.0,
                             CategoryID = 8,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1175),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6600),
                             Image = "\\Resources\\Chickenwing.jpg",
                             Name = "Chicken wing",
                             Status = 1,
@@ -1048,7 +1053,7 @@ namespace DAL.Migrations
                             FoodID = 81,
                             Calorie = 360.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1177),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6601),
                             Image = "\\Resources\\Adanakebab.jpg",
                             Name = "Adana Kebab",
                             Status = 1,
@@ -1059,7 +1064,7 @@ namespace DAL.Migrations
                             FoodID = 82,
                             Calorie = 235.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1178),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6602),
                             Image = "\\Resources\\Meatball.jpg",
                             Name = "Meatball",
                             Status = 1,
@@ -1070,7 +1075,7 @@ namespace DAL.Migrations
                             FoodID = 83,
                             Calorie = 336.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1180),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6604),
                             Image = "\\Resources\\Salami.jpg",
                             Name = "Salami",
                             Status = 1,
@@ -1081,7 +1086,7 @@ namespace DAL.Migrations
                             FoodID = 84,
                             Calorie = 300.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1181),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6605),
                             Image = "\\Resources\\Sausage.jpg",
                             Name = "Sausage",
                             Status = 1,
@@ -1092,7 +1097,7 @@ namespace DAL.Migrations
                             FoodID = 85,
                             Calorie = 186.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1183),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6606),
                             Image = "\\Resources\\Beefstew.jpg",
                             Name = "Beef Stew",
                             Status = 1,
@@ -1103,7 +1108,7 @@ namespace DAL.Migrations
                             FoodID = 86,
                             Calorie = 290.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1185),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6608),
                             Image = "\\Resources\\Chickenmarsal.jpg",
                             Name = "Chicken Marsal",
                             Status = 1,
@@ -1114,7 +1119,7 @@ namespace DAL.Migrations
                             FoodID = 87,
                             Calorie = 350.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1186),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6609),
                             Image = "\\Resources\\Chickentikkamasala.jpg",
                             Name = "Chicken Tikka Masala",
                             Status = 1,
@@ -1125,7 +1130,7 @@ namespace DAL.Migrations
                             FoodID = 88,
                             Calorie = 308.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1188),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6610),
                             Image = "\\Resources\\Chimichanga.jpg",
                             Name = "Chimichanga",
                             Status = 1,
@@ -1136,7 +1141,7 @@ namespace DAL.Migrations
                             FoodID = 89,
                             Calorie = 290.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1190),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6611),
                             Image = "\\Resources\\Fajita.jpg",
                             Name = "Fajita",
                             Status = 1,
@@ -1147,7 +1152,7 @@ namespace DAL.Migrations
                             FoodID = 90,
                             Calorie = 220.0,
                             CategoryID = 9,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1191),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6612),
                             Image = "\\Resources\\Steak.jpg",
                             Name = "Steak",
                             Status = 1,
@@ -1158,7 +1163,7 @@ namespace DAL.Migrations
                             FoodID = 91,
                             Calorie = 264.0,
                             CategoryID = 10,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1193),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6614),
                             Image = "\\Resources\\Bread.jpg",
                             Name = "Bread",
                             Status = 1,
@@ -1169,7 +1174,7 @@ namespace DAL.Migrations
                             FoodID = 92,
                             Calorie = 220.0,
                             CategoryID = 10,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1194),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6615),
                             Image = "\\Resources\\Egg.jpg",
                             Name = "Egg",
                             Status = 1,
@@ -1213,28 +1218,28 @@ namespace DAL.Migrations
                         new
                         {
                             MealID = 1,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1395),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6838),
                             MealName = "Breakfast",
                             TotalCalorie = 0.0
                         },
                         new
                         {
                             MealID = 2,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1397),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6841),
                             MealName = "Lunch",
                             TotalCalorie = 0.0
                         },
                         new
                         {
                             MealID = 3,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1398),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6842),
                             MealName = "Dinner",
                             TotalCalorie = 0.0
                         },
                         new
                         {
                             MealID = 4,
-                            CreationDate = new DateTime(2024, 3, 24, 14, 57, 47, 799, DateTimeKind.Local).AddTicks(1399),
+                            CreationDate = new DateTime(2024, 3, 24, 21, 26, 22, 221, DateTimeKind.Local).AddTicks(6843),
                             MealName = "Snack",
                             TotalCalorie = 0.0
                         });
@@ -1371,6 +1376,10 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Models.Concrete.Meal", null)
+                        .WithMany("Foods")
+                        .HasForeignKey("MealID");
+
                     b.Navigation("Category");
                 });
 
@@ -1424,6 +1433,8 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Models.Concrete.Meal", b =>
                 {
+                    b.Navigation("Foods");
+
                     b.Navigation("MealSummary");
                 });
 

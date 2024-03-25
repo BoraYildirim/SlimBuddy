@@ -1,4 +1,5 @@
 ﻿using DAL.Repositories.Concrete;
+using Microsoft.EntityFrameworkCore;
 using Models.Concrete;
 using Models.Enums;
 using System;
@@ -54,6 +55,10 @@ namespace BLL
         public List<Food> GetFoodByCategoryName(string categoryName)
         {
             return foodRepository.GetFoodByCategoryName(categoryName);
+        }
+        public List<Food> GetSearchedFood(int userID, string foodName)
+        {
+            return foodRepository.GetSearchedFood(userID, foodName);
         }
     }
 }

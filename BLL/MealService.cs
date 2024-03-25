@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    internal class MealService
+    public class MealService
     {
 
         public MealService()

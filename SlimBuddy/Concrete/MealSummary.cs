@@ -17,5 +17,7 @@ namespace Models.Concrete
         public int UserID { get; set; }
         public Food? Food { get; set; }
         public int FoodID { get; set; }
+
+
     }
 }

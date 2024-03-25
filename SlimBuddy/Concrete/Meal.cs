@@ -13,8 +13,8 @@ namespace Models.Concrete
         public int MealID { get; set; }
         public string MealName { get; set; }
         public double TotalCalorie { get; set; }
-      
-     
+
+        public virtual List<Food>? Foods { get; set; }
 
         public ICollection<MealSummary>? MealSummary { get; set; }
 
