@@ -64,7 +64,7 @@ namespace PL
 
         private void fOODToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void aCCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +75,24 @@ namespace PL
             this.Width = accountScreen.Width;
             this.Height = accountScreen.Height + 60;
             accountScreen.Show();
+        }
+
+        private void sUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SummaryScreen summaryScreen = new SummaryScreen(_user);
+            summaryScreen.MdiParent = this;
+            summaryScreen.Dock = DockStyle.Fill;
+            summaryScreen.Show();
+        }
+
+        private void dAILYCALORIEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailyCalorieScreen dailyCalorieScreen = new DailyCalorieScreen(_user);
+            dailyCalorieScreen.MdiParent = this;
+            dailyCalorieScreen.Dock = DockStyle.Fill;
+            this.Width = dailyCalorieScreen.Width;
+            this.Height = dailyCalorieScreen.Height + 60;
+            dailyCalorieScreen.Show();
         }
     }
 }
