@@ -9,7 +9,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -79,15 +82,52 @@ namespace PL
 
         }
 
-        
+
 
         private void lbFoods_Click(object sender, EventArgs e)
         {
-            Food food = lbFoods.SelectedItem as Food;
 
-            string strPath = "C:\\Users\\boray\\Desktop\\SlimBuddy\\DAL" + food.Image;
+            // lbFoods listesinden seçili olan nesneyi al
+            var food = lbFoods.SelectedItem as Food;
 
-            pictureBox1.ImageLocation = strPath;
+            if (food != null)
+            {
+                // Food.Name'i boşluklara göre böl
+                var parts = food.Name.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // İlk kelimenin ilk harfini büyük yap, geri kalanını küçük yap
+                if (parts.Length > 0)
+                {
+                    parts[0] = char.ToUpper(parts[0][0]) + parts[0].Substring(1).ToLower();
+                }
+
+                // İkinci kelime ve sonrasını küçük harfe çevir
+                for (int i = 1; i < parts.Length; i++)
+                {
+                    parts[i] = parts[i].ToLower();
+                }
+
+                // Kısımları birleştirerek boşluksuz bir string oluştur
+                var resourceName = string.Concat(parts);
+
+                // ResourceManager ile kaynağı bul
+                var resourceManager = new ResourceManager("PL.Properties.Resources", Assembly.GetExecutingAssembly());
+
+                try
+                {
+                    // Kaynağın adını kullanarak o kaynağı al ve PictureBox'a ata
+                    var image = (Bitmap)resourceManager.GetObject(resourceName, CultureInfo.InvariantCulture);
+                    pictureBox1.Image = image;
+                }
+                catch (Exception ex)
+                {
+                    // Kaynak bulunamazsa veya başka bir hata olursa
+                    Console.WriteLine("Kaynak bulunamadı veya bir hata oluştu: " + ex.Message);
+                    // Hata işleme veya yedek planınızı burada uygulayabilirsiniz.
+                }
+            }
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
