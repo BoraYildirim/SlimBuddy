@@ -68,5 +68,10 @@ namespace BLL
                 
                 
         }
+
+        public bool CheckEntries(string foodName)
+        {
+            return foodRepository.CheckEntries(foodName);
+        }
     }
 }

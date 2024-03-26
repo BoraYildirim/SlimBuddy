@@ -210,14 +210,6 @@ namespace PL
                 
             }
 
-
-            
-
-        
-
-   
-          
-
         }
 
         private void lbMeal_SelectedIndexChanged(object sender, EventArgs e)

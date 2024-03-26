@@ -27,7 +27,7 @@ namespace Models.Concrete
 
         public override string ToString()
         {
-            return Name+" => "+Calorie.ToString()+" Calorie"+" => "+Unit.ToString()+" x1";
+            return Name+" => " + Unit.ToString() + " x1 " + Calorie.ToString()+" Calorie"+" => ";
         }
     }
 
