@@ -22,5 +22,11 @@ namespace Models.Concrete
 
         public UserDetail? UserDetail { get; set; }
 
+
+        public override string ToString()
+        {
+            return Email + "      =>    " + base.Status.ToString();
+        }
+
     }
 }

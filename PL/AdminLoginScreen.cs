@@ -72,5 +72,7 @@ namespace PL
         {
             textBoxPassword.UseSystemPasswordChar = true;
         }
+
+ 
     }
 }

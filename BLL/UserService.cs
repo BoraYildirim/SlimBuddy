@@ -31,7 +31,6 @@ namespace BLL
 
         public bool Update(User user)
         {
-            user.Status = Status.Modified;
             user.ModifiedDate = DateTime.Now;
             return userRepository.Update(user);
         }

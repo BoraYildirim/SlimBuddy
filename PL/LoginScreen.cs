@@ -44,7 +44,7 @@ namespace PL
 
             foreach (User us in userService.GetAll())
             {
-                if (us.Email == textBoxEmail.Text && us.Password == textBoxPassword.Text && us.UserType == UserType.Regular)
+                if (us.Email == textBoxEmail.Text && us.Password == textBoxPassword.Text && us.UserType == UserType.Regular && us.Status != Status.Passive)
                 {
                     HomeScreen formHomeScreen = new HomeScreen(us, this);
                     formHomeScreen.Show();
