@@ -208,6 +208,7 @@
             // 
             // txtImage
             // 
+            txtImage.Enabled = false;
             txtImage.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtImage.Location = new Point(205, 343);
             txtImage.Margin = new Padding(2, 3, 2, 3);
@@ -271,7 +272,7 @@
             buttonUploadImage.TabIndex = 73;
             buttonUploadImage.Text = "Upload";
             buttonUploadImage.UseVisualStyleBackColor = false;
-        //    buttonUploadImage.Click += buttonUploadImage_Click;
+            buttonUploadImage.Click += buttonUploadImage_Click_1;
             // 
             // FoodScreen
             // 

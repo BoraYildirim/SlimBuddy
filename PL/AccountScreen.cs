@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using BLL;
 using Models.Concrete;
 
@@ -39,9 +40,27 @@ namespace PL
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNewAge.Text))
+            {
+                MessageBox.Show("Name field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtNewHeight.Text))
+            {
+                MessageBox.Show("Name field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtNewWeight.Text))
+            {
+                MessageBox.Show("Name field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+           
+
             UserDetail userDetail = userDetailService.GetById(_user.UserID);
 
-            AgeControl(txtNewAge.Text, userDetail);            
+            AgeControl(txtNewAge.Text, userDetail);
             HeightControl(txtNewHeight.Text, userDetail);
             WeightControl(txtNewWeight.Text, userDetail);
 
@@ -146,6 +165,11 @@ namespace PL
             {
                 MessageBox.Show("Values must have only Number");
             }
+        }
+
+        private void txtNewAge_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

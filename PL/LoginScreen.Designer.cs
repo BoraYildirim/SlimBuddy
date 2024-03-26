@@ -51,14 +51,16 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 45);
-            pictureBox1.Margin = new Padding(5);
+            pictureBox1.Location = new Point(0, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1202, 947);
+            pictureBox1.Size = new Size(740, 592);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+         //   pictureBox1.MouseDown += pictureBox1_MouseDown;
+           // pictureBox1.MouseMove += pictureBox1_MouseMove;
+            //pictureBox1.MouseUp += pictureBox1_MouseUp;
             // 
             // label4
             // 
@@ -66,10 +68,9 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label4.ForeColor = Color.Firebrick;
-            label4.Location = new Point(533, 45);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(328, 28);
             label4.Name = "label4";
-            label4.Size = new Size(484, 101);
+            label4.Size = new Size(300, 62);
             label4.TabIndex = 12;
             label4.Text = "SLIMBUDDY";
             // 
@@ -85,18 +86,18 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textBoxPassword);
             panel1.Controls.Add(textBoxEmail);
-            panel1.Location = new Point(462, 194);
-            panel1.Margin = new Padding(5);
+            panel1.Location = new Point(284, 121);
             panel1.Name = "panel1";
-            panel1.Size = new Size(635, 755);
+            panel1.Size = new Size(391, 472);
             panel1.TabIndex = 11;
             // 
             // checkBoxShowPassword
             // 
             checkBoxShowPassword.AutoSize = true;
-            checkBoxShowPassword.Location = new Point(488, 398);
+            checkBoxShowPassword.Location = new Point(300, 249);
+            checkBoxShowPassword.Margin = new Padding(2);
             checkBoxShowPassword.Name = "checkBoxShowPassword";
-            checkBoxShowPassword.Size = new Size(104, 36);
+            checkBoxShowPassword.Size = new Size(67, 24);
             checkBoxShowPassword.TabIndex = 15;
             checkBoxShowPassword.Text = "Show";
             checkBoxShowPassword.UseVisualStyleBackColor = true;
@@ -104,10 +105,9 @@
             // 
             // buttonAdmin
             // 
-            buttonAdmin.Location = new Point(176, 667);
-            buttonAdmin.Margin = new Padding(5);
+            buttonAdmin.Location = new Point(108, 417);
             buttonAdmin.Name = "buttonAdmin";
-            buttonAdmin.Size = new Size(278, 46);
+            buttonAdmin.Size = new Size(171, 29);
             buttonAdmin.TabIndex = 14;
             buttonAdmin.Text = "Admin Login";
             buttonAdmin.UseVisualStyleBackColor = true;
@@ -115,10 +115,9 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(211, 496);
-            buttonLogin.Margin = new Padding(5);
+            buttonLogin.Location = new Point(130, 310);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(187, 90);
+            buttonLogin.Size = new Size(115, 56);
             buttonLogin.TabIndex = 6;
             buttonLogin.Text = "LOGIN";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -127,10 +126,9 @@
             // linkLabelCreateAccount
             // 
             linkLabelCreateAccount.AutoSize = true;
-            linkLabelCreateAccount.Location = new Point(219, 608);
-            linkLabelCreateAccount.Margin = new Padding(5, 0, 5, 0);
+            linkLabelCreateAccount.Location = new Point(135, 380);
             linkLabelCreateAccount.Name = "linkLabelCreateAccount";
-            linkLabelCreateAccount.Size = new Size(177, 32);
+            linkLabelCreateAccount.Size = new Size(110, 20);
             linkLabelCreateAccount.TabIndex = 5;
             linkLabelCreateAccount.TabStop = true;
             linkLabelCreateAccount.Text = "Create Account";
@@ -141,47 +139,42 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Firebrick;
-            label3.Location = new Point(226, 61);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(139, 38);
             label3.Name = "label3";
-            label3.Size = new Size(150, 65);
+            label3.Size = new Size(95, 41);
             label3.TabIndex = 4;
             label3.Text = "Login";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(240, 341);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(148, 213);
             label2.Name = "label2";
-            label2.Size = new Size(111, 32);
+            label2.Size = new Size(70, 20);
             label2.TabIndex = 3;
             label2.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(255, 165);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(157, 103);
             label1.Name = "label1";
-            label1.Size = new Size(82, 32);
+            label1.Size = new Size(52, 20);
             label1.TabIndex = 2;
             label1.Text = "E-Mail";
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(128, 395);
-            textBoxPassword.Margin = new Padding(5);
+            textBoxPassword.Location = new Point(79, 247);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(342, 39);
+            textBoxPassword.Size = new Size(212, 27);
             textBoxPassword.TabIndex = 1;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(128, 219);
-            textBoxEmail.Margin = new Padding(5);
+            textBoxEmail.Location = new Point(79, 137);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(342, 39);
+            textBoxEmail.Size = new Size(212, 27);
             textBoxEmail.TabIndex = 0;
             // 
             // panel2
@@ -189,20 +182,21 @@
             panel2.BackColor = Color.Firebrick;
             panel2.Controls.Add(buttonClose);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1202, 50);
+            panel2.Size = new Size(740, 31);
             panel2.TabIndex = 13;
+            panel2.MouseDown += panel2_MouseDown;
+            panel2.MouseMove += panel2_MouseMove;
+            panel2.MouseUp += panel2_MouseUp;
             // 
             // buttonClose
             // 
             buttonClose.BackColor = Color.White;
             buttonClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonClose.ForeColor = Color.Red;
-            buttonClose.Location = new Point(1149, -2);
-            buttonClose.Margin = new Padding(5);
+            buttonClose.Location = new Point(707, -1);
             buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(54, 51);
+            buttonClose.Size = new Size(33, 32);
             buttonClose.TabIndex = 7;
             buttonClose.Text = "X";
             buttonClose.UseVisualStyleBackColor = false;
@@ -210,15 +204,14 @@
             // 
             // LoginScreen
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1202, 992);
+            ClientSize = new Size(740, 620);
             Controls.Add(panel2);
             Controls.Add(label4);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5);
             Name = "LoginScreen";
             Text = "SlimBuddy";
             Load += LoginScreen_Load;

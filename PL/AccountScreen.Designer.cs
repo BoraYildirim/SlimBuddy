@@ -162,6 +162,7 @@
             txtNewAge.Name = "txtNewAge";
             txtNewAge.Size = new Size(185, 27);
             txtNewAge.TabIndex = 35;
+            txtNewAge.TextChanged += txtNewAge_TextChanged;
             // 
             // txtNewHeight
             // 
