@@ -36,10 +36,9 @@
             // 
             // btnDeleteMeal
             // 
-            btnDeleteMeal.Location = new Point(872, 320);
-            btnDeleteMeal.Margin = new Padding(3, 2, 3, 2);
+            btnDeleteMeal.Location = new Point(997, 427);
             btnDeleteMeal.Name = "btnDeleteMeal";
-            btnDeleteMeal.Size = new Size(118, 60);
+            btnDeleteMeal.Size = new Size(135, 80);
             btnDeleteMeal.TabIndex = 1;
             btnDeleteMeal.Text = "DELETE MEAL";
             btnDeleteMeal.UseVisualStyleBackColor = true;
@@ -47,21 +46,21 @@
             // 
             // buttonUpdateMeal
             // 
-            buttonUpdateMeal.Location = new Point(872, 232);
-            buttonUpdateMeal.Margin = new Padding(3, 2, 3, 2);
+            buttonUpdateMeal.Location = new Point(997, 309);
             buttonUpdateMeal.Name = "buttonUpdateMeal";
-            buttonUpdateMeal.Size = new Size(118, 61);
+            buttonUpdateMeal.Size = new Size(135, 81);
             buttonUpdateMeal.TabIndex = 3;
             buttonUpdateMeal.Text = "UPDATE MEAL";
             buttonUpdateMeal.UseVisualStyleBackColor = true;
+            buttonUpdateMeal.Click += buttonUpdateMeal_Click;
             // 
             // lbMeal
             // 
             lbMeal.FormattingEnabled = true;
-            lbMeal.ItemHeight = 15;
-            lbMeal.Location = new Point(51, 53);
+            lbMeal.Location = new Point(58, 71);
+            lbMeal.Margin = new Padding(3, 4, 3, 4);
             lbMeal.Name = "lbMeal";
-            lbMeal.Size = new Size(279, 334);
+            lbMeal.Size = new Size(318, 444);
             lbMeal.TabIndex = 4;
             lbMeal.SelectedIndexChanged += lbMeal_SelectedIndexChanged;
             lbMeal.DoubleClick += lbMeal_DoubleClick;
@@ -69,23 +68,22 @@
             // lbFood
             // 
             lbFood.FormattingEnabled = true;
-            lbFood.ItemHeight = 15;
-            lbFood.Location = new Point(354, 51);
+            lbFood.Location = new Point(405, 68);
+            lbFood.Margin = new Padding(3, 4, 3, 4);
             lbFood.Name = "lbFood";
-            lbFood.Size = new Size(493, 334);
+            lbFood.Size = new Size(563, 444);
             lbFood.TabIndex = 5;
             // 
             // SummaryScreen
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 418);
+            ClientSize = new Size(1168, 557);
             Controls.Add(lbFood);
             Controls.Add(lbMeal);
             Controls.Add(buttonUpdateMeal);
             Controls.Add(btnDeleteMeal);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "SummaryScreen";
             Text = "SummaryScreen";
             Load += SummaryScreen_Load;

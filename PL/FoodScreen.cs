@@ -79,10 +79,48 @@ namespace PL
 
         }
 
+        public void EmptyErrorCheck()
+        {
+
+            if (listBoxFoods.SelectedItem != null)
+            {
+                MessageBox.Show("deselect from the list to add product");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Name field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            int calorieValue;
+            bool isNumeric = int.TryParse(txtCalorie.Text, out calorieValue);
+            if (!isNumeric || calorieValue < 0 || calorieValue > 5000)
+            {
+                MessageBox.Show("Calorie must be a numeric value between 0 and 5000.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (cmbUnit.SelectedItem == null)
+            {
+                MessageBox.Show("You must select a unit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (cmbCategory.SelectedItem == null)
+            {
+                MessageBox.Show("You must select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-
+            EmptyErrorCheck();
             Food food = new Food();
             if (cmbUnit.SelectedIndex == 0)
             {
@@ -161,24 +199,47 @@ namespace PL
             mealSummaryService.Add(summary);
 
 
+            MessageBox.Show("Validation succeeded. Saving data...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            txtName.Text= string.Empty;
+            txtCalorie.Text= string.Empty;
+            cmbCategory.SelectedIndex = 0;
+            cmbUnit.SelectedIndex = 0;
+
 
 
 
         }
+
+     
 
         private void listBoxFoods_DoubleClick(object sender, EventArgs e)
         {
-            Food food = (Food)listBoxFoods.SelectedItem;
-            txtName.Text = food.Name;
-            txtCalorie.Text = food.Calorie.ToString();
-            txtImage.Text = food.Image;
-
-
+           
+          
+            if (listBoxFoods.SelectedItem != null)
+            {
+                Food food = listBoxFoods.SelectedItem as Food;
+                txtName.Text = food.Name;
+                txtCalorie.Text = food.Calorie.ToString();
+                txtImage.Text = food.Image;
+                cmbUnit.SelectedItem = food.Unit.ToString();
+                cmbCategory.SelectedItem = food.Category;
+            }
 
         }
+    
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+    private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (listBoxFoods.SelectedItem == null)
+            {
+                MessageBox.Show("Please Choose Food !!!");
+                return;
+            }
+            EmptyErrorCheck();
+
+
             Food food = (Food)listBoxFoods.SelectedItem;
 
             if (cmbUnit.SelectedIndex == 0)
@@ -241,13 +302,21 @@ namespace PL
 
             foodService.Update(food);
 
-
+            MessageBox.Show("Update succeeded. Saving data...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (listBoxFoods.SelectedItem == null)
+            {
+                MessageBox.Show("Please Choose Food !!!");
+                return;
+            }
+            EmptyErrorCheck();
+
             Food food = (Food)listBoxFoods.SelectedItem;
-            foodService.Delete(food.FoodID);            
+            foodService.Delete(food.FoodID);
         }
+
     }
 }

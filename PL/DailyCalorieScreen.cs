@@ -144,5 +144,15 @@ namespace PL
                 labelNeed.Text = (CalculateBmr() * 1.5).ToString();
             }
         }
+
+        private void labelNeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

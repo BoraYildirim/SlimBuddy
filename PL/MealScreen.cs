@@ -48,11 +48,12 @@ namespace PL
 
         private void radioButtonBreakfast_CheckedChanged(object sender, EventArgs e)
         {
-
+            ChangeLabelMealName();
         }
 
         private void MealScreen_Load(object sender, EventArgs e)
         {
+            //lbMeal.Items.Clear();
             comboBoxCategory.DataSource = categoryService.GetAll();
             comboBoxCategory.DisplayMember = "CategoryName";
             comboBoxCategory.ValueMember = "CategoryName";
@@ -63,7 +64,7 @@ namespace PL
 
         private void radioButtonLunch_CheckedChanged(object sender, EventArgs e)
         {
-
+            ChangeLabelMealName();
         }
 
         private void menuStripCaregories_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -137,7 +138,15 @@ namespace PL
 
         private void lbFoods_DoubleClick(object sender, EventArgs e)
         {
-            lbMeal.Items.Add(lbFoods.SelectedItem as Food);
+            if (lbMeal.Items != null && (radioButtonBreakfast.Checked || radioButtonDinner.Checked || radioButtonLunch.Checked || radioButtonSnack.Checked))
+            {
+                lbMeal.Items.Add(lbFoods.SelectedItem as Food);
+                UpdateTotalCalorie();
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Meal !!!");
+            }
         }
 
         private void lbFoods_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,9 +156,11 @@ namespace PL
 
         private void buttonSaveMeal_Click(object sender, EventArgs e)
         {
-
-
-            if (lbMeal.Items != null && (radioButtonBreakfast.Checked || radioButtonDinner.Checked || radioButtonLunch.Checked || radioButtonSnack.Checked))
+            if (lbMeal.Items.Count == 0)
+            {
+                MessageBox.Show("Please choose food !!!");
+            }
+            else
             {
                 Meal meal = new Meal();
 
@@ -187,12 +198,25 @@ namespace PL
                     summary.FoodID = foo.FoodID;
                     mealSummaryService.Add(summary);
                 }
+                MessageBox.Show("Congratulations, your meal was successfully recorded.");
+                lbMeal.Items.Clear();
+                UpdateTotalCalorie();
+                labelMealName.Text = string.Empty;
+                labelMealName.Refresh();
+                radioButtonBreakfast.Checked = false;
+                radioButtonDinner.Checked = false;
+                radioButtonLunch.Checked = false;
+                radioButtonSnack.Checked = false;
+                
+            }
 
-            }
-            else
-            {
-                MessageBox.Show("Meal seems empty or radio buttons empty");
-            }
+
+            
+
+        
+
+   
+          
 
         }
 
@@ -208,8 +232,62 @@ namespace PL
             lbFoods.DataSource = food;
 
             lbFoods.DisplayMember = "Name Calorie";
-           
 
+
+        }
+
+        private void lbMeal_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbMeal.Items != null)
+            {
+                lbMeal.Items.Remove(lbMeal.SelectedItem);
+                UpdateTotalCalorie();
+            }
+
+        }
+
+        private void UpdateTotalCalorie()
+        {
+            double totalCalorie = 0;
+
+            foreach (Food item in lbMeal.Items)
+            {
+                totalCalorie += item.Calorie;
+            }
+
+            labelTotalCalorieValue.Text = totalCalorie.ToString();
+        }
+
+        private void ChangeLabelMealName()
+        {
+            string name = string.Empty;
+            if (radioButtonBreakfast.Checked)
+            {
+                name = "Breakfast";
+            }
+            else if (radioButtonDinner.Checked)
+            {
+                name = "Dinner";
+            }
+            else if (radioButtonLunch.Checked)
+            {
+                name = "Lunch";
+            }
+            else
+            {
+                name = "Snack";
+            }
+            labelMealName.Text = name;
+        }
+
+        private void radioButtonDinner_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeLabelMealName();
+        }
+
+        private void radioButtonSnack_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeLabelMealName();
         }
     }
 }

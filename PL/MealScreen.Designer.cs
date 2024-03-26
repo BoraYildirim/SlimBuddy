@@ -46,6 +46,8 @@
             lbFoods = new ListBox();
             pictureBox1 = new PictureBox();
             lbMeal = new ListBox();
+            labelTitle = new Label();
+            labelMealName = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,30 +55,29 @@
             // 
             // textBoxSearchFood
             // 
-            textBoxSearchFood.Location = new Point(599, 2);
-            textBoxSearchFood.Margin = new Padding(3, 2, 3, 2);
+            textBoxSearchFood.Location = new Point(702, 9);
             textBoxSearchFood.Name = "textBoxSearchFood";
-            textBoxSearchFood.Size = new Size(110, 23);
+            textBoxSearchFood.Size = new Size(111, 27);
             textBoxSearchFood.TabIndex = 2;
             textBoxSearchFood.TextChanged += textBoxSearchFood_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
-            label1.Location = new Point(484, 4);
+            label1.Font = new Font("Comic Sans MS", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(607, 13);
             label1.Name = "label1";
-            label1.Size = new Size(99, 16);
+            label1.Size = new Size(102, 19);
             label1.TabIndex = 3;
-            label1.Text = "Search FOOD :";
+            label1.Text = "Search FOOD:";
             // 
             // labelTotalCalorie
             // 
             labelTotalCalorie.AutoSize = true;
             labelTotalCalorie.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
-            labelTotalCalorie.Location = new Point(730, 6);
+            labelTotalCalorie.Location = new Point(843, 444);
             labelTotalCalorie.Name = "labelTotalCalorie";
-            labelTotalCalorie.Size = new Size(91, 16);
+            labelTotalCalorie.Size = new Size(116, 21);
             labelTotalCalorie.TabIndex = 6;
             labelTotalCalorie.Text = "Total Calorie :";
             // 
@@ -84,9 +85,9 @@
             // 
             labelTotalCalorieValue.AutoSize = true;
             labelTotalCalorieValue.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
-            labelTotalCalorieValue.Location = new Point(834, 7);
+            labelTotalCalorieValue.Location = new Point(965, 444);
             labelTotalCalorieValue.Name = "labelTotalCalorieValue";
-            labelTotalCalorieValue.Size = new Size(14, 16);
+            labelTotalCalorieValue.Size = new Size(19, 21);
             labelTotalCalorieValue.TabIndex = 7;
             labelTotalCalorieValue.Text = "0";
             // 
@@ -95,10 +96,9 @@
             radioButtonBreakfast.AutoSize = true;
             radioButtonBreakfast.BackColor = Color.Transparent;
             radioButtonBreakfast.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            radioButtonBreakfast.Location = new Point(135, 6);
-            radioButtonBreakfast.Margin = new Padding(3, 2, 3, 2);
+            radioButtonBreakfast.Location = new Point(154, 8);
             radioButtonBreakfast.Name = "radioButtonBreakfast";
-            radioButtonBreakfast.Size = new Size(106, 27);
+            radioButtonBreakfast.Size = new Size(130, 33);
             radioButtonBreakfast.TabIndex = 8;
             radioButtonBreakfast.TabStop = true;
             radioButtonBreakfast.Text = "Breakfast";
@@ -110,10 +110,9 @@
             radioButtonLunch.AutoSize = true;
             radioButtonLunch.BackColor = Color.Transparent;
             radioButtonLunch.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            radioButtonLunch.Location = new Point(286, 6);
-            radioButtonLunch.Margin = new Padding(3, 2, 3, 2);
+            radioButtonLunch.Location = new Point(327, 8);
             radioButtonLunch.Name = "radioButtonLunch";
-            radioButtonLunch.Size = new Size(70, 27);
+            radioButtonLunch.Size = new Size(87, 33);
             radioButtonLunch.TabIndex = 9;
             radioButtonLunch.TabStop = true;
             radioButtonLunch.Text = "Lunch";
@@ -125,37 +124,37 @@
             radioButtonSnack.AutoSize = true;
             radioButtonSnack.BackColor = Color.Transparent;
             radioButtonSnack.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            radioButtonSnack.Location = new Point(498, 6);
-            radioButtonSnack.Margin = new Padding(3, 2, 3, 2);
+            radioButtonSnack.Location = new Point(569, 8);
             radioButtonSnack.Name = "radioButtonSnack";
-            radioButtonSnack.Size = new Size(73, 27);
+            radioButtonSnack.Size = new Size(90, 33);
             radioButtonSnack.TabIndex = 11;
             radioButtonSnack.TabStop = true;
             radioButtonSnack.Text = "Snack";
             radioButtonSnack.UseVisualStyleBackColor = false;
+            radioButtonSnack.CheckedChanged += radioButtonSnack_CheckedChanged;
             // 
             // radioButtonDinner
             // 
             radioButtonDinner.AutoSize = true;
             radioButtonDinner.BackColor = Color.Transparent;
             radioButtonDinner.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            radioButtonDinner.Location = new Point(403, 8);
-            radioButtonDinner.Margin = new Padding(3, 2, 3, 2);
+            radioButtonDinner.Location = new Point(461, 11);
             radioButtonDinner.Name = "radioButtonDinner";
-            radioButtonDinner.Size = new Size(77, 27);
+            radioButtonDinner.Size = new Size(95, 33);
             radioButtonDinner.TabIndex = 10;
             radioButtonDinner.TabStop = true;
             radioButtonDinner.Text = "Dinner";
             radioButtonDinner.UseVisualStyleBackColor = false;
+            radioButtonDinner.CheckedChanged += radioButtonDinner_CheckedChanged;
             // 
             // labelMeal
             // 
             labelMeal.AutoSize = true;
             labelMeal.BackColor = Color.Transparent;
             labelMeal.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelMeal.Location = new Point(3, 6);
+            labelMeal.Location = new Point(3, 8);
             labelMeal.Name = "labelMeal";
-            labelMeal.Size = new Size(132, 23);
+            labelMeal.Size = new Size(167, 29);
             labelMeal.TabIndex = 12;
             labelMeal.Text = "Choose Meal ->";
             // 
@@ -168,20 +167,18 @@
             panel1.Controls.Add(labelMeal);
             panel1.Controls.Add(radioButtonSnack);
             panel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            panel1.Location = new Point(12, 340);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(14, 453);
             panel1.Name = "panel1";
-            panel1.Size = new Size(699, 40);
+            panel1.Size = new Size(799, 53);
             panel1.TabIndex = 14;
             // 
             // buttonSaveMeal
             // 
             buttonSaveMeal.BackColor = Color.IndianRed;
             buttonSaveMeal.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
-            buttonSaveMeal.Location = new Point(738, 351);
-            buttonSaveMeal.Margin = new Padding(3, 2, 3, 2);
+            buttonSaveMeal.Location = new Point(843, 468);
             buttonSaveMeal.Name = "buttonSaveMeal";
-            buttonSaveMeal.Size = new Size(283, 31);
+            buttonSaveMeal.Size = new Size(323, 41);
             buttonSaveMeal.TabIndex = 15;
             buttonSaveMeal.Text = "Save Meal";
             buttonSaveMeal.UseVisualStyleBackColor = false;
@@ -191,10 +188,9 @@
             // 
             button1.BackColor = Color.IndianRed;
             button1.Enabled = false;
-            button1.Location = new Point(716, 0);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(818, 0);
             button1.Name = "button1";
-            button1.Size = new Size(9, 380);
+            button1.Size = new Size(10, 507);
             button1.TabIndex = 16;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = false;
@@ -203,11 +199,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(11, 4);
+            label3.Location = new Point(37, 9);
             label3.Name = "label3";
-            label3.Size = new Size(121, 16);
+            label3.Size = new Size(108, 21);
             label3.TabIndex = 18;
-            label3.Text = "--CATEGORIES --";
+            label3.Text = "CATEGORIES";
             // 
             // fileSystemWatcher1
             // 
@@ -217,21 +213,22 @@
             // comboBoxCategory
             // 
             comboBoxCategory.FormattingEnabled = true;
-            comboBoxCategory.Location = new Point(11, 24);
+            comboBoxCategory.Location = new Point(13, 32);
             comboBoxCategory.Margin = new Padding(2, 1, 2, 1);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(132, 23);
+            comboBoxCategory.Size = new Size(150, 28);
             comboBoxCategory.TabIndex = 19;
             comboBoxCategory.SelectedIndexChanged += comboBoxCategory_SelectedIndexChanged;
             // 
             // lbFoods
             // 
-            lbFoods.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbFoods.Font = new Font("Comic Sans MS", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbFoods.FormattingEnabled = true;
-            lbFoods.ItemHeight = 27;
-            lbFoods.Location = new Point(158, 48);
+            lbFoods.ItemHeight = 26;
+            lbFoods.Location = new Point(168, 12);
+            lbFoods.Margin = new Padding(3, 4, 3, 4);
             lbFoods.Name = "lbFoods";
-            lbFoods.Size = new Size(368, 247);
+            lbFoods.Size = new Size(433, 420);
             lbFoods.TabIndex = 20;
             lbFoods.Click += lbFoods_Click;
             lbFoods.SelectedIndexChanged += lbFoods_SelectedIndexChanged;
@@ -239,9 +236,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(532, 75);
+            pictureBox1.Location = new Point(607, 43);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(177, 155);
+            pictureBox1.Size = new Size(202, 389);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
@@ -250,19 +248,43 @@
             // lbMeal
             // 
             lbMeal.FormattingEnabled = true;
-            lbMeal.ItemHeight = 15;
-            lbMeal.Location = new Point(738, 48);
+            lbMeal.Location = new Point(843, 64);
+            lbMeal.Margin = new Padding(3, 4, 3, 4);
             lbMeal.Name = "lbMeal";
-            lbMeal.Size = new Size(272, 244);
+            lbMeal.Size = new Size(310, 364);
             lbMeal.TabIndex = 22;
             lbMeal.SelectedIndexChanged += lbMeal_SelectedIndexChanged;
+            lbMeal.DoubleClick += lbMeal_DoubleClick;
+            // 
+            // labelTitle
+            // 
+            labelTitle.AutoSize = true;
+            labelTitle.BackColor = Color.IndianRed;
+            labelTitle.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Bold | FontStyle.Italic);
+            labelTitle.Location = new Point(912, 9);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(144, 34);
+            labelTitle.TabIndex = 23;
+            labelTitle.Text = "ADD MEAL";
+            // 
+            // labelMealName
+            // 
+            labelMealName.AutoSize = true;
+            labelMealName.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold);
+            labelMealName.Location = new Point(1039, 444);
+            labelMealName.Name = "labelMealName";
+            labelMealName.Size = new Size(37, 21);
+            labelMealName.TabIndex = 24;
+            labelMealName.Text = "---";
             // 
             // MealScreen
             // 
             AccessibleRole = AccessibleRole.Animation;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 419);
+            ClientSize = new Size(1168, 559);
+            Controls.Add(labelMealName);
+            Controls.Add(labelTitle);
             Controls.Add(lbMeal);
             Controls.Add(pictureBox1);
             Controls.Add(lbFoods);
@@ -276,7 +298,6 @@
             Controls.Add(buttonSaveMeal);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "MealScreen";
             Text = "MealScreen";
             Load += MealScreen_Load;
@@ -307,5 +328,7 @@
         private ListBox lbFoods;
         private PictureBox pictureBox1;
         private ListBox lbMeal;
+        private Label labelTitle;
+        private Label labelMealName;
     }
 }

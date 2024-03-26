@@ -29,6 +29,7 @@ namespace PL
             AdminLoginScreen formAdminLoginScreen = new AdminLoginScreen();
             this.Hide();
             formAdminLoginScreen.ShowDialog();
+            this.Show();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

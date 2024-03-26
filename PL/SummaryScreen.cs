@@ -91,11 +91,33 @@ namespace PL
 
         private void btnDeleteMeal_Click(object sender, EventArgs e)
         {
-            Meal meal =(Meal)lbMeal.SelectedItem;
-            lbMeal.Items.Remove(lbMeal.SelectedItem);
-            mealService.Delete(meal.MealID);
-            lbFood.Items.Clear();
+            Meal meal = (Meal)lbMeal.SelectedItem;
+            if (lbMeal.SelectedItem != null)
+            {
+                lbMeal.Items.Remove(lbMeal.SelectedItem);
+                mealService.Delete(meal.MealID);
+                lbFood.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Meal !!!");
+            }
 
+
+        }
+
+        private void buttonUpdateMeal_Click(object sender, EventArgs e)
+        {
+            Meal meal = (Meal)lbMeal.SelectedItem;
+            if (lbMeal.SelectedItem != null)
+            {
+                
+                lbFood.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Meal !!!");
+            }
         }
     }
 }

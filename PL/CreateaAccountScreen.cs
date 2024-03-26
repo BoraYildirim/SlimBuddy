@@ -247,6 +247,7 @@ namespace PL
                     user.UserDetail = userDetail;
                     userService.Add(user);
                     MessageBox.Show("Succesfully");
+                    this.Close();
                 }
                 catch (Exception)
                 {
