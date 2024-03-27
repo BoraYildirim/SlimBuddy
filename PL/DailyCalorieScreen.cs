@@ -46,6 +46,8 @@ namespace PL
 
         private void DailyCalorieScreen_Load(object sender, EventArgs e)
         {
+            lblDifference.Visible = false;
+
             foreach (ActivityLevel level in Enum.GetValues(typeof(ActivityLevel)))
             {
                 comboBoxActivityLevel.Items.Add(level);
@@ -104,10 +106,13 @@ namespace PL
             }
 
             labelTotal.Text = totalCalorie2.ToString();
+
+            totalCalorie3 = totalCalorie2;
+
         }
 
 
-
+        double totalCalorie3;
         public double CalculateBmr()
         {
 
@@ -128,7 +133,7 @@ namespace PL
 
         private void comboBoxActivityLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            double value;
+            double value=0;
             if (comboBoxActivityLevel.SelectedIndex == 0)
             {
                 value = (CalculateBmr() * 1.0);
@@ -163,6 +168,28 @@ namespace PL
                 labelNeed.Text = Math.Round(value, 2).ToString();
 
             }
+
+
+            double KaloriFarki=totalCalorie3 - (double)value;
+            if (KaloriFarki>0)
+            {
+                lblDifference.BackColor = Color.Red;
+                lblDifference.Text = "Difference = " + Math.Round(KaloriFarki,2).ToString()+ " " + " You are gaining weight ";
+                lblDifference.Visible= true;
+            }
+            if (KaloriFarki==0)
+            {
+                lblDifference.BackColor = Color.Blue;
+                lblDifference.Text = "Balanced";
+                lblDifference.Visible = true;
+            }
+            if (KaloriFarki<0)
+            {
+                lblDifference.BackColor = Color.Green;
+                lblDifference.Text = "Difference = "+ Math.Round(KaloriFarki, 2).ToString() + " " + " you are losing weight ";
+                lblDifference.Visible = true;
+            }
+            
         }
 
         private void labelNeed_Click(object sender, EventArgs e)

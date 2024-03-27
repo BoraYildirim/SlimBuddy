@@ -106,20 +106,48 @@ namespace PL
                 dgvThisUserWeek.Rows.Add(row.Email, row.MealName, row.TotalCalorie);
             }
 
-            List<MealSummary> mealSummaries = new List<MealSummary>();
-            foreach (MealSummary mealSummary in mealSummaryService.GetAll())
+
+
+            List<Meal> mealList = new List<Meal>();
+
+            foreach (Meal meal in mealService.GetAll())
             {
-                if (mealSummary.UserID==_user.UserID)
+                if (meal.MealName == "?")
+                {
+                    mealList.Add(meal);
+                }
+
+            }
+
+            List<MealSummary> allSummaries = new List<MealSummary>();
+            allSummaries = mealSummaryService.GetAll();
+            for (int i = 0; i < mealList.Count; i++)
+            {
+                for (int j = 0; j < allSummaries.Count; j++)
+                {
+                    if (mealList[i].MealID == allSummaries[j].MealID)
+                    {
+                        allSummaries.RemoveAt(j);
+                    }
+
+                }
+            }
+
+
+            List<MealSummary> mealSummaries = new List<MealSummary>();
+            foreach (MealSummary mealSummary in allSummaries)
+            {
+                if (mealSummary.UserID == _user.UserID)
                 {
                     mealSummaries.Add(mealSummary);
                 }
             }
-            List<int>foodIdList = new List<int>();
+            List<int> foodIdList = new List<int>();
             foreach (MealSummary mealSummary1 in mealSummaries)
             {
                 foodIdList.Add(mealSummary1.FoodID);
             }
-            
+
             List<Food> TodayFoods = new List<Food>();
 
             foreach (int i in foodIdList)
@@ -128,15 +156,11 @@ namespace PL
                 TodayFoods.Add(food);
             }
 
-
             foreach (Food food in TodayFoods)
             {
-                listBox1.Items.Add(food);
+
+            listBox1.Items.Add(food);
             }
-
-
-
-
 
         }
 
