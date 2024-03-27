@@ -21,7 +21,7 @@ namespace DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data source=MAHMUT_TAYLAN\\SQLEXPRESS;Initial catalog=SlimBuddy;Integrated security=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer(".;Initial catalog=SlimBuddy;Integrated security=true;TrustServerCertificate=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
