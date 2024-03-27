@@ -29,7 +29,7 @@ namespace PL
         UserDetailService userDetailService;
         private void AccountScreen_Load(object sender, EventArgs e)   //Kullanıcının bilgileri formda dolu gelmektedir.
         {          
-            lblEmail.Text= _user.Email;
+            lblEmail.Text= _user.Email; 
             lblFirstName.Text = userDetailService.GetUserName(_user.UserID);
             lblLastName.Text = userDetailService.GetUserSurname(_user.UserID);
             lblGender.Text = userDetailService.GetUserGender(_user.UserID);
