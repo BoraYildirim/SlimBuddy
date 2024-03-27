@@ -391,7 +391,7 @@ namespace PL
         private void buttonUploadImage_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files(.jpg;.jpeg; .gif;.bmp; .png)|.jpg; .jpeg;.gif; .bmp;.png";
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Resmi yerel sistemde kaydet
