@@ -259,7 +259,7 @@
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.BackColor = Color.IndianRed;
+            labelTitle.BackColor = Color.Transparent;
             labelTitle.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Bold | FontStyle.Italic);
             labelTitle.Location = new Point(912, 9);
             labelTitle.Name = "labelTitle";

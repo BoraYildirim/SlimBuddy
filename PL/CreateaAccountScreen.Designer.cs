@@ -96,7 +96,7 @@
             // 
             checkBoxShowPassword.AutoSize = true;
             checkBoxShowPassword.Location = new Point(258, 358);
-            checkBoxShowPassword.Margin = new Padding(2, 2, 2, 2);
+            checkBoxShowPassword.Margin = new Padding(2);
             checkBoxShowPassword.Name = "checkBoxShowPassword";
             checkBoxShowPassword.Size = new Size(67, 24);
             checkBoxShowPassword.TabIndex = 26;
@@ -335,6 +335,9 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(852, 29);
             panel2.TabIndex = 26;
+            panel2.MouseDown += panel2_MouseDown;
+            panel2.MouseMove += panel2_MouseMove;
+            panel2.MouseUp += panel2_MouseUp;
             // 
             // buttonClose
             // 

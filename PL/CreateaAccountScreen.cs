@@ -34,7 +34,7 @@ namespace PL
 
             string pattern = @"^[\w-\.]+@([\w-]+\.)+com$";
             if (Regex.IsMatch(textBoxEmail.Text, pattern))
-            {               
+            {
                 user.Email = textBoxEmail.Text;
             }
 
@@ -162,20 +162,29 @@ namespace PL
 
         public void HeightControl(double height)
         {
-            if (height <= 55 || height >= 250)
+            if (height <= 30 || height >= 250)
             {
-                MessageBox.Show("Hatakı Boy");
-                throw new Exception();
+                MessageBox.Show("Please Enter between 30 - 250 cm ");
+                return;
             }
         }
-        public void WeightControl(double height)
+        public void WeightControl(double weight)
         {
-            if (height <= 55 || height >= 250)
+            if (weight <= 30 || weight >= 250)
             {
-                MessageBox.Show("Hatalı Kilo");
-                throw new Exception();
+                MessageBox.Show("Please Enter between 30 - 250 kg ");
+                return;
             }
         }
+        public void AgeControl(int age)
+        {
+            if (age <= 6 || age >= 99)
+            {
+                MessageBox.Show("Please Enter between 6 - 99 years ");
+                return;
+            }
+        }
+
 
 
         public void FormClear()
@@ -195,24 +204,24 @@ namespace PL
         private void buttonRegister_Click(object sender, EventArgs e)
         {
 
-            int kontrol = 0;
+            int control = 0;
 
             foreach (User us in userService.GetAll())
             {
                 if (us.Email == textBoxEmail.Text)
                 {
 
-                    kontrol = 1;
+                    control = 1;
                     break;
                 }
 
 
             }
 
-            if (kontrol == 1)
+            if (control == 1)
             {
 
-                MessageBox.Show("Upss Somethings gone wrong");
+                MessageBox.Show("the mail address already exists");
             }
             else
             {
@@ -220,6 +229,7 @@ namespace PL
                 {
                     HeightControl(double.Parse(textBoxHeight.Text));
                     WeightControl(double.Parse(textBoxWeight.Text));
+                    AgeControl(int.Parse(textBoxAge.Text));
 
 
 
@@ -247,7 +257,8 @@ namespace PL
                     user.UserDetail = userDetail;
                     userService.Add(user);
                     MessageBox.Show("Succesfully");
-                    this.Close();
+                    // this.Close();
+                    FormClear();
                 }
                 catch (Exception)
                 {
@@ -258,7 +269,7 @@ namespace PL
             }
 
 
-            FormClear();
+
         }
 
 
@@ -312,6 +323,29 @@ namespace PL
                 // Metin kutusunun arka plan rengini kırmızı yaparak, formatın yanlış olduğunu göster
                 textBoxEmail.BackColor = Color.Salmon;
             }
+        }
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }
