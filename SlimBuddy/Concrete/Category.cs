@@ -13,8 +13,7 @@ namespace Models.Concrete
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
-        
-
+      
         public ICollection<Food>? Foods { get; set; }
 
         public override string ToString()

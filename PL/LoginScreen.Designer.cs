@@ -57,10 +57,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-         //   pictureBox1.MouseDown += pictureBox1_MouseDown;
-           // pictureBox1.MouseMove += pictureBox1_MouseMove;
-            //pictureBox1.MouseUp += pictureBox1_MouseUp;
+            //pictureBox1.Click += pictureBox1_Click;
             // 
             // label4
             // 
@@ -68,7 +65,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label4.ForeColor = Color.Firebrick;
-            label4.Location = new Point(328, 28);
+            label4.Location = new Point(334, 44);
             label4.Name = "label4";
             label4.Size = new Size(300, 62);
             label4.TabIndex = 12;

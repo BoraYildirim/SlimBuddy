@@ -12,7 +12,6 @@ namespace BLL
 {
     public class FoodService
     {
-
         public FoodService()
         {
             foodRepository = new FoodRepository(new DAL.Context.SlimBuddyDBContext());
@@ -26,7 +25,6 @@ namespace BLL
 
             return foodRepository.Add(food);
         }
-
 
         public bool Update(Food food)
         {
@@ -46,7 +44,6 @@ namespace BLL
             return foodRepository.Find(id);
         }
 
-
         public List<Food> GetAll()
         {
             return foodRepository.GetAll();
@@ -61,12 +58,9 @@ namespace BLL
             return foodRepository.GetSearchedFood(userID, foodName);
         }
      
-
         public List<Food> GetFoodWithWord(string word)
         {
-            return foodRepository.GetFoodWithWord(word);
-                
-                
+            return foodRepository.GetFoodWithWord(word);                           
         }
 
         public bool CheckEntries(string foodName)

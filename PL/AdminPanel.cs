@@ -27,16 +27,17 @@ namespace PL
         Form _form;
         UserService userService;
 
-        private void AdminPanel_Load(object sender, EventArgs e)
+        private void AdminPanel_Load(object sender, EventArgs e)  //sayfa yüklendiğinde tüm kullanıcıları listboxta listeler
         {
             listBoxUserList.Items.Clear();
             foreach (User user in userService.GetAll())
             {
-                listBoxUserList.Items.Add(user);
+                if(user.UserType!= UserType.Admin)
+                    listBoxUserList.Items.Add(user);
             }
         }
 
-        private void buttonActive_Click(object sender, EventArgs e)
+        private void buttonActive_Click(object sender, EventArgs e)  //seçilen kullanıcının durumunu aktife alır
         {
             User user = listBoxUserList.SelectedItem as User;
 
@@ -44,12 +45,14 @@ namespace PL
             {
                 foreach (User use in userService.GetAll())
                 {
-                    if (use.UserID == user.UserID)
+                    if (use.UserType != UserType.Admin)
                     {
-                        user.Status = Status.Active;
-                        userService.Update(user);
+                        if (use.UserID == user.UserID)
+                        {
+                            user.Status = Status.Active;
+                            userService.Update(user);
+                        }
                     }
-
                 }
             }
             else
@@ -60,24 +63,26 @@ namespace PL
 
             foreach (User us in userService.GetAll())
             {
-                listBoxUserList.Items.Add(us);
+                if (us.UserType != UserType.Admin)
+                    listBoxUserList.Items.Add(us);
             }
-
         }
 
-        private void buttonPassive_Click(object sender, EventArgs e)
+        private void buttonPassive_Click(object sender, EventArgs e)  //seçilen kullanıcının durumunu pasife alır
         {
             User user = listBoxUserList.SelectedItem as User;
             if (user != null)
             {
                 foreach (User use in userService.GetAll())
                 {
-                    if (use.UserID == user.UserID)
+                    if (use.UserType != UserType.Admin)
                     {
-                        user.Status = Status.Passive;
-                        userService.Update(user);
+                        if (use.UserID == user.UserID)
+                        {
+                            user.Status = Status.Passive;
+                            userService.Update(user);
+                        }
                     }
-
                 }
             }
             else
@@ -89,12 +94,12 @@ namespace PL
 
             foreach (User us in userService.GetAll())
             {
-                listBoxUserList.Items.Add(us);
+                if (us.UserType != UserType.Admin)
+                    listBoxUserList.Items.Add(us);
             }
-
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)  //sayfayı kapama butonu
         {
             this.Close();
             AdminLoginScreen adminLoginScreen = new AdminLoginScreen();

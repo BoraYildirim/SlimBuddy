@@ -39,50 +39,57 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Comic Sans MS", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(247, 87);
+            label1.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Location = new Point(159, 44);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(187, 51);
+            label1.Size = new Size(153, 41);
             label1.TabIndex = 0;
             label1.Text = "User List";
             // 
             // listBoxUserList
             // 
             listBoxUserList.FormattingEnabled = true;
-            listBoxUserList.Location = new Point(100, 172);
+            listBoxUserList.Location = new Point(62, 108);
+            listBoxUserList.Margin = new Padding(2);
             listBoxUserList.Name = "listBoxUserList";
-            listBoxUserList.Size = new Size(554, 676);
+            listBoxUserList.Size = new Size(342, 424);
             listBoxUserList.TabIndex = 1;
             // 
             // buttonActive
             // 
+            buttonActive.BackColor = Color.LightGreen;
             buttonActive.Font = new Font("Comic Sans MS", 10.125F);
-            buttonActive.Location = new Point(814, 347);
+            buttonActive.Location = new Point(437, 275);
+            buttonActive.Margin = new Padding(2);
             buttonActive.Name = "buttonActive";
-            buttonActive.Size = new Size(203, 92);
+            buttonActive.Size = new Size(130, 79);
             buttonActive.TabIndex = 2;
             buttonActive.Text = "Active";
-            buttonActive.UseVisualStyleBackColor = true;
+            buttonActive.UseVisualStyleBackColor = false;
             buttonActive.Click += buttonActive_Click;
             // 
             // buttonPassive
             // 
+            buttonPassive.BackColor = Color.IndianRed;
             buttonPassive.Font = new Font("Comic Sans MS", 10.125F);
-            buttonPassive.Location = new Point(814, 490);
+            buttonPassive.Location = new Point(608, 275);
+            buttonPassive.Margin = new Padding(2);
             buttonPassive.Name = "buttonPassive";
-            buttonPassive.Size = new Size(203, 92);
+            buttonPassive.Size = new Size(135, 79);
             buttonPassive.TabIndex = 3;
             buttonPassive.Text = "Passive";
-            buttonPassive.UseVisualStyleBackColor = true;
+            buttonPassive.UseVisualStyleBackColor = false;
             buttonPassive.Click += buttonPassive_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Comic Sans MS", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.Location = new Point(778, 209);
+            label2.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.Location = new Point(470, 175);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(281, 51);
+            label2.Size = new Size(230, 41);
             label2.TabIndex = 4;
             label2.Text = "Change Status";
             // 
@@ -92,9 +99,10 @@
             buttonClose.CausesValidation = false;
             buttonClose.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonClose.ForeColor = Color.Red;
-            buttonClose.Location = new Point(1233, -2);
+            buttonClose.Location = new Point(759, -1);
+            buttonClose.Margin = new Padding(2);
             buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(66, 57);
+            buttonClose.Size = new Size(41, 36);
             buttonClose.TabIndex = 5;
             buttonClose.Text = "X";
             buttonClose.UseVisualStyleBackColor = false;
@@ -102,9 +110,9 @@
             // 
             // AdminPanel
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1299, 917);
+            ClientSize = new Size(799, 573);
             Controls.Add(buttonClose);
             Controls.Add(label2);
             Controls.Add(buttonPassive);
@@ -112,6 +120,7 @@
             Controls.Add(listBoxUserList);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "AdminPanel";
             Text = "AdminPanel";
             Load += AdminPanel_Load;

@@ -11,7 +11,6 @@ namespace BLL
 {
     public class MealSummaryService
     {
-
         public MealSummaryService()
         {
             mealSummaryRepository = new MealSummaryRepository(new DAL.Context.SlimBuddyDBContext());
@@ -25,7 +24,6 @@ namespace BLL
 
             return mealSummaryRepository.Add(mealSummary);
         }
-
 
         public bool Update(MealSummary mealSummary)
         {
@@ -45,11 +43,9 @@ namespace BLL
             return mealSummaryRepository.Find(id);
         }
 
-
         public List<MealSummary> GetAll()
         {
             return mealSummaryRepository.GetAll();
         }
-
     }
 }

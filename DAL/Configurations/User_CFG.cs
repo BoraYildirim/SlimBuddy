@@ -12,8 +12,7 @@ namespace DAL.Configurations
     public class User_CFG : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)
-        {
-          
+        {          
             builder.Property(x => x.Email).HasColumnType("nvarchar").HasMaxLength(60).IsRequired();
             builder.Property(x => x.Password).HasColumnType("nvarchar").HasMaxLength(60).IsRequired();
         }

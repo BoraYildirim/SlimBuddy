@@ -29,30 +29,23 @@
         private void InitializeComponent()
         {
             btnDeleteMeal = new Button();
-            buttonUpdateMeal = new Button();
             lbMeal = new ListBox();
             lbFood = new ListBox();
+            label6 = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnDeleteMeal
             // 
-            btnDeleteMeal.Location = new Point(997, 427);
+            btnDeleteMeal.BackColor = Color.IndianRed;
+            btnDeleteMeal.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            btnDeleteMeal.Location = new Point(996, 435);
             btnDeleteMeal.Name = "btnDeleteMeal";
             btnDeleteMeal.Size = new Size(135, 80);
             btnDeleteMeal.TabIndex = 1;
             btnDeleteMeal.Text = "DELETE MEAL";
-            btnDeleteMeal.UseVisualStyleBackColor = true;
+            btnDeleteMeal.UseVisualStyleBackColor = false;
             btnDeleteMeal.Click += btnDeleteMeal_Click;
-            // 
-            // buttonUpdateMeal
-            // 
-            buttonUpdateMeal.Location = new Point(997, 309);
-            buttonUpdateMeal.Name = "buttonUpdateMeal";
-            buttonUpdateMeal.Size = new Size(135, 81);
-            buttonUpdateMeal.TabIndex = 3;
-            buttonUpdateMeal.Text = "UPDATE MEAL";
-            buttonUpdateMeal.UseVisualStyleBackColor = true;
-            buttonUpdateMeal.Click += buttonUpdateMeal_Click;
             // 
             // lbMeal
             // 
@@ -62,7 +55,7 @@
             lbMeal.Name = "lbMeal";
             lbMeal.Size = new Size(318, 444);
             lbMeal.TabIndex = 4;
-            lbMeal.SelectedIndexChanged += lbMeal_SelectedIndexChanged;
+            //lbMeal.SelectedIndexChanged += lbMeal_SelectedIndexChanged;
             lbMeal.DoubleClick += lbMeal_DoubleClick;
             // 
             // lbFood
@@ -74,26 +67,49 @@
             lbFood.Size = new Size(563, 444);
             lbFood.TabIndex = 5;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
+            label6.Location = new Point(58, 18);
+            label6.Name = "label6";
+            label6.Size = new Size(144, 39);
+            label6.TabIndex = 22;
+            label6.Text = "Meal List";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
+            label1.Location = new Point(405, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 39);
+            label1.TabIndex = 23;
+            label1.Text = "Food List";
+            // 
             // SummaryScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1168, 557);
+            Controls.Add(label1);
+            Controls.Add(label6);
             Controls.Add(lbFood);
             Controls.Add(lbMeal);
-            Controls.Add(buttonUpdateMeal);
             Controls.Add(btnDeleteMeal);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SummaryScreen";
             Text = "SummaryScreen";
             Load += SummaryScreen_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Button btnDeleteMeal;
-        private Button buttonUpdateMeal;
         private ListBox lbMeal;
         private ListBox lbFood;
+        private Label label6;
+        private Label label1;
     }
 }

@@ -32,7 +32,5 @@ namespace DAL.Repositories.Concrete
             return userMeals;
         }
     }
-
-
 }
 

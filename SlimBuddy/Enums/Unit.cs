@@ -8,11 +8,9 @@ namespace Models.Enums
 {
     public enum Unit
     {
-
         Portion=1,
         Quantity,
         milliliter
-
     }
 
 }

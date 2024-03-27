@@ -12,14 +12,12 @@ namespace Models.Abstracts
     {
         public BaseEntity()
         {
-            CreationDate = DateTime.Now;
-            
+            CreationDate = DateTime.Now;         
         }
 
         public DateTime CreationDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DateTime? DeletedDate { get; set; }
         public Status? Status { get; set; }
-
     }
 }

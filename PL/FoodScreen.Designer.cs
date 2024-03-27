@@ -123,7 +123,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic);
-            label5.Location = new Point(94, 402);
+            label5.Location = new Point(102, 398);
             label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
             label5.Size = new Size(70, 32);
@@ -134,7 +134,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic);
-            label2.Location = new Point(84, 294);
+            label2.Location = new Point(73, 289);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(99, 32);
@@ -145,7 +145,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(94, 239);
+            label1.Location = new Point(85, 234);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new Size(87, 32);
@@ -179,7 +179,7 @@
             // 
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic);
-            lblCategory.Location = new Point(49, 444);
+            lblCategory.Location = new Point(49, 446);
             lblCategory.Margin = new Padding(5, 0, 5, 0);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(123, 32);
@@ -199,7 +199,7 @@
             // 
             lblImage.AutoSize = true;
             lblImage.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic);
-            lblImage.Location = new Point(89, 351);
+            lblImage.Location = new Point(79, 346);
             lblImage.Margin = new Padding(5, 0, 5, 0);
             lblImage.Name = "lblImage";
             lblImage.Size = new Size(93, 32);
@@ -224,7 +224,7 @@
             listBoxFoods.Name = "listBoxFoods";
             listBoxFoods.Size = new Size(599, 424);
             listBoxFoods.TabIndex = 69;
-            listBoxFoods.SelectedIndexChanged += listBoxFoods_SelectedIndexChanged;
+            //listBoxFoods.SelectedIndexChanged += listBoxFoods_SelectedIndexChanged;
             listBoxFoods.DoubleClick += listBoxFoods_DoubleClick;
             // 
             // cmbUnit
@@ -235,7 +235,7 @@
             cmbUnit.Name = "cmbUnit";
             cmbUnit.Size = new Size(170, 28);
             cmbUnit.TabIndex = 70;
-            cmbUnit.SelectedIndexChanged += cmbUnit_SelectedIndexChanged;
+            //cmbUnit.SelectedIndexChanged += cmbUnit_SelectedIndexChanged;
             // 
             // openFileDialog1
             // 

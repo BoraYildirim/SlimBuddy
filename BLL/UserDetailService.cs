@@ -13,7 +13,6 @@ namespace BLL
     public class UserDetailService
     {
 
-
         public UserDetailService()
         {
             userDetailRepository = new UserDetailRepository(new DAL.Context.SlimBuddyDBContext());
@@ -27,7 +26,6 @@ namespace BLL
 
             return userDetailRepository.Add(userDetail);
         }
-
 
         public bool Update(UserDetail userDetail)
         {
@@ -46,7 +44,6 @@ namespace BLL
         {
             return userDetailRepository.Find(id);
         }
-
 
         public List<UserDetail> GetAll()
         {

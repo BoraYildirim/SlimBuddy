@@ -13,23 +13,22 @@ namespace PL
         }
 
         UserService userService;
-
-
         private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //mevcut formdan createaccount screene geçiþ yapýlýr
             CreateaAccountScreen createForm = new CreateaAccountScreen();
             this.Hide();
             createForm.ShowDialog();
             this.Show();
-
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
+            //mevcut formdan adminlogin screene geçiþ yapýlýr
             AdminLoginScreen formAdminLoginScreen = new AdminLoginScreen();
             this.Hide();
             formAdminLoginScreen.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -39,30 +38,26 @@ namespace PL
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
             int control = 0;
-
+            // Tüm kullanýcýlarý kontrol et
             foreach (User us in userService.GetAll())
             {
+                //kullanýcý bilgisi kontrolü yapýlýr
                 if (us.Email == textBoxEmail.Text && us.Password == textBoxPassword.Text && us.UserType == UserType.Regular && us.Status != Status.Passive)
                 {
+                    // Ana ekraný baþlat, bu formu gizle
                     HomeScreen formHomeScreen = new HomeScreen(us, this);
                     formHomeScreen.Show();
                     control = 1;
                     this.Hide();
-
                 }
-
             }
-            if (control == 0)
+            if (control == 0) // Kontrol deðiþkeni hala 0 ise, yanlýþ kullanýcý giriþi
             {
                 MessageBox.Show("Incorrect User Login!");
                 textBoxEmail.Clear();
                 textBoxPassword.Clear();
             }
-
-
-
         }
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -70,32 +65,23 @@ namespace PL
             if (checkBoxShowPassword.Checked)
             {
                 textBoxPassword.UseSystemPasswordChar = false;
-
             }
             else
             {
                 textBoxPassword.UseSystemPasswordChar = true;
-
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
             textBoxPassword.UseSystemPasswordChar = true;
         }
+
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-
-
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
-
             dragging = true;
             dragCursorPoint = Cursor.Position;
             dragFormPoint = this.Location;
@@ -109,7 +95,6 @@ namespace PL
                 this.Location = Point.Add(dragFormPoint, new Size(dif));
             }
         }
-
         private void panel2_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;

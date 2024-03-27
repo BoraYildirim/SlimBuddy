@@ -29,7 +29,5 @@ namespace DAL.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(System.Reflection.Assembly.GetExecutingAssembly());
         }
-
-
     }
 }

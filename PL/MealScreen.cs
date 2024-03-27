@@ -30,60 +30,39 @@ namespace PL
             mealService = new();
             mealSummaryService = new();
         }
+
         MealSummaryService mealSummaryService;
         MealService mealService;
         CategoryService categoryService;
         FoodService foodService;
         User _user;
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void toolStripContainer2_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButtonBreakfast_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeLabelMealName();
+            ChangeLabelMealName(); // Yemek adı etiketini değiştirme işlevini çağır
         }
 
         private void MealScreen_Load(object sender, EventArgs e)
-        {
-            //lbMeal.Items.Clear();
+        {   
+            // Kategori combobox'ını veritabanından alınan kategori listesiyle doldur       
             comboBoxCategory.DataSource = categoryService.GetAll();
             comboBoxCategory.DisplayMember = "CategoryName";
             comboBoxCategory.ValueMember = "CategoryName";
-
-
-
         }
 
         private void radioButtonLunch_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeLabelMealName();
-        }
-
-        private void menuStripCaregories_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            ChangeLabelMealName(); // Yemek adı etiketini değiştirme işlevini çağır
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Seçilen kategoriyi al
             Category category = comboBoxCategory.SelectedItem as Category;
-
+            // Listbox'ı seçilen kategoriye göre doldur
             lbFoods.DataSource = foodService.GetFoodByCategoryName(category.CategoryName);
-
+            // Listbox'ta gösterilecek özellikleri belirt
             lbFoods.DisplayMember = "Name Calorie";
-
-
         }
-
-
 
         private void lbFoods_Click(object sender, EventArgs e)
         {
@@ -127,19 +106,14 @@ namespace PL
                     // Hata işleme veya yedek planınızı burada uygulayabilirsiniz.
                 }
             }
-
-
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+         
         private void lbFoods_DoubleClick(object sender, EventArgs e)
         {
+            // Listbox'ta seçilen öğe ve seçili öğün kontrol edilir
             if (lbMeal.Items != null && (radioButtonBreakfast.Checked || radioButtonDinner.Checked || radioButtonLunch.Checked || radioButtonSnack.Checked))
             {
+                // Seçilen yiyeceği öğün listesine ekleyin ve toplam kaloriyi güncelleyin
                 lbMeal.Items.Add(lbFoods.SelectedItem as Food);
                 UpdateTotalCalorie();
             }
@@ -148,14 +122,10 @@ namespace PL
                 MessageBox.Show("Please Choose Meal !!!");
             }
         }
-
-        private void lbFoods_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void buttonSaveMeal_Click(object sender, EventArgs e)
         {
+            // Öğün listesinin boş olup olmadığı kontrol edilir
             if (lbMeal.Items.Count == 0)
             {
                 MessageBox.Show("Please choose food !!!");
@@ -164,6 +134,7 @@ namespace PL
             {
                 Meal meal = new Meal();
 
+                // Hangi öğün türünün seçildiğine bağlı olarak öğün adı atanır
                 if (radioButtonBreakfast.Checked)
                 {
                     meal.MealName = "Breakfast";
@@ -180,16 +151,18 @@ namespace PL
                 {
                     meal.MealName = "Snack";
                 }
+                // Öğünde bulunan yiyeceklerin toplam kalorisi hesaplanır
                 double calorie = 0;
                 foreach (Food fo in lbMeal.Items)
                 {
                     calorie += fo.Calorie;
                 }
                 meal.TotalCalorie = calorie;
+
+                // Yeni öğün veritabanına eklenir
                 mealService.Add(meal);
 
-
-
+                // Her bir yiyecek için bir özet oluşturulur ve veritabanına eklenir
                 foreach (Food foo in lbMeal.Items)
                 {
                     MealSummary summary = new MealSummary();
@@ -206,53 +179,46 @@ namespace PL
                 radioButtonBreakfast.Checked = false;
                 radioButtonDinner.Checked = false;
                 radioButtonLunch.Checked = false;
-                radioButtonSnack.Checked = false;
-                
+                radioButtonSnack.Checked = false;            
             }
-
-        }
-
-        private void lbMeal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxSearchFood_TextChanged(object sender, EventArgs e)
         {
+            // Arama kutusundaki metne göre yiyecekleri al
             List<Food> food = foodService.GetFoodWithWord(textBoxSearchFood.Text);
 
-            lbFoods.DataSource = food;
+            lbFoods.DataSource = food; // Yiyecekleri liste kutusuna veri kaynağı olarak ata
 
-            lbFoods.DisplayMember = "Name Calorie";
-
-
+            lbFoods.DisplayMember = "Name Calorie";  // Listbox'ta gösterilecek özellikleri belirt
         }
 
         private void lbMeal_DoubleClick(object sender, EventArgs e)
         {
+            // Eğer öğün listesi boş değilse seçilen öğeyi kaldır ve toplam kaloriyi güncelle
             if (lbMeal.Items != null)
             {
                 lbMeal.Items.Remove(lbMeal.SelectedItem);
                 UpdateTotalCalorie();
             }
-
         }
 
         private void UpdateTotalCalorie()
         {
             double totalCalorie = 0;
 
-            foreach (Food item in lbMeal.Items)
+            foreach (Food item in lbMeal.Items)// Her yiyeceğin kalorisini topla
             {
                 totalCalorie += item.Calorie;
             }
 
-            labelTotalCalorieValue.Text = totalCalorie.ToString();
+            labelTotalCalorieValue.Text = totalCalorie.ToString(); // Toplam kaloriyi ekrana yazdır
         }
 
         private void ChangeLabelMealName()
         {
             string name = string.Empty;
+            // Öğün adını belirle
             if (radioButtonBreakfast.Checked)
             {
                 name = "Breakfast";
@@ -269,17 +235,17 @@ namespace PL
             {
                 name = "Snack";
             }
-            labelMealName.Text = name;
+            labelMealName.Text = name; // Etiketin metnini güncelle
         }
 
         private void radioButtonDinner_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeLabelMealName();
+            ChangeLabelMealName(); // Öğün adını değiştir
         }
 
         private void radioButtonSnack_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeLabelMealName();
+            ChangeLabelMealName(); // Öğün adını değiştir
         }
     }
 }

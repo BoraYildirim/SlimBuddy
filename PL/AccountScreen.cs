@@ -27,10 +27,9 @@ namespace PL
         User _user;
         UserService userService;
         UserDetailService userDetailService;
+        private void AccountScreen_Load(object sender, EventArgs e)   //Kullanıcının bilgileri formda dolu gelmektedir.
+        {          
 
-        private void AccountScreen_Load(object sender, EventArgs e)
-        {
-            lblEmail.Text = _user.Email;
             lblFirstName.Text = userDetailService.GetUserName(_user.UserID);
             lblLastName.Text = userDetailService.GetUserSurname(_user.UserID);
             lblGender.Text = userDetailService.GetUserGender(_user.UserID);
@@ -39,33 +38,33 @@ namespace PL
             lblAge.Text = userDetailService.GetUserAge(_user.UserID).ToString();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)           
         {
-            if (string.IsNullOrWhiteSpace(txtNewAge.Text))
+            if (string.IsNullOrWhiteSpace(txtNewAge.Text))          //boşluk kontrolü
             {
                 MessageBox.Show("Age field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             int ageValue;
             bool isNumeric = int.TryParse(txtNewAge.Text, out ageValue);
-            if (!isNumeric || ageValue < 6 || ageValue > 99)
+            if (!isNumeric || ageValue < 6 || ageValue > 99)        //yaş kontrolü ve numerik değer kontrolü
             {
                 MessageBox.Show("Age must be a numeric value between 6 and 99.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtNewHeight.Text))
+            if (string.IsNullOrWhiteSpace(txtNewHeight.Text))       //boşluk kontrolü
             {
                 MessageBox.Show("Height field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             int heightValue;
             bool isNumeric2 = int.TryParse(txtNewHeight.Text, out heightValue);
-            if (!isNumeric || heightValue < 30 || heightValue > 250)
+            if (!isNumeric || heightValue < 30 || heightValue > 250)    //boy kontrolü ve numerik kontrolü
             {
                 MessageBox.Show("Height must be a numeric value between 30 and 250.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtNewWeight.Text))
+            if (string.IsNullOrWhiteSpace(txtNewWeight.Text))           //boşluk kontrolü
             {
                 MessageBox.Show("Weight field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -73,22 +72,17 @@ namespace PL
            
             int weightValue;
             bool isNumeric3 = int.TryParse(txtNewWeight.Text, out weightValue);
-            if (!isNumeric || weightValue < 30 || weightValue > 250)
+            if (!isNumeric || weightValue < 30 || weightValue > 250)    //kilo kontorlğ ve numerik kontrolü
             {
                 MessageBox.Show("Weight must be a numeric value between 30 and 250.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             UserDetail userDetail = userDetailService.GetById(_user.UserID);
 
             userDetail.Age = int.Parse(txtNewAge.Text);
             userDetail.Height = double.Parse(txtNewHeight.Text);
             userDetail.Weight = double.Parse(txtNewWeight.Text);
-           // AgeControl(txtNewAge.Text, userDetail);
-           // HeightControl(txtNewHeight.Text, userDetail);
-           // WeightControl(txtNewWeight.Text, userDetail);
-
 
             userDetailService.Update(userDetail);
 
@@ -100,48 +94,7 @@ namespace PL
             txtNewHeight.Text=string.Empty;
             txtNewWeight.Text=string.Empty;
 
-            MessageBox.Show("Successfully Update");
-        }
-
-        public void AgeControl(string age, UserDetail userDetail)
-        {
-            int letterControl = 0;
-            int digitControl = 0;
-            int symbolConrol = 0;
-
-            foreach (char c in age)
-            {
-
-                if (char.IsLetter(c))
-                {
-                    letterControl++;
-                }
-                if (char.IsDigit(c))
-                {
-                    digitControl++;
-                }
-                if (char.IsSymbol(c) || char.IsSeparator(c) || char.IsPunctuation(c))
-                {
-                    symbolConrol++;
-                }
-            }
-            if (letterControl == 0 && digitControl > 0 && symbolConrol == 0)
-            {
-                userDetail.Age = int.Parse(age);
-            }
-            else
-            {
-                MessageBox.Show("Values must have only Number");
-            }
-
-        }
-
-       
-      
-
-        private void txtNewAge_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+            MessageBox.Show("Successfully Update"); //kayıt başarılı
+        }       
     }
 }

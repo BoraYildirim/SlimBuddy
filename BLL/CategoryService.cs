@@ -27,7 +27,6 @@ namespace BLL
             return categoryRepository.Add(category);
         }
 
-
         public bool Update(Category category)
         {
             category.Status = Status.Modified;
@@ -45,7 +44,6 @@ namespace BLL
         {
             return categoryRepository.Find(id);
         }
-
 
         public List<Category> GetAll()
         {

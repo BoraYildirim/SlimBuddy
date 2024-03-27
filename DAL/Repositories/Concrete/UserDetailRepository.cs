@@ -14,8 +14,8 @@ namespace DAL.Repositories.Concrete
         public UserDetailRepository(SlimBuddyDBContext dbContext) : base(dbContext)
         {
             _dbContext = new SlimBuddyDBContext();
-
         }
+
         SlimBuddyDBContext _dbContext;
         public int GetUserAge(int userId)
         {

@@ -130,7 +130,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
-            label1.Location = new Point(738, 430);
+            label1.Location = new Point(564, 437);
             label1.Name = "label1";
             label1.Size = new Size(114, 39);
             label1.TabIndex = 34;
@@ -140,7 +140,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
-            label5.Location = new Point(738, 357);
+            label5.Location = new Point(564, 364);
             label5.Name = "label5";
             label5.Size = new Size(107, 39);
             label5.TabIndex = 33;
@@ -150,7 +150,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
-            label10.Location = new Point(738, 287);
+            label10.Location = new Point(564, 294);
             label10.Name = "label10";
             label10.Size = new Size(68, 39);
             label10.TabIndex = 32;
@@ -158,22 +158,22 @@
             // 
             // txtNewAge
             // 
-            txtNewAge.Location = new Point(892, 299);
+            txtNewAge.Location = new Point(718, 306);
             txtNewAge.Name = "txtNewAge";
             txtNewAge.Size = new Size(185, 27);
             txtNewAge.TabIndex = 35;
-            txtNewAge.TextChanged += txtNewAge_TextChanged;
+            //txtNewAge.TextChanged += txtNewAge_TextChanged;
             // 
             // txtNewHeight
             // 
-            txtNewHeight.Location = new Point(892, 369);
+            txtNewHeight.Location = new Point(718, 376);
             txtNewHeight.Name = "txtNewHeight";
             txtNewHeight.Size = new Size(185, 27);
             txtNewHeight.TabIndex = 36;
             // 
             // txtNewWeight
             // 
-            txtNewWeight.Location = new Point(892, 441);
+            txtNewWeight.Location = new Point(718, 448);
             txtNewWeight.Name = "txtNewWeight";
             txtNewWeight.Size = new Size(185, 27);
             txtNewWeight.TabIndex = 37;
@@ -183,11 +183,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Bold);
             label11.ForeColor = Color.Red;
-            label11.Location = new Point(564, 287);
+            label11.Location = new Point(755, 245);
             label11.Name = "label11";
-            label11.Size = new Size(141, 39);
+            label11.Size = new Size(129, 39);
             label11.TabIndex = 38;
-            label11.Text = "UPDATE:";
+            label11.Text = "UPDATE";
             // 
             // lblEmail
             // 
@@ -280,16 +280,16 @@
             // 
             button1.BackColor = Color.Red;
             button1.Enabled = false;
-            button1.Location = new Point(564, 224);
+            button1.Location = new Point(564, 218);
             button1.Name = "button1";
-            button1.Size = new Size(513, 11);
+            button1.Size = new Size(532, 11);
             button1.TabIndex = 47;
             button1.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.IndianRed;
-            btnUpdate.Location = new Point(564, 357);
+            btnUpdate.Location = new Point(965, 349);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(131, 78);
             btnUpdate.TabIndex = 48;

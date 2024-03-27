@@ -16,10 +16,8 @@ namespace DAL.Repositories.Concrete
         {
             _dbContext = new SlimBuddyDBContext();
         }
+
         SlimBuddyDBContext _dbContext;
-
-
-
         public List<string> GetMealsNames(int userID)
         {
             return _dbContext.MealSummaries
@@ -34,6 +32,7 @@ namespace DAL.Repositories.Concrete
         {
             return _dbContext.Meals.Where(x => x.MealName == text).Select(x => x.MealID).FirstOrDefault();
         }
+
         public bool CheckEntries(string mealName)
         {
             var mlName = _dbContext.Meals.FirstOrDefault(x => x.MealName == mealName);
@@ -45,9 +44,6 @@ namespace DAL.Repositories.Concrete
             {
                 return true;
             }
-        }
-
-       
-        
+        }           
     }
 }

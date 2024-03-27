@@ -19,23 +19,12 @@ namespace PL
             InitializeComponent();
             _user = user;
             _form = form;
-
         }
 
         User _user;
         Form _form;
-
-        private void aDDMEALToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void HomeScreen_Load(object sender, EventArgs e)
+       
+        private void HomeScreen_Load(object sender, EventArgs e) //sayfa yüklendiğinde Mealscreen açılır
         {
             MealScreen mealScreen = new MealScreen(_user);
             mealScreen.MdiParent = this;
@@ -43,10 +32,9 @@ namespace PL
             this.Width = mealScreen.Width;
             this.Height = mealScreen.Height + 60;
             mealScreen.Show();
-
         }
 
-        private void mEALToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mEALToolStripMenuItem_Click(object sender, EventArgs e) //menuden mealscreene basıldığında açılır
         {
             MealScreen mealScreen = new MealScreen(_user);
             mealScreen.MdiParent = this;
@@ -59,7 +47,6 @@ namespace PL
         private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void fOODToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +84,7 @@ namespace PL
             this.Height = dailyCalorieScreen.Height + 60;
             dailyCalorieScreen.Show();
         }
+
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;

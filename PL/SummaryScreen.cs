@@ -23,6 +23,7 @@ namespace PL
             mealService = new();
             mealSummaryService = new();
         }
+
         MealSummaryService mealSummaryService;
         MealService mealService;
         CategoryService categoryService;
@@ -33,24 +34,28 @@ namespace PL
 
             MealSummary mealSummary = new MealSummary();
             List<MealSummary> listMealSummary = new List<MealSummary>();
+            // Tüm özetleri al
             foreach (MealSummary summary in mealSummaryService.GetAll())
             {
+                // Kullanıcının ID'sine göre özetleri filtrele
                 if (summary.UserID == _user.UserID)
                 {
                     listMealSummary.Add(summary);
                 }
-
             }
-
+            // Bugünkü tüm öğünleri ekle
             foreach (MealSummary summary2 in listMealSummary)
             {
                 Meal meal = mealService.GetById(summary2.MealID);
+
+                // Öğünün oluşturulma tarihi bugünün tarihine eşitse ve "?" değilse
                 if (meal.CreationDate.Day == DateTime.Now.Day && meal.MealName!="?")
                 {
                     lbMeal.Items.Add(meal);
                 }
-
             }
+
+            // Aynı öğünleri tekrarlamamak için öğünleri tekilleştir
             List<Meal> meals = new List<Meal>();
             foreach (Meal meal in lbMeal.Items)
             {
@@ -59,23 +64,19 @@ namespace PL
                     meals.Add(meal);
                 }
             }
+
+            // Önceki listeyi temizle ve tekilleştirilmiş öğünleri ekleyin
             lbMeal.Items.Clear();
             foreach (Meal meal in meals)
             {
                 lbMeal.Items.Add(meal);
             }
-
-
-        }
-
-        private void lbMeal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lbMeal_DoubleClick(object sender, EventArgs e)
         {
             lbFood.Items.Clear();
+            // Seçilen öğünün içindeki yiyecekleri listele
             MealSummary mealSummary = new MealSummary();
             Meal meal = (Meal)lbMeal.SelectedItem;
 
@@ -91,6 +92,7 @@ namespace PL
 
         private void btnDeleteMeal_Click(object sender, EventArgs e)
         {
+            // Seçilen öğünü sil ve bağlı yiyecek listesini temizle
             Meal meal = (Meal)lbMeal.SelectedItem;
             if (lbMeal.SelectedItem != null)
             {
@@ -102,16 +104,14 @@ namespace PL
             {
                 MessageBox.Show("Please Choose Meal !!!");
             }
-
-
         }
 
         private void buttonUpdateMeal_Click(object sender, EventArgs e)
         {
+            // Seçilen öğünün bağlı yiyecek listesini temizle
             Meal meal = (Meal)lbMeal.SelectedItem;
             if (lbMeal.SelectedItem != null)
-            {
-                
+            {          
                 lbFood.Items.Clear();
             }
             else

@@ -22,6 +22,5 @@ namespace Models.Concrete
         {
             return MealName;
         }
-
     }
 }

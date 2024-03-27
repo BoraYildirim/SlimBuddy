@@ -17,8 +17,7 @@ namespace DAL.Seed
             builder.HasData
               (
                   new User { Email = "admin@admin.com", Password = "Admin123*", UserType = UserType.Admin, Status = Status.Active, UserID=1 }
-                  );
-                  
+                  );                
         }
     }
 }

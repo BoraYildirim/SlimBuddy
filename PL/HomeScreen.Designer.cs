@@ -41,15 +41,16 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.IndianRed;
+            menuStrip1.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { mEALToolStripMenuItem, fOODToolStripMenuItem, dAILYCALORIEToolStripMenuItem, aNALYSISToolStripMenuItem, sUMMARYToolStripMenuItem, aCCOUNTToolStripMenuItem, lOGOUTToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 1, 0, 1);
-            menuStrip1.Size = new Size(1168, 26);
+            menuStrip1.Size = new Size(1168, 31);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             menuStrip1.MouseDown += menuStrip1_MouseDown;
             menuStrip1.MouseMove += menuStrip1_MouseMove;
             menuStrip1.MouseUp += menuStrip1_MouseUp;
@@ -57,49 +58,49 @@
             // mEALToolStripMenuItem
             // 
             mEALToolStripMenuItem.Name = "mEALToolStripMenuItem";
-            mEALToolStripMenuItem.Size = new Size(61, 24);
+            mEALToolStripMenuItem.Size = new Size(73, 29);
             mEALToolStripMenuItem.Text = "MEAL";
             mEALToolStripMenuItem.Click += mEALToolStripMenuItem_Click;
             // 
             // fOODToolStripMenuItem
             // 
             fOODToolStripMenuItem.Name = "fOODToolStripMenuItem";
-            fOODToolStripMenuItem.Size = new Size(63, 24);
+            fOODToolStripMenuItem.Size = new Size(76, 29);
             fOODToolStripMenuItem.Text = "FOOD";
             fOODToolStripMenuItem.Click += fOODToolStripMenuItem_Click;
             // 
             // dAILYCALORIEToolStripMenuItem
             // 
             dAILYCALORIEToolStripMenuItem.Name = "dAILYCALORIEToolStripMenuItem";
-            dAILYCALORIEToolStripMenuItem.Size = new Size(123, 24);
+            dAILYCALORIEToolStripMenuItem.Size = new Size(163, 29);
             dAILYCALORIEToolStripMenuItem.Text = "DAILY CALORIE";
             dAILYCALORIEToolStripMenuItem.Click += dAILYCALORIEToolStripMenuItem_Click;
             // 
             // aNALYSISToolStripMenuItem
             // 
             aNALYSISToolStripMenuItem.Name = "aNALYSISToolStripMenuItem";
-            aNALYSISToolStripMenuItem.Size = new Size(88, 24);
+            aNALYSISToolStripMenuItem.Size = new Size(117, 29);
             aNALYSISToolStripMenuItem.Text = "ANALYSIS";
             aNALYSISToolStripMenuItem.Click += aNALYSISToolStripMenuItem_Click;
             // 
             // sUMMARYToolStripMenuItem
             // 
             sUMMARYToolStripMenuItem.Name = "sUMMARYToolStripMenuItem";
-            sUMMARYToolStripMenuItem.Size = new Size(94, 24);
-            sUMMARYToolStripMenuItem.Text = "SUMMARY";
+            sUMMARYToolStripMenuItem.Size = new Size(229, 29);
+            sUMMARYToolStripMenuItem.Text = "DAILY MEAL SUMMARY";
             sUMMARYToolStripMenuItem.Click += sUMMARYToolStripMenuItem_Click;
             // 
             // aCCOUNTToolStripMenuItem
             // 
             aCCOUNTToolStripMenuItem.Name = "aCCOUNTToolStripMenuItem";
-            aCCOUNTToolStripMenuItem.Size = new Size(91, 24);
+            aCCOUNTToolStripMenuItem.Size = new Size(113, 29);
             aCCOUNTToolStripMenuItem.Text = "ACCOUNT";
             aCCOUNTToolStripMenuItem.Click += aCCOUNTToolStripMenuItem_Click;
             // 
             // lOGOUTToolStripMenuItem
             // 
             lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            lOGOUTToolStripMenuItem.Size = new Size(83, 24);
+            lOGOUTToolStripMenuItem.Size = new Size(107, 29);
             lOGOUTToolStripMenuItem.Text = "LOG OUT";
             lOGOUTToolStripMenuItem.Click += lOGOUTToolStripMenuItem_Click;
             // 

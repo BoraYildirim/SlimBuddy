@@ -20,19 +20,21 @@ namespace DAL.Repositories.Concrete
         }
         SlimBuddyDBContext _dbContext;
 
-
         public User Control(string email, string password)
         {
             return _dbContext.Users.Include(x => x.UserDetail).AsNoTracking().FirstOrDefault(x => x.Email == email && x.Password == password);
         }
+
         public User UserByUserId(int userId)
         {
             return _dbContext.Users.FirstOrDefault(x => x.UserID == userId);
         }
+
         public bool RegisterControl(string email)
         {
             return _dbContext.Users.AsNoTracking().Any(x => x.Email == email);
         }
+
         public List<User> GetUsers()
         {
             return _dbContext.Users.Where(x => x.Status == Status.Active).ToList();
@@ -40,33 +42,33 @@ namespace DAL.Repositories.Concrete
 
         public IEnumerable<object> MealOfAllDaily(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
         {
-            var result = users
-    .Join(mealSummaries, user => user.UserID, ms => ms.UserID, (user, ms) => new { user, ms })
-    .Join(meals.Where(meal => meal.CreationDate.Day == DateTime.Now.Day), x => x.ms.MealID, meal => meal.MealID, (x, meal) =>
-        new MealsAllTemplate
-        {
+        var result = users
+        .Join(mealSummaries, user => user.UserID, ms => ms.UserID, (user, ms) => new { user, ms })
+        .Join(meals.Where(meal => meal.CreationDate.Day == DateTime.Now.Day), x => x.ms.MealID, meal => meal.MealID, (x, meal) =>
+            new MealsAllTemplate
+            {
             Email = x.user.Email,
             MealName = meal.MealName,
             TotalCalorie = meal.TotalCalorie
-        }
-    );
-            return result.Cast<object>();
+            });
+
+        return result.Cast<object>();
         }
 
 
         public IEnumerable<object> MealOfAllWeekly(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
         {
-            var result = users
-    .Join(mealSummaries, user => user.UserID, ms => ms.UserID, (user, ms) => new { user, ms })
-    .Join(meals.Where(meal => meal.CreationDate.Month == DateTime.Now.Month), x => x.ms.MealID, meal => meal.MealID, (x, meal) =>
-        new MealsAllTemplate
-        {
+        var result = users
+        .Join(mealSummaries, user => user.UserID, ms => ms.UserID, (user, ms) => new { user, ms })
+        .Join(meals.Where(meal => meal.CreationDate.Month == DateTime.Now.Month), x => x.ms.MealID, meal => meal.MealID, (x, meal) =>
+            new MealsAllTemplate
+            {
             Email = x.user.Email,
             MealName = meal.MealName,
             TotalCalorie = meal.TotalCalorie
-        }
-    );
-            return result.Cast<object>();
+            });
+
+        return result.Cast<object>();
         }
 
         public IEnumerable<object> MealOfAllWeeklyThisUser(User user, List<MealSummary> mealSummaries, List<Meal> meals)
@@ -85,7 +87,7 @@ namespace DAL.Repositories.Concrete
                     }
                 );
 
-            return result.Cast<object>();
+        return result.Cast<object>();
         }
 
         public IEnumerable<object> MealOfAllDailyThisUser(User user, List<MealSummary> mealSummaries, List<Meal> meals)
@@ -134,7 +136,5 @@ namespace DAL.Repositories.Concrete
                 return true;
             }
         }
-
-
     }
 }

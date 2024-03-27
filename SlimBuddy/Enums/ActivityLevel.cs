@@ -13,7 +13,5 @@ namespace Models.Enums
        MidLevel,
        HighLevel,
        VeryHighLevel
-
-
     }
 }

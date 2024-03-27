@@ -26,7 +26,6 @@ namespace BLL
             return mealRepository.Add(meal);
         }
 
-
         public bool Update(Meal meal)
         {
             meal.Status = Status.Modified;
@@ -45,12 +44,9 @@ namespace BLL
             return mealRepository.Find(id);
         }
 
-
         public List<Meal> GetAll()
         {
             return mealRepository.GetAll();
         }
-
-
     }
 }

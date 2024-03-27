@@ -12,22 +12,18 @@ namespace Models.Concrete
     {
         public int FoodID { get; set; }
         public string Name { get; set; }
-
         public double Calorie { get; set; } 
-
         public string Image { get; set; }
         public Unit Unit { get; set; }
 
         public Category? Category { get; set; }
         public int CategoryID { get; set; }
 
-
         public ICollection<MealSummary>? MealSummary { get; set; }
-
 
         public override string ToString()
         {
-            return Name+" => " + Unit.ToString() + " x1 " + Calorie.ToString()+" Calorie"+" => ";
+            return Name+" => " + Unit.ToString() + " x 1  =>  "+ Calorie.ToString()+" Calorie";
         }
     }
 

@@ -29,7 +29,6 @@ namespace BLL
             return userRepository.Add(user);
         }
 
-
         public bool Update(User user)
         {
             user.ModifiedDate = DateTime.Now;
@@ -47,7 +46,6 @@ namespace BLL
             return userRepository.Find(id);
         }
 
-
         public List<User> GetAll()
         {
             return userRepository.GetAll();
@@ -60,14 +58,14 @@ namespace BLL
 
         public bool CheckEntries(string email)
         {
-            return userRepository.CheckEntries(email);
-           
+            return userRepository.CheckEntries(email);          
         }
 
         public IEnumerable<object> MealOfAllDaily(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
         {            
             return userRepository.MealOfAllDaily(users, mealSummaries, meals);
         }
+
         public IEnumerable<object> MealOfAllWeekly(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
         {
             return userRepository.MealOfAllWeekly(users, mealSummaries, meals);

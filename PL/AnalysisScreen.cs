@@ -26,38 +26,33 @@ namespace PL
             mealSummaryService = new();
             userService = new();
         }
+
         UserService userService;
         MealSummaryService mealSummaryService;
         MealService mealService;
         CategoryService categoryService;
         FoodService foodService;
         User _user;
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void AnalysisScreen_Load(object sender, EventArgs e)    
         {
-
-        }
-
-        private void AnalysisScreen_Load(object sender, EventArgs e)
-        {
-
-
+            // Veri tablosuna sütunlar ekleniyor.                                                           
             dataGridView1.Columns.Add("Email", "Email");
             dataGridView1.Columns.Add("MealName", "MealName");
             dataGridView1.Columns.Add("TotalCalorie", "TotalCalorie");
 
+            // Tüm kullanıcıları ve öğün özetlerini almak için servisler kullanılıyor.
             List<User> Uss = userService.GetAll();
             List<MealSummary> mSs = mealSummaryService.GetAll();
             List<Meal> ms = mealService.GetAll();
 
+            // Tüm günlük öğünleri kullanıcı e-posta, öğün adı ve toplam kaloriye göre veri tablosuna ekleniyor.
             foreach (var item in userService.MealOfAllDaily(Uss, mSs, ms))
             {
                 dynamic row = item;
                 dataGridView1.Rows.Add(row.Email, row.MealName, row.TotalCalorie);
             }
 
-
-
-
+            // Haftalık öğünleri kullanıcı e-posta, öğün adı ve toplam kaloriye göre veri tablosuna ekleniyor.
             dgvUserWeek.Columns.Add("Email", "Email");
             dgvUserWeek.Columns.Add("MealName", "MealName");
             dgvUserWeek.Columns.Add("TotalCalorie", "TotalCalorie");
@@ -66,14 +61,13 @@ namespace PL
             List<MealSummary> mSs2 = mealSummaryService.GetAll();
             List<Meal> ms2 = mealService.GetAll();
 
-
             foreach (var item in userService.MealOfAllWeekly(Uss2, mSs2, ms2))
             {
                 dynamic row = item;
                 dgvUserWeek.Rows.Add(row.Email, row.MealName, row.TotalCalorie);
             }
 
-
+            // Kullanıcının günlük öğünleri kullanıcı e-posta, öğün adı ve toplam kaloriye göre veri tablosuna ekleniyor.
             dgvThisUserDaily.Columns.Add("Email", "Email");
             dgvThisUserDaily.Columns.Add("MealName", "MealName");
             dgvThisUserDaily.Columns.Add("TotalCalorie", "TotalCalorie");
@@ -89,8 +83,7 @@ namespace PL
                 dgvThisUserDaily.Rows.Add(row.Email, row.MealName, row.TotalCalorie);
             }
 
-
-
+            // Kullanıcının haftalık öğünleri kullanıcı e-posta, öğün adı ve toplam kaloriye göre veri tablosuna ekleniyor.
             dgvThisUserWeek.Columns.Add("Email", "Email");
             dgvThisUserWeek.Columns.Add("MealName", "MealName");
             dgvThisUserWeek.Columns.Add("TotalCalorie", "TotalCalorie");
@@ -106,19 +99,16 @@ namespace PL
                 dgvThisUserWeek.Rows.Add(row.Email, row.MealName, row.TotalCalorie);
             }
 
-
-
             List<Meal> mealList = new List<Meal>();
-
             foreach (Meal meal in mealService.GetAll())
             {
                 if (meal.MealName == "?")
                 {
                     mealList.Add(meal);
                 }
-
             }
 
+            // Tüm özetlerin listesi oluşturuluyor ve "?"" olan öğünler listeden çıkarılıyor.
             List<MealSummary> allSummaries = new List<MealSummary>();
             allSummaries = mealSummaryService.GetAll();
             for (int i = 0; i < mealList.Count; i++)
@@ -129,10 +119,8 @@ namespace PL
                     {
                         allSummaries.RemoveAt(j);
                     }
-
                 }
             }
-
 
             List<MealSummary> mealSummaries = new List<MealSummary>();
             foreach (MealSummary mealSummary in allSummaries)
@@ -142,6 +130,7 @@ namespace PL
                     mealSummaries.Add(mealSummary);
                 }
             }
+
             List<int> foodIdList = new List<int>();
             foreach (MealSummary mealSummary1 in mealSummaries)
             {
@@ -149,36 +138,17 @@ namespace PL
             }
 
             List<Food> TodayFoods = new List<Food>();
-
             foreach (int i in foodIdList)
             {
                 Food food = foodService.GetById(i);
                 TodayFoods.Add(food);
             }
 
+            // Bugün yenen yemekler listbox'a ekleniyor.
             foreach (Food food in TodayFoods)
             {
-
             listBox1.Items.Add(food);
             }
-
-        }
-
-        private void rdoWeekly_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdoDaily_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void btnGoster_Click(object sender, EventArgs e)
-        {
-
-            
         }
     }
 }

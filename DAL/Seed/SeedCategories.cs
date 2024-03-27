@@ -14,8 +14,7 @@ namespace DAL.Seed
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasData
-                (
-                  
+                (              
                     new Category { CategoryID = 1, CategoryName = "Fruit" },
                     new Category { CategoryID = 2, CategoryName = "Drink" },
                     new Category { CategoryID = 3, CategoryName = "Snack" },

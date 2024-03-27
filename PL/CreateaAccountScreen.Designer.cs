@@ -90,7 +90,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(760, 524);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // checkBoxShowPassword
             // 
@@ -111,7 +110,7 @@
             button2.Location = new Point(348, 81);
             button2.Margin = new Padding(4, 2, 4, 2);
             button2.Name = "button2";
-            button2.Size = new Size(12, 404);
+            button2.Size = new Size(12, 405);
             button2.TabIndex = 25;
             button2.UseVisualStyleBackColor = false;
             // 
