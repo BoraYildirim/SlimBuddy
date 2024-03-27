@@ -321,6 +321,7 @@ namespace PL
             MessageBox.Show("Update succeeded. Saving data...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearTextBox();
             ClearComboBoxSelections();
+            pictureBox1.Image = null;
         }
 
         private void FoodScreen_MouseClick(object sender, MouseEventArgs e) //formda bir yer tıklandığında listedeki seçili
@@ -365,18 +366,6 @@ namespace PL
                 return;
             }
 
-            //if (cmbUnit.SelectedItem == null)
-            //{
-            //    MessageBox.Show("You must select a unit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //if (cmbCategory.SelectedItem == null)
-            //{
-            //    MessageBox.Show("You must select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
             MessageBox.Show("Delete succeeded. Saving data...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearTextBox();
             ClearComboBoxSelections();
@@ -386,12 +375,15 @@ namespace PL
             listBoxFoods.Items.Remove(food);
             ClearTextBox();
             ClearComboBoxSelections();
+            pictureBox1.Image = null;
         }
         string _savePath;
         private void buttonUploadImage_Click_1(object sender, EventArgs e)
         {
+            
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Resmi yerel sistemde kaydet
@@ -404,14 +396,26 @@ namespace PL
                 // Dosyayı kopyala veya taşı
                 File.Copy(filePath, savePath, true);
 
-
                 // savePath yolu, resmin uygulama içinde nerede saklandığını gösterir ve ihtiyacınız olduğunda kullanılabilir.
                 _savePath = savePath;
+
+                // Dosya yolu null değilse ve resim dosyası varsa
+                if (!string.IsNullOrEmpty(_savePath) && File.Exists(_savePath))
+                {
+                    // Resmi yükle ve PictureBox'a ata
+                    pictureBox1.Image = Image.FromFile(_savePath);
+                }
+                else
+                {
+                    // Dosya yolu null veya dosya yoksa kullanıcıya uyarı ver
+                    MessageBox.Show("The selected image file is invalid or does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 MessageBox.Show("You have not selected any image. Please select an image to proceed.", "No Image Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
     }
 }
