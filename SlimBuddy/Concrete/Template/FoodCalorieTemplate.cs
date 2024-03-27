@@ -9,6 +9,6 @@ namespace Models.Concrete.Template
     public class FoodCalorieTemplate
     {
         public string Name { get; set; }
-        public double Calorie { get; set; }
+        public double Calorie { get; set; }    
     }
 }
