@@ -45,7 +45,7 @@ namespace PL
             foreach (MealSummary summary2 in listMealSummary)
             {
                 Meal meal = mealService.GetById(summary2.MealID);
-                if (meal.CreationDate.Day == DateTime.Now.Day)
+                if (meal.CreationDate.Day == DateTime.Now.Day && meal.MealName!="?")
                 {
                     lbMeal.Items.Add(meal);
                 }

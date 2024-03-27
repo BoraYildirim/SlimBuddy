@@ -89,7 +89,11 @@ namespace PL
 
             foreach (Meal meal in meal2)
             {
-                listBoxTodaysMeals.Items.Add(meal);
+                if (meal.MealName!="?")
+                {
+                    listBoxTodaysMeals.Items.Add(meal);
+                }
+                
             }
 
             double totalCalorie2 = 0;
