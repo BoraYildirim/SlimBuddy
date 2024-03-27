@@ -234,6 +234,7 @@
             cmbUnit.Name = "cmbUnit";
             cmbUnit.Size = new Size(170, 28);
             cmbUnit.TabIndex = 70;
+            cmbUnit.SelectedIndexChanged += cmbUnit_SelectedIndexChanged;
             // 
             // openFileDialog1
             // 

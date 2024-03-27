@@ -153,7 +153,7 @@ namespace PL
 
             if (!isValidTurkishLettersAndSpaces || spaceCount > 4)
             {
-                MessageBox.Show("Name field must contain only letters (including Turkish letters) and a maximum of 2 spaces.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Name field must contain only letters (including Turkish letters) and a maximum of 4 spaces.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -186,10 +186,10 @@ namespace PL
             food.Calorie = double.Parse(txtCalorie.Text);
             //food.Image = txtImage.Text;
 
-          
 
 
-           
+
+
 
 
 
@@ -269,7 +269,7 @@ namespace PL
         {
             txtName.Text = string.Empty;
             txtCalorie.Text = string.Empty;
-            txtImage.Text = string.Empty;   
+            txtImage.Text = string.Empty;
 
         }
 
@@ -282,7 +282,7 @@ namespace PL
                 {
                     ComboBox comboBox = (ComboBox)control;
                     comboBox.SelectedItem = null;
-                 
+
                 }
             }
         }
@@ -445,7 +445,7 @@ namespace PL
         string _savePath;
         private void buttonUploadImage_Click(object sender, EventArgs e)
         {
-          
+
 
 
             //OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -490,6 +490,11 @@ namespace PL
             }
 
 
+
+        }
+
+        private void cmbUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

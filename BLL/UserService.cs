@@ -58,6 +58,12 @@ namespace BLL
             return userRepository.RegisterControl(email);
         }
 
+        public bool CheckEntries(string email)
+        {
+            return userRepository.CheckEntries(email);
+           
+        }
+
         public IEnumerable<object> MealOfAllDaily(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
         {            
             return userRepository.MealOfAllDaily(users, mealSummaries, meals);

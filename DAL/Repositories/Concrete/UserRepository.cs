@@ -122,6 +122,19 @@ namespace DAL.Repositories.Concrete
             return result.Cast<object>();
         }
 
+        public bool CheckEntries(string email)
+        {
+            var emailName = _dbContext.Users.FirstOrDefault(x => x.Email == email);
+            if (emailName == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
 
     }
 }

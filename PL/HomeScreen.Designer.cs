@@ -80,6 +80,7 @@
             aNALYSISToolStripMenuItem.Name = "aNALYSISToolStripMenuItem";
             aNALYSISToolStripMenuItem.Size = new Size(88, 24);
             aNALYSISToolStripMenuItem.Text = "ANALYSIS";
+            aNALYSISToolStripMenuItem.Click += aNALYSISToolStripMenuItem_Click;
             // 
             // sUMMARYToolStripMenuItem
             // 

@@ -120,5 +120,15 @@ namespace PL
         {
             dragging = false;
         }
+
+        private void aNALYSISToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnalysisScreen analysisScreen = new AnalysisScreen(_user);
+            analysisScreen.MdiParent = this;
+            analysisScreen.Dock = DockStyle.Fill;
+            this.Width = analysisScreen.Width;
+            this.Height = analysisScreen.Height + 60;
+            analysisScreen.Show();
+        }
     }
 }

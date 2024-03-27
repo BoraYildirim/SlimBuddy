@@ -18,14 +18,14 @@ namespace Models.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        [Range(6, 99, ErrorMessage = "Please Enter the years between  6 - 99")]
+       
         public int Age { get; set; }
         public Gender Gender { get; set; }
 
-        [Range(55, 270, ErrorMessage = "Please Enter the years between  55 - 330")]
+      
         public double Height { get; set; }
 
-        [Range(30, 370, ErrorMessage = "Please Enter the years between  30 - 370")]
+     
         public double Weight { get; set; }
 
         public ActivityLevel ActivityLevel{ get; set; }

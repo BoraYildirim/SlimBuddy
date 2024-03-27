@@ -102,7 +102,7 @@
             checkBoxShowPassword.TabIndex = 26;
             checkBoxShowPassword.Text = "Show";
             checkBoxShowPassword.UseVisualStyleBackColor = true;
-            checkBoxShowPassword.CheckedChanged += checkBoxShowPassword_CheckedChanged;
+            checkBoxShowPassword.CheckedChanged += checkBoxShowPassword_CheckedChanged_1;
             // 
             // button2
             // 
@@ -289,7 +289,7 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(203, 27);
             textBoxEmail.TabIndex = 2;
-            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
+            textBoxEmail.TextChanged += textBoxEmail_TextChanged_1;
             // 
             // label1
             // 
@@ -318,7 +318,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 21);
+            pictureBox1.Location = new Point(0, 23);
             pictureBox1.Margin = new Padding(4, 2, 4, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(852, 588);
@@ -335,9 +335,9 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(852, 29);
             panel2.TabIndex = 26;
-            panel2.MouseDown += panel2_MouseDown;
-            panel2.MouseMove += panel2_MouseMove;
-            panel2.MouseUp += panel2_MouseUp;
+            panel2.MouseDown += panel2_MouseDown_1;
+            panel2.MouseMove += panel2_MouseMove_1;
+            panel2.MouseUp += panel2_MouseUp_1;
             // 
             // buttonClose
             // 
@@ -351,7 +351,7 @@
             buttonClose.TabIndex = 26;
             buttonClose.Text = "X";
             buttonClose.UseVisualStyleBackColor = false;
-            buttonClose.Click += buttonClose_Click;
+            buttonClose.Click += buttonClose_Click_1;
             // 
             // CreateaAccountScreen
             // 
@@ -365,7 +365,7 @@
             Margin = new Padding(4, 2, 4, 2);
             Name = "CreateaAccountScreen";
             Text = "Create Account";
-            Load += CreateaAccountScreen_Load;
+            Load += CreateaAccountScreen_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
