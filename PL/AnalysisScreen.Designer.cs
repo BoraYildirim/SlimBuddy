@@ -28,221 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            rdoWeekly = new RadioButton();
-            rdoDaily = new RadioButton();
-            groupBoxWeeklyDaily = new GroupBox();
-            listView1 = new ListView();
-            Meal = new ColumnHeader();
-            UserEaten = new ColumnHeader();
-            TotalEaten = new ColumnHeader();
-            UserCalorie = new ColumnHeader();
-            TotalCalorie = new ColumnHeader();
-            listView2 = new ListView();
-            FoodName = new ColumnHeader();
-            Quantity = new ColumnHeader();
-            listView3 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
+            dataGridView1 = new DataGridView();
+            dgvUserWeek = new DataGridView();
+            dgvThisUserDaily = new DataGridView();
+            dgvThisUserWeek = new DataGridView();
             label1 = new Label();
-            button2 = new Button();
-            groupBoxWeeklyDaily.SuspendLayout();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            listBox1 = new ListBox();
+            label5 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUserWeek).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvThisUserDaily).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvThisUserWeek).BeginInit();
             SuspendLayout();
             // 
-            // rdoWeekly
+            // dataGridView1
             // 
-            rdoWeekly.AutoSize = true;
-            rdoWeekly.Location = new Point(39, 35);
-            rdoWeekly.Margin = new Padding(3, 4, 3, 4);
-            rdoWeekly.Name = "rdoWeekly";
-            rdoWeekly.Size = new Size(17, 16);
-            rdoWeekly.TabIndex = 3;
-            rdoWeekly.TabStop = true;
-            rdoWeekly.UseVisualStyleBackColor = true;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(368, 67);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 17;
             // 
-            // rdoDaily
+            // dgvUserWeek
             // 
-            rdoDaily.AutoSize = true;
-            rdoDaily.Location = new Point(154, 35);
-            rdoDaily.Margin = new Padding(3, 4, 3, 4);
-            rdoDaily.Name = "rdoDaily";
-            rdoDaily.Size = new Size(17, 16);
-            rdoDaily.TabIndex = 4;
-            rdoDaily.TabStop = true;
-            rdoDaily.UseVisualStyleBackColor = true;
+            dgvUserWeek.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUserWeek.Location = new Point(368, 232);
+            dgvUserWeek.Name = "dgvUserWeek";
+            dgvUserWeek.Size = new Size(240, 150);
+            dgvUserWeek.TabIndex = 18;
             // 
-            // groupBoxWeeklyDaily
+            // dgvThisUserDaily
             // 
-            groupBoxWeeklyDaily.Controls.Add(rdoDaily);
-            groupBoxWeeklyDaily.Controls.Add(rdoWeekly);
-            groupBoxWeeklyDaily.Font = new Font("Ink Free", 11.9999981F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            groupBoxWeeklyDaily.Location = new Point(485, 212);
-            groupBoxWeeklyDaily.Margin = new Padding(3, 4, 3, 4);
-            groupBoxWeeklyDaily.Name = "groupBoxWeeklyDaily";
-            groupBoxWeeklyDaily.Padding = new Padding(3, 4, 3, 4);
-            groupBoxWeeklyDaily.Size = new Size(214, 101);
-            groupBoxWeeklyDaily.TabIndex = 5;
-            groupBoxWeeklyDaily.TabStop = false;
-            groupBoxWeeklyDaily.Text = "Weekly   Or    Daily";
-            groupBoxWeeklyDaily.Enter += groupBox1_Enter;
+            dgvThisUserDaily.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvThisUserDaily.Location = new Point(122, 67);
+            dgvThisUserDaily.Name = "dgvThisUserDaily";
+            dgvThisUserDaily.Size = new Size(240, 150);
+            dgvThisUserDaily.TabIndex = 19;
             // 
-            // listView1
+            // dgvThisUserWeek
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { Meal, UserEaten, TotalEaten, UserCalorie, TotalCalorie });
-            listView1.GridLines = true;
-            listView1.Location = new Point(14, 13);
-            listView1.Margin = new Padding(3, 4, 3, 4);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(417, 231);
-            listView1.TabIndex = 11;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // Meal
-            // 
-            Meal.Text = "Meal";
-            Meal.Width = 80;
-            // 
-            // UserEaten
-            // 
-            UserEaten.Text = "User Eaten";
-            UserEaten.Width = 80;
-            // 
-            // TotalEaten
-            // 
-            TotalEaten.Text = "Total Eaten";
-            TotalEaten.Width = 80;
-            // 
-            // UserCalorie
-            // 
-            UserCalorie.Text = "User Calorie";
-            // 
-            // TotalCalorie
-            // 
-            TotalCalorie.Text = "Total Calorie";
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { FoodName, Quantity });
-            listView2.GridLines = true;
-            listView2.Location = new Point(811, 125);
-            listView2.Margin = new Padding(3, 4, 3, 4);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(288, 331);
-            listView2.TabIndex = 12;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
-            // 
-            // FoodName
-            // 
-            FoodName.Text = "Food Name";
-            FoodName.Width = 100;
-            // 
-            // Quantity
-            // 
-            Quantity.Text = "Quantity";
-            Quantity.Width = 100;
-            // 
-            // listView3
-            // 
-            listView3.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
-            listView3.GridLines = true;
-            listView3.Location = new Point(14, 267);
-            listView3.Margin = new Padding(3, 4, 3, 4);
-            listView3.Name = "listView3";
-            listView3.Size = new Size(417, 231);
-            listView3.TabIndex = 13;
-            listView3.UseCompatibleStateImageBehavior = false;
-            listView3.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Meal";
-            columnHeader1.Width = 80;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "User Eaten";
-            columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Total Eaten";
-            columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "User Calorie";
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Total Calorie";
+            dgvThisUserWeek.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvThisUserWeek.Location = new Point(122, 232);
+            dgvThisUserWeek.Name = "dgvThisUserWeek";
+            dgvThisUserWeek.Size = new Size(240, 150);
+            dgvThisUserWeek.TabIndex = 20;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Ink Free", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(792, 55);
+            label1.Font = new Font("Impact", 20.25F, FontStyle.Bold);
+            label1.Location = new Point(122, 21);
             label1.Name = "label1";
-            label1.Size = new Size(328, 42);
-            label1.TabIndex = 14;
-            label1.Text = "How Much Do I Eat";
+            label1.Size = new Size(127, 34);
+            label1.TabIndex = 21;
+            label1.Text = "This User";
             // 
-            // button2
+            // label2
             // 
-            button2.BackColor = Color.Black;
-            button2.Enabled = false;
-            button2.Location = new Point(755, 77);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(11, 379);
-            button2.TabIndex = 16;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Impact", 20.25F, FontStyle.Bold);
+            label2.Location = new Point(368, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(125, 34);
+            label2.TabIndex = 22;
+            label2.Text = "Everyone";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Impact", 20.25F, FontStyle.Bold);
+            label3.Location = new Point(30, 93);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 34);
+            label3.TabIndex = 23;
+            label3.Text = "Daily";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Impact", 20.25F, FontStyle.Bold);
+            label4.Location = new Point(12, 267);
+            label4.Name = "label4";
+            label4.Size = new Size(103, 34);
+            label4.TabIndex = 24;
+            label4.Text = "Weekly";
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 27;
+            listBox1.Location = new Point(634, 103);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(347, 220);
+            listBox1.TabIndex = 25;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Impact", 20.25F, FontStyle.Bold);
+            label5.Location = new Point(672, 43);
+            label5.Name = "label5";
+            label5.Size = new Size(254, 34);
+            label5.TabIndex = 26;
+            label5.Text = "What Do I  Eat Today";
             // 
             // AnalysisScreen
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1168, 558);
-            Controls.Add(button2);
+            ClientSize = new Size(1022, 418);
+            Controls.Add(label5);
+            Controls.Add(listBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(listView3);
-            Controls.Add(listView2);
-            Controls.Add(listView1);
-            Controls.Add(groupBoxWeeklyDaily);
+            Controls.Add(dgvThisUserWeek);
+            Controls.Add(dgvThisUserDaily);
+            Controls.Add(dgvUserWeek);
+            Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "AnalysisScreen";
             Text = "AnalysisScreen";
-            groupBoxWeeklyDaily.ResumeLayout(false);
-            groupBoxWeeklyDaily.PerformLayout();
+            Load += AnalysisScreen_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUserWeek).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvThisUserDaily).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvThisUserWeek).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private RadioButton rdoWeekly;
-        private RadioButton rdoDaily;
-        private GroupBox groupBoxWeeklyDaily;
-        private ListView listView1;
-        private ListView listView2;
-        private ColumnHeader FoodName;
-        private ColumnHeader Quantity;
-        private ColumnHeader Meal;
-        private ColumnHeader UserEaten;
-        private ColumnHeader TotalEaten;
-        private ColumnHeader UserCalorie;
-        private ColumnHeader TotalCalorie;
-        private ListView listView3;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
+        private DataGridView dataGridView1;
+        private DataGridView dgvUserWeek;
+        private DataGridView dgvThisUserDaily;
+        private DataGridView dgvThisUserWeek;
         private Label label1;
-        private Button button2;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private ListBox listBox1;
+        private Label label5;
     }
 }

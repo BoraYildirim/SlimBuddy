@@ -1,6 +1,7 @@
 ﻿using DAL.Repositories.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Models.Concrete;
+using Models.Concrete.Template;
 using Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,29 @@ namespace BLL
         public bool RegisterControl(string email)
         {
             return userRepository.RegisterControl(email);
+        }
+
+        public IEnumerable<object> MealOfAllDaily(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
+        {            
+            return userRepository.MealOfAllDaily(users, mealSummaries, meals);
+        }
+        public IEnumerable<object> MealOfAllWeekly(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals)
+        {
+            return userRepository.MealOfAllWeekly(users, mealSummaries, meals);
+        }
+
+        public IEnumerable<object> MealOfAllDailyThisUser(User user, List<MealSummary> mealSummaries, List<Meal> meals)
+        {
+            return userRepository.MealOfAllDailyThisUser(user, mealSummaries, meals);
+        }
+
+        public IEnumerable<object> MealOfAllWeeklyThisUser(User user, List<MealSummary> mealSummaries, List<Meal> meals)
+        {
+            return userRepository.MealOfAllWeeklyThisUser(user, mealSummaries, meals);
+        }
+        public IEnumerable<object> GetFoodAndCalories(List<User> users, List<MealSummary> mealSummaries, List<Meal> meals, List<Food> foods)
+        {
+            return userRepository.GetFoodAndCalories(users, mealSummaries, meals, foods);
         }
     }
 }
