@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -127,25 +128,40 @@ namespace PL
 
         private void comboBoxActivityLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            double value;
             if (comboBoxActivityLevel.SelectedIndex == 0)
             {
-                labelNeed.Text = (CalculateBmr() * 1.0).ToString();
+                value = (CalculateBmr() * 1.0);
+               
+                labelNeed.Text = Math.Round(value, 2).ToString();  
             }
             if (comboBoxActivityLevel.SelectedIndex == 1)
             {
-                labelNeed.Text = (CalculateBmr() * 1.2).ToString();
+                
+                value = (CalculateBmr() * 1.2);
+                
+                labelNeed.Text = Math.Round(value, 2).ToString();
             }
             if (comboBoxActivityLevel.SelectedIndex == 2)
             {
-                labelNeed.Text = (CalculateBmr() * 1.3).ToString();
+                value = (CalculateBmr() * 1.3);
+               
+                labelNeed.Text = Math.Round(value, 2).ToString();
+
             }
             if (comboBoxActivityLevel.SelectedIndex == 3)
             {
-                labelNeed.Text = (CalculateBmr() * 1.4).ToString();
+                value = (CalculateBmr() * 1.4);
+               
+                labelNeed.Text = Math.Round(value, 2).ToString();
+
             }
             if (comboBoxActivityLevel.SelectedIndex == 4)
             {
-                labelNeed.Text = (CalculateBmr() * 1.5).ToString();
+                value = (CalculateBmr() * 1.5);
+                
+                labelNeed.Text = Math.Round(value, 2).ToString();
+
             }
         }
 

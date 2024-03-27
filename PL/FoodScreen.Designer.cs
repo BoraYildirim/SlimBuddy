@@ -224,6 +224,7 @@
             listBoxFoods.Name = "listBoxFoods";
             listBoxFoods.Size = new Size(599, 424);
             listBoxFoods.TabIndex = 69;
+            listBoxFoods.SelectedIndexChanged += listBoxFoods_SelectedIndexChanged;
             listBoxFoods.DoubleClick += listBoxFoods_DoubleClick;
             // 
             // cmbUnit

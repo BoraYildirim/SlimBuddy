@@ -184,12 +184,7 @@ namespace PL
             food.CategoryID = cmbCategory.SelectedIndex;
             food.Name = txtName.Text;
             food.Calorie = double.Parse(txtCalorie.Text);
-            //food.Image = txtImage.Text;
-
-
-
-
-
+            food.Image = string.Empty;
 
 
 
@@ -494,6 +489,11 @@ namespace PL
         }
 
         private void cmbUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxFoods_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
